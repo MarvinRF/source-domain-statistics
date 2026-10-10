@@ -1,0 +1,30 @@
+{
+  "provenance": {
+    "git_commit": "c4cdf2add8197b209bdd0ff103c37c21c59e1a43",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-10T06:51:22+00:00",
+    "inputs": {
+      "results/granularity/bridge_music_gte.csv.gz": {
+        "sha256": "5dc711ce1bd91a284485773ed91c323f61adeff9d0044d3d6fb28ee22e6406e2",
+        "bytes": 970966
+      },
+      "results/granularity/bridge_movies_gte.csv.gz": {
+        "sha256": "ab30154299a8ba8f1d45634b9ffc7145581a634ebbc97f91328db358f9874930",
+        "bytes": 2724705
+      },
+      "results/granularity/bridge_games_gte.csv.gz": {
+        "sha256": "85a47d7edf36e760924c8ce68dbc0e3430949024dd7cba0e7c995e864c6bce08",
+        "bytes": 416348
+      }
+    }
+  }
+}

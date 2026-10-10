@@ -1,0 +1,406 @@
+contrast,label,domain,seed,n,mean_diff,ci95_low,ci95_high,n_nonzero_diff,p_holm_signflip,verdict
+qU_vs_raw,Query ZCA(U) vs raw,games,42,1959,0.00264108,0.000996323,0.00421583,94,0.00479952,better
+qU_vs_raw,Query ZCA(U) vs raw,games,43,1958,0.00302089,0.00139767,0.00468244,121,0.00279972,better
+qU_vs_raw,Query ZCA(U) vs raw,games,44,1959,0.00348895,0.00201135,0.00513852,112,0.00089991,better
+qU_vs_raw,Query ZCA(U) vs raw,games,45,1958,0.00358943,0.00201906,0.00520167,102,0.00119988,better
+qU_vs_raw,Query ZCA(U) vs raw,games,46,1961,0.00331564,0.00188121,0.00495617,108,0.00069993,better
+qU_vs_raw,Query ZCA(U) vs raw,movies,42,13458,0.00405449,0.00346965,0.00466323,593,0.00089991,better
+qU_vs_raw,Query ZCA(U) vs raw,movies,43,13457,0.00437809,0.00374867,0.00501435,603,0.00069993,better
+qU_vs_raw,Query ZCA(U) vs raw,movies,44,13455,0.00381388,0.0032271,0.00443088,581,0.00079992,better
+qU_vs_raw,Query ZCA(U) vs raw,movies,45,13453,0.00352544,0.00298862,0.00406199,605,0.00079992,better
+qU_vs_raw,Query ZCA(U) vs raw,movies,46,13457,0.00416963,0.00357335,0.00477094,597,0.00079992,better
+qU_vs_raw,Query ZCA(U) vs raw,music,42,4884,0.0022588,0.00156402,0.00299772,135,0.00089991,better
+qU_vs_raw,Query ZCA(U) vs raw,music,43,4884,0.00266376,0.00186986,0.00359814,148,0.00079992,better
+qU_vs_raw,Query ZCA(U) vs raw,music,44,4884,0.00273506,0.00195342,0.00354808,147,0.00089991,better
+qU_vs_raw,Query ZCA(U) vs raw,music,45,4884,0.0027483,0.00193606,0.00363986,131,0.00089991,better
+qU_vs_raw,Query ZCA(U) vs raw,music,46,4884,0.00221585,0.00144736,0.00300743,125,0.00079992,better
+qCtr_vs_raw,Query centring(U) vs raw,games,42,1959,0.00164704,0.00033075,0.00299464,83,0.0285971,better
+qCtr_vs_raw,Query centring(U) vs raw,games,43,1958,0.00237389,0.000987317,0.00382463,111,0.00479952,better
+qCtr_vs_raw,Query centring(U) vs raw,games,44,1959,0.00194582,0.000576719,0.00331043,92,0.0146985,better
+qCtr_vs_raw,Query centring(U) vs raw,games,45,1958,0.00253669,0.00116735,0.00401666,94,0.00349965,better
+qCtr_vs_raw,Query centring(U) vs raw,games,46,1961,0.00264089,0.00133845,0.00422135,95,0.0009999,better
+qCtr_vs_raw,Query centring(U) vs raw,movies,42,13458,0.00173754,0.00131529,0.00218134,407,0.00089991,better
+qCtr_vs_raw,Query centring(U) vs raw,movies,43,13457,0.00202841,0.00153821,0.00251733,424,0.00069993,better
+qCtr_vs_raw,Query centring(U) vs raw,movies,44,13455,0.00179478,0.00137512,0.00223154,403,0.00079992,better
+qCtr_vs_raw,Query centring(U) vs raw,movies,45,13453,0.00159656,0.00119747,0.00202741,420,0.00079992,better
+qCtr_vs_raw,Query centring(U) vs raw,movies,46,13457,0.00205315,0.00160959,0.00252493,418,0.00079992,better
+qCtr_vs_raw,Query centring(U) vs raw,music,42,4884,0.00164073,0.00105578,0.00223088,125,0.00089991,better
+qCtr_vs_raw,Query centring(U) vs raw,music,43,4884,0.00213837,0.00143728,0.00290795,138,0.00079992,better
+qCtr_vs_raw,Query centring(U) vs raw,music,44,4884,0.00198701,0.00134481,0.00263618,125,0.00089991,better
+qCtr_vs_raw,Query centring(U) vs raw,music,45,4884,0.00225899,0.00161823,0.00296356,133,0.00089991,better
+qCtr_vs_raw,Query centring(U) vs raw,music,46,4884,0.00146494,0.00086249,0.00209356,108,0.00079992,better
+a1,Query ZCA(U) vs items ZCA(C) (a1),games,42,1959,0.00344256,0.00184272,0.00502711,96,0.00059994,better
+a1,Query ZCA(U) vs items ZCA(C) (a1),games,43,1958,0.00399312,0.00236516,0.00569436,114,0.00059994,better
+a1,Query ZCA(U) vs items ZCA(C) (a1),games,44,1959,0.00442913,0.0028897,0.00610065,109,0.00059994,better
+a1,Query ZCA(U) vs items ZCA(C) (a1),games,45,1958,0.00458053,0.00308366,0.00610721,101,0.00059994,better
+a1,Query ZCA(U) vs items ZCA(C) (a1),games,46,1961,0.00454288,0.00302685,0.00627329,109,0.00059994,better
+a1,Query ZCA(U) vs items ZCA(C) (a1),movies,42,13458,0.00459393,0.00400181,0.00517921,555,0.00059994,better
+a1,Query ZCA(U) vs items ZCA(C) (a1),movies,43,13457,0.00505627,0.0044731,0.00567021,567,0.00059994,better
+a1,Query ZCA(U) vs items ZCA(C) (a1),movies,44,13455,0.00459557,0.00405796,0.00520204,555,0.00059994,better
+a1,Query ZCA(U) vs items ZCA(C) (a1),movies,45,13453,0.00427429,0.0037489,0.00479497,578,0.00059994,better
+a1,Query ZCA(U) vs items ZCA(C) (a1),movies,46,13457,0.00481572,0.00421584,0.00541108,577,0.00059994,better
+a1,Query ZCA(U) vs items ZCA(C) (a1),music,42,4884,0.00283484,0.00211996,0.00356475,131,0.00059994,better
+a1,Query ZCA(U) vs items ZCA(C) (a1),music,43,4884,0.0035205,0.00267611,0.00449521,141,0.00059994,better
+a1,Query ZCA(U) vs items ZCA(C) (a1),music,44,4884,0.00324375,0.002487,0.00405344,148,0.00059994,better
+a1,Query ZCA(U) vs items ZCA(C) (a1),music,45,4884,0.00348708,0.00260567,0.00445753,122,0.00059994,better
+a1,Query ZCA(U) vs items ZCA(C) (a1),music,46,4884,0.00303336,0.00225979,0.00385559,111,0.00059994,better
+a2,Query centring(U) vs items ZCA(C) (a2),games,42,1959,0.00244852,0.0010145,0.00397633,89,0.0039996,better
+a2,Query centring(U) vs items ZCA(C) (a2),games,43,1958,0.00334613,0.00192458,0.00475679,112,0.00059994,better
+a2,Query centring(U) vs items ZCA(C) (a2),games,44,1959,0.002886,0.00154177,0.00424333,95,0.00059994,better
+a2,Query centring(U) vs items ZCA(C) (a2),games,45,1958,0.00352779,0.0021395,0.00494928,95,0.00059994,better
+a2,Query centring(U) vs items ZCA(C) (a2),games,46,1961,0.00386813,0.00246243,0.00554694,101,0.00059994,better
+a2,Query centring(U) vs items ZCA(C) (a2),movies,42,13458,0.00227698,0.00186944,0.00269734,379,0.00059994,better
+a2,Query centring(U) vs items ZCA(C) (a2),movies,43,13457,0.00270658,0.00222245,0.0032177,412,0.00059994,better
+a2,Query centring(U) vs items ZCA(C) (a2),movies,44,13455,0.00257647,0.00214042,0.00303706,371,0.00059994,better
+a2,Query centring(U) vs items ZCA(C) (a2),movies,45,13453,0.00234541,0.00193107,0.00277173,412,0.00059994,better
+a2,Query centring(U) vs items ZCA(C) (a2),movies,46,13457,0.00269924,0.00225615,0.00316247,415,0.00059994,better
+a2,Query centring(U) vs items ZCA(C) (a2),music,42,4884,0.00221677,0.0016142,0.00285448,118,0.00059994,better
+a2,Query centring(U) vs items ZCA(C) (a2),music,43,4884,0.00299511,0.00222601,0.00382256,127,0.00059994,better
+a2,Query centring(U) vs items ZCA(C) (a2),music,44,4884,0.0024957,0.00184298,0.0031358,127,0.00059994,better
+a2,Query centring(U) vs items ZCA(C) (a2),music,45,4884,0.00299776,0.00225452,0.00383771,123,0.00059994,better
+a2,Query centring(U) vs items ZCA(C) (a2),music,46,4884,0.00228245,0.00165873,0.00297625,99,0.00059994,better
+a3,Query ZCA(B) vs items ZCA(C) (a3),games,42,1959,0.00329854,0.00188264,0.0048628,95,0.00059994,better
+a3,Query ZCA(B) vs items ZCA(C) (a3),games,43,1958,0.00427065,0.00270586,0.00590761,111,0.00059994,better
+a3,Query ZCA(B) vs items ZCA(C) (a3),games,44,1959,0.00431598,0.00277988,0.00598435,93,0.00059994,better
+a3,Query ZCA(B) vs items ZCA(C) (a3),games,45,1958,0.0045463,0.0031495,0.00607847,93,0.00059994,better
+a3,Query ZCA(B) vs items ZCA(C) (a3),games,46,1961,0.00407739,0.00267152,0.00563606,101,0.00059994,better
+a3,Query ZCA(B) vs items ZCA(C) (a3),movies,42,13458,0.00401913,0.00349723,0.00455385,485,0.00059994,better
+a3,Query ZCA(B) vs items ZCA(C) (a3),movies,43,13457,0.00456927,0.00402024,0.00512144,521,0.00059994,better
+a3,Query ZCA(B) vs items ZCA(C) (a3),movies,44,13455,0.00397947,0.00348851,0.00449072,468,0.00059994,better
+a3,Query ZCA(B) vs items ZCA(C) (a3),movies,45,13453,0.00380547,0.00331732,0.00430497,498,0.00059994,better
+a3,Query ZCA(B) vs items ZCA(C) (a3),movies,46,13457,0.00432852,0.00380759,0.00485063,521,0.00059994,better
+a3,Query ZCA(B) vs items ZCA(C) (a3),music,42,4884,0.00245275,0.00183197,0.00311106,118,0.00059994,better
+a3,Query ZCA(B) vs items ZCA(C) (a3),music,43,4884,0.00360918,0.00277335,0.00448536,137,0.00059994,better
+a3,Query ZCA(B) vs items ZCA(C) (a3),music,44,4884,0.00287773,0.00219362,0.0035817,133,0.00059994,better
+a3,Query ZCA(B) vs items ZCA(C) (a3),music,45,4884,0.00324265,0.00244327,0.00414434,118,0.00059994,better
+a3,Query ZCA(B) vs items ZCA(C) (a3),music,46,4884,0.00263716,0.00192892,0.00339232,107,0.00059994,better
+a4,Best query arm vs best items arm (a4),games,42,1959,6.24301e-05,-0.00116776,0.0012869,88,1,ns
+a4,Best query arm vs best items arm (a4),games,43,1958,0.000920066,-0.000264788,0.00215683,104,0.293371,ns
+a4,Best query arm vs best items arm (a4),games,44,1959,8.78341e-05,-0.00129755,0.00142931,103,1,ns
+a4,Best query arm vs best items arm (a4),games,45,1958,0.00186907,0.000905579,0.00283097,81,0.00119988,better
+a4,Best query arm vs best items arm (a4),games,46,1961,0.00134646,0.000449767,0.00229049,77,0.010499,better
+a4,Best query arm vs best items arm (a4),movies,42,13458,0.00134438,0.000942141,0.00175469,556,0.00059994,better
+a4,Best query arm vs best items arm (a4),movies,43,13457,0.0014713,0.00104075,0.00191128,568,0.00059994,better
+a4,Best query arm vs best items arm (a4),movies,44,13455,0.00154326,0.00113159,0.00199188,540,0.00059994,better
+a4,Best query arm vs best items arm (a4),movies,45,13453,0.00131345,0.000908042,0.00169901,561,0.00059994,better
+a4,Best query arm vs best items arm (a4),movies,46,13457,0.00151045,0.00111027,0.00190913,563,0.00059994,better
+a4,Best query arm vs best items arm (a4),music,42,4884,0.00137544,0.000747137,0.0019999,122,0.00059994,better
+a4,Best query arm vs best items arm (a4),music,43,4884,0.00117867,0.000528551,0.00185295,138,0.00269973,better
+a4,Best query arm vs best items arm (a4),music,44,4884,0.000929063,0.00028574,0.001548,142,0.0125987,better
+a4,Best query arm vs best items arm (a4),music,45,4884,0.0014247,0.00090222,0.00194046,123,0.00059994,better
+a4,Best query arm vs best items arm (a4),music,46,4884,0.00087528,0.000375204,0.00139344,125,0.0029997,better
+b,Query ZCA(U) vs centring(U) (b),games,42,1959,0.000994042,-0.000300059,0.0021915,94,0.344066,ns
+b,Query ZCA(U) vs centring(U) (b),games,43,1958,0.000646993,-0.000410781,0.00177663,105,0.293371,ns
+b,Query ZCA(U) vs centring(U) (b),games,44,1959,0.00154313,0.000397112,0.00275846,109,0.0389961,better
+b,Query ZCA(U) vs centring(U) (b),games,45,1958,0.00105274,-0.00022437,0.00236297,105,0.192981,ns
+b,Query ZCA(U) vs centring(U) (b),games,46,1961,0.000674752,-0.000311761,0.00162437,96,0.181282,ns
+b,Query ZCA(U) vs centring(U) (b),movies,42,13458,0.00231695,0.00185409,0.00285226,571,0.00059994,better
+b,Query ZCA(U) vs centring(U) (b),movies,43,13457,0.00234968,0.00185269,0.00284788,591,0.00059994,better
+b,Query ZCA(U) vs centring(U) (b),movies,44,13455,0.0020191,0.00153921,0.00251493,586,0.00059994,better
+b,Query ZCA(U) vs centring(U) (b),movies,45,13453,0.00192888,0.00148124,0.00238954,590,0.00059994,better
+b,Query ZCA(U) vs centring(U) (b),movies,46,13457,0.00211648,0.00162569,0.0026126,577,0.00059994,better
+b,Query ZCA(U) vs centring(U) (b),music,42,4884,0.000618075,6.32467e-06,0.00124054,145,0.10319,ns
+b,Query ZCA(U) vs centring(U) (b),music,43,4884,0.000525388,-0.000185722,0.00131001,154,0.328367,ns
+b,Query ZCA(U) vs centring(U) (b),music,44,4884,0.000748052,0.000106873,0.00139449,163,0.0383962,better
+b,Query ZCA(U) vs centring(U) (b),music,45,4884,0.000489315,-0.000199404,0.00118512,151,0.20178,ns
+b,Query ZCA(U) vs centring(U) (b),music,46,4884,0.000750907,0.000176729,0.00135066,121,0.0233977,better
+c,Both sides vs query only (c),games,42,1959,-9.12094e-05,-0.00117989,0.000937467,78,1,ns
+c,Both sides vs query only (c),games,43,1958,-0.00102814,-0.00217373,-4.33113e-05,92,0.164384,ns
+c,Both sides vs query only (c),games,44,1959,-0.00015359,-0.00135215,0.00104953,98,1,ns
+c,Both sides vs query only (c),games,45,1958,-0.000781251,-0.00175655,0.000162789,79,0.192981,ns
+c,Both sides vs query only (c),games,46,1961,-0.00114943,-0.00222088,-0.000204835,91,0.0541946,ns
+c,Both sides vs query only (c),movies,42,13458,0.000617609,0.000207337,0.00103275,574,0.00329967,better
+c,Both sides vs query only (c),movies,43,13457,0.000419185,1.82836e-06,0.000828255,576,0.0445955,better
+c,Both sides vs query only (c),movies,44,13455,0.000153094,-0.000253126,0.00056108,570,0.476652,ns
+c,Both sides vs query only (c),movies,45,13453,0.000722085,0.000331975,0.00111503,597,0.0009999,better
+c,Both sides vs query only (c),movies,46,13457,0.000285167,-0.000133398,0.0006842,597,0.188281,ns
+c,Both sides vs query only (c),music,42,4884,9.09232e-05,-0.000442342,0.000604007,129,0.735626,ns
+c,Both sides vs query only (c),music,43,4884,-2.82548e-05,-0.000542774,0.00050201,143,0.922508,ns
+c,Both sides vs query only (c),music,44,4884,-5.28782e-06,-0.000471359,0.000477192,144,0.981302,ns
+c,Both sides vs query only (c),music,45,4884,-0.000418548,-0.000922004,6.5499e-05,132,0.20178,ns
+c,Both sides vs query only (c),music,46,4884,-0.000229395,-0.000722799,0.000229343,119,0.363464,ns
+d1,Query ZCA(C) vs raw (d1),games,42,1959,-0.00186854,-0.00281225,-0.000988591,51,0.00029997,worse
+d1,Query ZCA(C) vs raw (d1),games,43,1958,-0.00085725,-0.00180067,6.00284e-05,62,0.133987,ns
+d1,Query ZCA(C) vs raw (d1),games,44,1959,-0.00175378,-0.00266618,-0.000904991,50,0.00029997,worse
+d1,Query ZCA(C) vs raw (d1),games,45,1958,-0.000262416,-0.00117671,0.000630368,51,0.671533,ns
+d1,Query ZCA(C) vs raw (d1),games,46,1961,-0.00109935,-0.00194687,-0.000262298,54,0.0127987,worse
+d1,Query ZCA(C) vs raw (d1),movies,42,13458,-0.00107926,-0.00135774,-0.000819375,216,0.00029997,worse
+d1,Query ZCA(C) vs raw (d1),movies,43,13457,-0.000937029,-0.00122548,-0.000650021,228,0.00029997,worse
+d1,Query ZCA(C) vs raw (d1),movies,44,13455,-0.00101413,-0.00129547,-0.000735575,225,0.00029997,worse
+d1,Query ZCA(C) vs raw (d1),movies,45,13453,-0.0011688,-0.00145537,-0.000885687,214,0.00029997,worse
+d1,Query ZCA(C) vs raw (d1),movies,46,13457,-0.000957354,-0.0012232,-0.000714925,224,0.00029997,worse
+d1,Query ZCA(C) vs raw (d1),music,42,4884,-8.11106e-05,-0.000455599,0.000299128,64,0.674233,ns
+d1,Query ZCA(C) vs raw (d1),music,43,4884,0.00029843,-0.000142131,0.000774977,85,0.224278,ns
+d1,Query ZCA(C) vs raw (d1),music,44,4884,1.2583e-05,-0.000366361,0.000378055,62,0.949905,ns
+d1,Query ZCA(C) vs raw (d1),music,45,4884,0.000238214,-0.000138584,0.000667652,67,0.233177,ns
+d1,Query ZCA(C) vs raw (d1),music,46,4884,-0.000348956,-0.000701213,-1.46073e-05,54,0.0759924,ns
+d2,Query ZCA(U) vs query ZCA(C) (d2),games,42,1959,0.00450962,0.00282383,0.006199,80,0.00029997,better
+d2,Query ZCA(U) vs query ZCA(C) (d2),games,43,1958,0.00387814,0.00230873,0.00564196,110,0.00029997,better
+d2,Query ZCA(U) vs query ZCA(C) (d2),games,44,1959,0.00524274,0.00381747,0.00673927,99,0.00029997,better
+d2,Query ZCA(U) vs query ZCA(C) (d2),games,45,1958,0.00385184,0.00230862,0.00550864,103,0.00029997,better
+d2,Query ZCA(U) vs query ZCA(C) (d2),games,46,1961,0.00441499,0.00302283,0.00595863,95,0.00029997,better
+d2,Query ZCA(U) vs query ZCA(C) (d2),movies,42,13458,0.00513375,0.00457656,0.00571567,542,0.00029997,better
+d2,Query ZCA(U) vs query ZCA(C) (d2),movies,43,13457,0.00531512,0.00475513,0.00590917,549,0.00029997,better
+d2,Query ZCA(U) vs query ZCA(C) (d2),movies,44,13455,0.00482801,0.00427399,0.00539451,545,0.00029997,better
+d2,Query ZCA(U) vs query ZCA(C) (d2),movies,45,13453,0.00469424,0.00417783,0.00520954,551,0.00029997,better
+d2,Query ZCA(U) vs query ZCA(C) (d2),movies,46,13457,0.00512698,0.00454458,0.00571793,559,0.00029997,better
+d2,Query ZCA(U) vs query ZCA(C) (d2),music,42,4884,0.00233991,0.00163111,0.0030571,126,0.00029997,better
+d2,Query ZCA(U) vs query ZCA(C) (d2),music,43,4884,0.00236533,0.00158348,0.00327886,143,0.00029997,better
+d2,Query ZCA(U) vs query ZCA(C) (d2),music,44,4884,0.00272248,0.00199928,0.0035069,145,0.00029997,better
+d2,Query ZCA(U) vs query ZCA(C) (d2),music,45,4884,0.00251009,0.00175772,0.00332115,127,0.00029997,better
+d2,Query ZCA(U) vs query ZCA(C) (d2),music,46,4884,0.0025648,0.00184371,0.00335393,114,0.00029997,better
+itemsU_vs_raw,Items ZCA(U) vs raw,games,42,1959,0.00216831,0.000854511,0.0036027,78,0.00839916,better
+itemsU_vs_raw,Items ZCA(U) vs raw,games,43,1958,0.00157668,0.000315396,0.00285092,97,0.090491,ns
+itemsU_vs_raw,Items ZCA(U) vs raw,games,44,1959,0.00250863,0.00116982,0.00387656,85,0.00239976,better
+itemsU_vs_raw,Items ZCA(U) vs raw,games,45,1958,0.00161745,0.000446759,0.0029135,72,0.0581942,ns
+itemsU_vs_raw,Items ZCA(U) vs raw,games,46,1961,0.00150369,0.000298313,0.00277469,78,0.0763924,ns
+itemsU_vs_raw,Items ZCA(U) vs raw,movies,42,13458,0.00271243,0.00222777,0.00319491,449,0.00129987,better
+itemsU_vs_raw,Items ZCA(U) vs raw,movies,43,13457,0.00290679,0.00246311,0.0033621,463,0.00129987,better
+itemsU_vs_raw,Items ZCA(U) vs raw,movies,44,13455,0.0022733,0.00183581,0.00272791,443,0.00129987,better
+itemsU_vs_raw,Items ZCA(U) vs raw,movies,45,13453,0.002212,0.00180307,0.00265256,431,0.00129987,better
+itemsU_vs_raw,Items ZCA(U) vs raw,movies,46,13457,0.00265918,0.00218784,0.00312539,452,0.00129987,better
+itemsU_vs_raw,Items ZCA(U) vs raw,music,42,4884,0.000965871,0.000459383,0.00146101,86,0.00129987,better
+itemsU_vs_raw,Items ZCA(U) vs raw,music,43,4884,0.00154653,0.000929375,0.00219477,104,0.00129987,better
+itemsU_vs_raw,Items ZCA(U) vs raw,music,44,4884,0.00107292,0.000582618,0.00156669,89,0.00129987,better
+itemsU_vs_raw,Items ZCA(U) vs raw,music,45,4884,0.00111929,0.000642734,0.00164994,90,0.00129987,better
+itemsU_vs_raw,Items ZCA(U) vs raw,music,46,4884,0.00115993,0.000606947,0.00171411,94,0.00129987,better
+itemsB_vs_raw,Items ZCA(B) vs raw,games,42,1959,-0.000245311,-0.0011099,0.000572508,51,0.867313,ns
+itemsB_vs_raw,Items ZCA(B) vs raw,games,43,1958,-0.00123171,-0.00203865,-0.000436383,58,0.0132987,worse
+itemsB_vs_raw,Items ZCA(B) vs raw,games,44,1959,-0.00066195,-0.00137797,4.39088e-05,51,0.225577,ns
+itemsB_vs_raw,Items ZCA(B) vs raw,games,45,1958,-0.00030151,-0.00123846,0.000550151,46,1,ns
+itemsB_vs_raw,Items ZCA(B) vs raw,games,46,1961,-0.000569469,-0.00157527,0.000422636,59,0.681832,ns
+itemsB_vs_raw,Items ZCA(B) vs raw,movies,42,13458,-0.000915742,-0.00116034,-0.000670391,199,0.00129987,worse
+itemsB_vs_raw,Items ZCA(B) vs raw,movies,43,13457,-0.000844512,-0.00110358,-0.000595543,201,0.00129987,worse
+itemsB_vs_raw,Items ZCA(B) vs raw,movies,44,13455,-0.0010543,-0.00134202,-0.000794402,197,0.00129987,worse
+itemsB_vs_raw,Items ZCA(B) vs raw,movies,45,13453,-0.00106141,-0.00135627,-0.00077353,199,0.00129987,worse
+itemsB_vs_raw,Items ZCA(B) vs raw,movies,46,13457,-0.000987721,-0.00124746,-0.000749546,202,0.00129987,worse
+itemsB_vs_raw,Items ZCA(B) vs raw,music,42,4884,-0.000747226,-0.00115319,-0.000391245,49,0.00129987,worse
+itemsB_vs_raw,Items ZCA(B) vs raw,music,43,4884,-0.000881921,-0.00128272,-0.000528442,69,0.00129987,worse
+itemsB_vs_raw,Items ZCA(B) vs raw,music,44,4884,-0.000542464,-0.000865682,-0.000235017,50,0.0029997,worse
+itemsB_vs_raw,Items ZCA(B) vs raw,music,45,4884,-0.00083448,-0.00128534,-0.000437982,51,0.00129987,worse
+itemsB_vs_raw,Items ZCA(B) vs raw,music,46,4884,-0.000798932,-0.0011629,-0.000467291,52,0.00129987,worse
+itemsC_vs_raw,Items ZCA(C) vs raw,games,42,1959,-0.000801485,-0.00181312,0.000160153,65,0.479152,ns
+itemsC_vs_raw,Items ZCA(C) vs raw,games,43,1958,-0.000972238,-0.00188954,-7.50556e-05,69,0.174783,ns
+itemsC_vs_raw,Items ZCA(C) vs raw,games,44,1959,-0.000940177,-0.00187422,-9.885e-05,60,0.144486,ns
+itemsC_vs_raw,Items ZCA(C) vs raw,games,45,1958,-0.000991102,-0.00183491,-0.000143497,50,0.110489,ns
+itemsC_vs_raw,Items ZCA(C) vs raw,games,46,1961,-0.00122724,-0.00211748,-0.000429664,67,0.0161984,worse
+itemsC_vs_raw,Items ZCA(C) vs raw,movies,42,13458,-0.000539438,-0.000812277,-0.000254824,227,0.00129987,worse
+itemsC_vs_raw,Items ZCA(C) vs raw,movies,43,13457,-0.000678176,-0.000926678,-0.000447043,233,0.00129987,worse
+itemsC_vs_raw,Items ZCA(C) vs raw,movies,44,13455,-0.000781684,-0.00105411,-0.000533845,216,0.00129987,worse
+itemsC_vs_raw,Items ZCA(C) vs raw,movies,45,13453,-0.000748843,-0.00102431,-0.000472279,232,0.00129987,worse
+itemsC_vs_raw,Items ZCA(C) vs raw,movies,46,13457,-0.000646092,-0.000912026,-0.000389093,230,0.00129987,worse
+itemsC_vs_raw,Items ZCA(C) vs raw,music,42,4884,-0.000576038,-0.000933514,-0.000245225,55,0.00159984,worse
+itemsC_vs_raw,Items ZCA(C) vs raw,music,43,4884,-0.000856734,-0.00123327,-0.000528007,72,0.00129987,worse
+itemsC_vs_raw,Items ZCA(C) vs raw,music,44,4884,-0.000508693,-0.00081669,-0.000222141,53,0.0039996,worse
+itemsC_vs_raw,Items ZCA(C) vs raw,music,45,4884,-0.000738776,-0.0011061,-0.000406184,56,0.00129987,worse
+itemsC_vs_raw,Items ZCA(C) vs raw,music,46,4884,-0.000817507,-0.00119547,-0.000472934,55,0.00129987,worse
+sideU,"Query vs items, same source U",games,42,1959,0.000472765,-0.000686697,0.00157991,84,0.867313,ns
+sideU,"Query vs items, same source U",games,43,1958,0.00144421,0.000386029,0.00262244,100,0.0665933,ns
+sideU,"Query vs items, same source U",games,44,1959,0.000980325,-0.000139059,0.00221045,104,0.238176,ns
+sideU,"Query vs items, same source U",games,45,1958,0.00197198,0.000946503,0.00308481,84,0.00349965,better
+sideU,"Query vs items, same source U",games,46,1961,0.00181195,0.000759308,0.00294055,92,0.00629937,better
+sideU,"Query vs items, same source U",movies,42,13458,0.00134205,0.000938914,0.00175201,554,0.00129987,better
+sideU,"Query vs items, same source U",movies,43,13457,0.0014713,0.00104075,0.00191128,568,0.00129987,better
+sideU,"Query vs items, same source U",movies,44,13455,0.00154058,0.00113153,0.00198418,538,0.00129987,better
+sideU,"Query vs items, same source U",movies,45,13453,0.00131345,0.000908042,0.00169901,561,0.00129987,better
+sideU,"Query vs items, same source U",movies,46,13457,0.00151045,0.00111027,0.00190913,563,0.00129987,better
+sideU,"Query vs items, same source U",music,42,4884,0.00129293,0.000700678,0.00189589,122,0.00129987,better
+sideU,"Query vs items, same source U",music,43,4884,0.00111723,0.000520179,0.00178579,138,0.00179982,better
+sideU,"Query vs items, same source U",music,44,4884,0.00166214,0.000996135,0.00234146,143,0.00129987,better
+sideU,"Query vs items, same source U",music,45,4884,0.00162901,0.000946941,0.00234932,125,0.00129987,better
+sideU,"Query vs items, same source U",music,46,4884,0.00105592,0.000488634,0.00167846,113,0.0019998,better
+sideB,"Query vs items, same source B",games,42,1959,0.00274237,0.00135153,0.00422125,89,0.00319968,better
+sideB,"Query vs items, same source B",games,43,1958,0.00453012,0.00311574,0.00607711,98,0.00129987,better
+sideB,"Query vs items, same source B",games,44,1959,0.00403776,0.00258825,0.00564495,87,0.00129987,better
+sideB,"Query vs items, same source B",games,45,1958,0.00385671,0.00245007,0.00547015,94,0.00129987,better
+sideB,"Query vs items, same source B",games,46,1961,0.00341962,0.00193961,0.00496099,93,0.00129987,better
+sideB,"Query vs items, same source B",movies,42,13458,0.00439543,0.00386214,0.0049328,472,0.00129987,better
+sideB,"Query vs items, same source B",movies,43,13457,0.00473561,0.00418641,0.00531317,516,0.00129987,better
+sideB,"Query vs items, same source B",movies,44,13455,0.00425209,0.00374665,0.00475277,455,0.00129987,better
+sideB,"Query vs items, same source B",movies,45,13453,0.00411803,0.00360043,0.00462682,483,0.00129987,better
+sideB,"Query vs items, same source B",movies,46,13457,0.00467015,0.00413604,0.00520903,504,0.00129987,better
+sideB,"Query vs items, same source B",music,42,4884,0.00262394,0.00197925,0.00333227,114,0.00129987,better
+sideB,"Query vs items, same source B",music,43,4884,0.00363436,0.00274802,0.00459887,138,0.00129987,better
+sideB,"Query vs items, same source B",music,44,4884,0.0029115,0.00222665,0.00361459,128,0.00129987,better
+sideB,"Query vs items, same source B",music,45,4884,0.00333835,0.0024946,0.00429894,122,0.00129987,better
+sideB,"Query vs items, same source B",music,46,4884,0.00261859,0.00185075,0.00340397,104,0.00129987,better
+sideC,"Query vs items, same source C",games,42,1959,-0.00106705,-0.00194189,-0.000152561,52,0.0934907,ns
+sideC,"Query vs items, same source C",games,43,1958,0.000114988,-0.00082845,0.00104044,67,1,ns
+sideC,"Query vs items, same source C",games,44,1959,-0.000813606,-0.00164826,-7.5781e-08,54,0.185981,ns
+sideC,"Query vs items, same source C",games,45,1958,0.000728686,-0.00014729,0.00159577,51,0.435156,ns
+sideC,"Query vs items, same source C",games,46,1961,0.000127893,-0.000723123,0.00102984,53,0.774223,ns
+sideC,"Query vs items, same source C",movies,42,13458,-0.000539827,-0.000784513,-0.000298393,176,0.00129987,worse
+sideC,"Query vs items, same source C",movies,43,13457,-0.000258853,-0.000506744,-2.65659e-06,192,0.079592,ns
+sideC,"Query vs items, same source C",movies,44,13455,-0.000232446,-0.000496368,3.74893e-05,188,0.0732927,ns
+sideC,"Query vs items, same source C",movies,45,13453,-0.000419954,-0.000670702,-0.000159288,192,0.00219978,worse
+sideC,"Query vs items, same source C",movies,46,13457,-0.000311262,-0.000543304,-9.01857e-05,183,0.010299,worse
+sideC,"Query vs items, same source C",music,42,4884,0.000494928,0.000132166,0.000867323,56,0.0215978,better
+sideC,"Query vs items, same source C",music,43,4884,0.00115516,0.000675176,0.00169516,76,0.00129987,better
+sideC,"Query vs items, same source C",music,44,4884,0.000521276,0.000182353,0.000866804,59,0.00719928,better
+sideC,"Query vs items, same source C",music,45,4884,0.00097699,0.000523625,0.00152584,58,0.00129987,better
+sideC,"Query vs items, same source C",music,46,4884,0.000468551,0.000171553,0.000817353,47,0.00929907,better
+lexIdf_vs_ctr,IDF overlap vs centred query,games,42,1959,-0.000600683,-0.00224056,0.00098538,103,1,ns
+lexIdf_vs_ctr,IDF overlap vs centred query,games,43,1958,-0.00102384,-0.00245359,0.000464268,123,0.875412,ns
+lexIdf_vs_ctr,IDF overlap vs centred query,games,44,1959,-0.00065485,-0.00204737,0.000848427,106,1,ns
+lexIdf_vs_ctr,IDF overlap vs centred query,games,45,1958,-0.000494368,-0.00216985,0.00115642,125,1,ns
+lexIdf_vs_ctr,IDF overlap vs centred query,games,46,1961,-0.000918313,-0.00263106,0.000698492,120,0.993501,ns
+lexIdf_vs_ctr,IDF overlap vs centred query,movies,42,13458,-0.000442343,-0.00100896,0.000143984,535,0.40346,ns
+lexIdf_vs_ctr,IDF overlap vs centred query,movies,43,13457,-0.000877535,-0.0014518,-0.000296488,547,0.0151985,worse
+lexIdf_vs_ctr,IDF overlap vs centred query,movies,44,13455,-0.000870516,-0.00145881,-0.000273949,539,0.0143986,worse
+lexIdf_vs_ctr,IDF overlap vs centred query,movies,45,13453,-0.0004187,-0.00101245,0.000124731,579,0.480252,ns
+lexIdf_vs_ctr,IDF overlap vs centred query,movies,46,13457,-0.000983814,-0.00157246,-0.000367169,570,0.00479952,worse
+lexIdf_vs_ctr,IDF overlap vs centred query,music,42,4884,-4.55729e-05,-0.000853094,0.000741572,161,1,ns
+lexIdf_vs_ctr,IDF overlap vs centred query,music,43,4884,-0.00101816,-0.00187291,-0.000138433,161,0.0569943,ns
+lexIdf_vs_ctr,IDF overlap vs centred query,music,44,4884,-0.000308546,-0.0011242,0.000534129,168,0.941906,ns
+lexIdf_vs_ctr,IDF overlap vs centred query,music,45,4884,-0.000810968,-0.00165658,5.44137e-05,167,0.126387,ns
+lexIdf_vs_ctr,IDF overlap vs centred query,music,46,4884,-0.000591025,-0.0014082,0.000199022,136,0.272973,ns
+lexBm25_vs_ctr,BM25 vs centred query,games,42,1959,-0.00142841,-0.00294653,-1.1643e-05,93,0.480552,ns
+lexBm25_vs_ctr,BM25 vs centred query,games,43,1958,-0.000733357,-0.00220648,0.000794064,118,0.875412,ns
+lexBm25_vs_ctr,BM25 vs centred query,games,44,1959,-0.00103285,-0.00234459,0.000263985,103,0.633437,ns
+lexBm25_vs_ctr,BM25 vs centred query,games,45,1958,-0.0010017,-0.00268011,0.000669126,106,0.707929,ns
+lexBm25_vs_ctr,BM25 vs centred query,games,46,1961,-0.00198203,-0.00353546,-0.000644645,114,0.0530947,ns
+lexBm25_vs_ctr,BM25 vs centred query,movies,42,13458,0.000688386,0.000151729,0.00124483,561,0.0619938,ns
+lexBm25_vs_ctr,BM25 vs centred query,movies,43,13457,0.000613854,7.14456e-05,0.00115358,570,0.110089,ns
+lexBm25_vs_ctr,BM25 vs centred query,movies,44,13455,0.000408927,-0.000164486,0.000995598,565,0.163584,ns
+lexBm25_vs_ctr,BM25 vs centred query,movies,45,13453,0.000256642,-0.00029718,0.000811002,558,0.557144,ns
+lexBm25_vs_ctr,BM25 vs centred query,movies,46,13457,0.000327098,-0.000267248,0.00088445,576,0.247975,ns
+lexBm25_vs_ctr,BM25 vs centred query,music,42,4884,-0.000653014,-0.0013295,-3.45585e-05,135,0.274773,ns
+lexBm25_vs_ctr,BM25 vs centred query,music,43,4884,-0.00100945,-0.00175817,-0.000307403,140,0.0284972,worse
+lexBm25_vs_ctr,BM25 vs centred query,music,44,4884,-0.00113903,-0.00179853,-0.000454681,148,0.0125987,worse
+lexBm25_vs_ctr,BM25 vs centred query,music,45,4884,-0.00131742,-0.00209499,-0.000557417,147,0.00769923,worse
+lexBm25_vs_ctr,BM25 vs centred query,music,46,4884,-0.000888704,-0.00157831,-0.000268259,116,0.0415958,worse
+lexIdf_vs_zca,IDF overlap vs query ZCA(U),games,42,1959,-0.00159473,-0.00329207,-5.75203e-05,108,0.480552,ns
+lexIdf_vs_zca,IDF overlap vs query ZCA(U),games,43,1958,-0.00167083,-0.0031855,-0.000209863,124,0.315668,ns
+lexIdf_vs_zca,IDF overlap vs query ZCA(U),games,44,1959,-0.00219798,-0.00358147,-0.000773082,109,0.0229977,worse
+lexIdf_vs_zca,IDF overlap vs query ZCA(U),games,45,1958,-0.00154711,-0.00313603,-3.02968e-05,117,0.329367,ns
+lexIdf_vs_zca,IDF overlap vs query ZCA(U),games,46,1961,-0.00159306,-0.00327209,-5.14294e-06,126,0.317368,ns
+lexIdf_vs_zca,IDF overlap vs query ZCA(U),movies,42,13458,-0.00275929,-0.00339059,-0.00213993,631,0.00159984,worse
+lexIdf_vs_zca,IDF overlap vs query ZCA(U),movies,43,13457,-0.00322722,-0.00390256,-0.00257025,655,0.00159984,worse
+lexIdf_vs_zca,IDF overlap vs query ZCA(U),movies,44,13455,-0.00288962,-0.00353637,-0.00228118,644,0.00159984,worse
+lexIdf_vs_zca,IDF overlap vs query ZCA(U),movies,45,13453,-0.00234758,-0.0029589,-0.00177787,669,0.00159984,worse
+lexIdf_vs_zca,IDF overlap vs query ZCA(U),movies,46,13457,-0.0031003,-0.00371751,-0.00245118,657,0.00159984,worse
+lexIdf_vs_zca,IDF overlap vs query ZCA(U),music,42,4884,-0.000663648,-0.00145294,9.37458e-05,157,0.371563,ns
+lexIdf_vs_zca,IDF overlap vs query ZCA(U),music,43,4884,-0.00154355,-0.00250784,-0.000672771,156,0.00539946,worse
+lexIdf_vs_zca,IDF overlap vs query ZCA(U),music,44,4884,-0.0010566,-0.00182185,-0.000295019,160,0.0293971,worse
+lexIdf_vs_zca,IDF overlap vs query ZCA(U),music,45,4884,-0.00130028,-0.00224497,-0.000409991,157,0.0244976,worse
+lexIdf_vs_zca,IDF overlap vs query ZCA(U),music,46,4884,-0.00134193,-0.00218728,-0.000534898,137,0.0079992,worse
+lexBm25_vs_zca,BM25 vs query ZCA(U),games,42,1959,-0.00242245,-0.00396578,-0.000880173,98,0.0307969,worse
+lexBm25_vs_zca,BM25 vs query ZCA(U),games,43,1958,-0.00138035,-0.00287572,0.000268769,120,0.508749,ns
+lexBm25_vs_zca,BM25 vs query ZCA(U),games,44,1959,-0.00257599,-0.00405536,-0.00127084,111,0.00329967,worse
+lexBm25_vs_zca,BM25 vs query ZCA(U),games,45,1958,-0.00205444,-0.00366789,-0.000548787,104,0.10349,ns
+lexBm25_vs_zca,BM25 vs query ZCA(U),games,46,1961,-0.00265678,-0.00418974,-0.00126623,114,0.00479952,worse
+lexBm25_vs_zca,BM25 vs query ZCA(U),movies,42,13458,-0.00162856,-0.00218486,-0.00104804,649,0.00159984,worse
+lexBm25_vs_zca,BM25 vs query ZCA(U),movies,43,13457,-0.00173583,-0.00232214,-0.00116263,650,0.00159984,worse
+lexBm25_vs_zca,BM25 vs query ZCA(U),movies,44,13455,-0.00161017,-0.00219058,-0.0010331,650,0.00159984,worse
+lexBm25_vs_zca,BM25 vs query ZCA(U),movies,45,13453,-0.00167224,-0.00219973,-0.00114715,634,0.00159984,worse
+lexBm25_vs_zca,BM25 vs query ZCA(U),movies,46,13457,-0.00178938,-0.0023743,-0.00123246,647,0.00159984,worse
+lexBm25_vs_zca,BM25 vs query ZCA(U),music,42,4884,-0.00127109,-0.00200019,-0.000559268,142,0.0029997,worse
+lexBm25_vs_zca,BM25 vs query ZCA(U),music,43,4884,-0.00153484,-0.00241631,-0.000705951,146,0.00219978,worse
+lexBm25_vs_zca,BM25 vs query ZCA(U),music,44,4884,-0.00188708,-0.00259933,-0.00117796,153,0.00159984,worse
+lexBm25_vs_zca,BM25 vs query ZCA(U),music,45,4884,-0.00180674,-0.00273696,-0.00089613,143,0.00159984,worse
+lexBm25_vs_zca,BM25 vs query ZCA(U),music,46,4884,-0.00163961,-0.00242648,-0.000920899,124,0.00159984,worse
+zca_vs_pop,Query ZCA(U) vs popularity,games,42,1959,-0.0249329,-0.028618,-0.0210635,425,0.00139986,worse
+zca_vs_pop,Query ZCA(U) vs popularity,games,43,1958,-0.0238313,-0.0276071,-0.0199466,431,0.00139986,worse
+zca_vs_pop,Query ZCA(U) vs popularity,games,44,1959,-0.0221771,-0.0258411,-0.018761,425,0.00139986,worse
+zca_vs_pop,Query ZCA(U) vs popularity,games,45,1958,-0.0254649,-0.0290538,-0.0220531,439,0.00139986,worse
+zca_vs_pop,Query ZCA(U) vs popularity,games,46,1961,-0.0267437,-0.0307979,-0.0226619,467,0.00139986,worse
+zca_vs_pop,Query ZCA(U) vs popularity,movies,42,13458,-0.00244514,-0.00335702,-0.0015228,1309,0.00139986,worse
+zca_vs_pop,Query ZCA(U) vs popularity,movies,43,13457,-0.00219143,-0.00316939,-0.00121516,1306,0.00139986,worse
+zca_vs_pop,Query ZCA(U) vs popularity,movies,44,13455,-0.00289374,-0.00380825,-0.00199286,1327,0.00139986,worse
+zca_vs_pop,Query ZCA(U) vs popularity,movies,45,13453,-0.00262308,-0.00351849,-0.00176956,1286,0.00139986,worse
+zca_vs_pop,Query ZCA(U) vs popularity,movies,46,13457,-0.00208052,-0.00299081,-0.00121322,1318,0.00139986,worse
+zca_vs_pop,Query ZCA(U) vs popularity,music,42,4884,-0.00804806,-0.00955074,-0.00654718,509,0.00139986,worse
+zca_vs_pop,Query ZCA(U) vs popularity,music,43,4884,-0.00785138,-0.00956445,-0.00617879,516,0.00139986,worse
+zca_vs_pop,Query ZCA(U) vs popularity,music,44,4884,-0.00937492,-0.0109608,-0.00769147,542,0.00139986,worse
+zca_vs_pop,Query ZCA(U) vs popularity,music,45,4884,-0.00841805,-0.0101922,-0.00672405,510,0.00139986,worse
+zca_vs_pop,Query ZCA(U) vs popularity,music,46,4884,-0.00800444,-0.00958356,-0.00638448,476,0.00139986,worse
+hybZca_vs_pop,Hybrid ZCA + popularity vs popularity,games,42,1959,0.00201468,0.000434738,0.00358395,349,0.0479952,better
+hybZca_vs_pop,Hybrid ZCA + popularity vs popularity,games,43,1958,0.00127451,-0.00156487,0.00392257,436,1,ns
+hybZca_vs_pop,Hybrid ZCA + popularity vs popularity,games,44,1959,0.00318047,0.00157314,0.00485642,334,0.0009999,better
+hybZca_vs_pop,Hybrid ZCA + popularity vs popularity,games,45,1958,0.00213193,0.000592438,0.00372668,361,0.0311969,better
+hybZca_vs_pop,Hybrid ZCA + popularity vs popularity,games,46,1961,0.00234222,0.000651516,0.00424908,386,0.0344966,better
+hybZca_vs_pop,Hybrid ZCA + popularity vs popularity,movies,42,13458,0.00336282,0.00228679,0.0044051,1633,0.00079992,better
+hybZca_vs_pop,Hybrid ZCA + popularity vs popularity,movies,43,13457,0.0042659,0.00339658,0.00516864,1449,0.00079992,better
+hybZca_vs_pop,Hybrid ZCA + popularity vs popularity,movies,44,13455,0.00390512,0.00305282,0.00478859,1417,0.00079992,better
+hybZca_vs_pop,Hybrid ZCA + popularity vs popularity,movies,45,13453,0.00441986,0.00359071,0.00533538,1431,0.00079992,better
+hybZca_vs_pop,Hybrid ZCA + popularity vs popularity,movies,46,13457,0.00499161,0.00409493,0.00588309,1471,0.00079992,better
+hybZca_vs_pop,Hybrid ZCA + popularity vs popularity,music,42,4884,0.001312,0.000450138,0.00223953,437,0.019998,better
+hybZca_vs_pop,Hybrid ZCA + popularity vs popularity,music,43,4884,0.00105036,0.000122173,0.00197937,496,0.0443956,better
+hybZca_vs_pop,Hybrid ZCA + popularity vs popularity,music,44,4884,0.000556496,-0.000328734,0.00145819,497,0.909909,ns
+hybZca_vs_pop,Hybrid ZCA + popularity vs popularity,music,45,4884,0.000289395,-0.000246677,0.000797525,354,0.908009,ns
+hybZca_vs_pop,Hybrid ZCA + popularity vs popularity,music,46,4884,0.000203128,-0.00010679,0.000529014,197,1,ns
+hybZca_vs_hybRaw,Hybrid ZCA + popularity vs hybrid raw,games,42,1959,0.00128244,-0.00069544,0.00319659,387,0.583742,ns
+hybZca_vs_hybRaw,Hybrid ZCA + popularity vs hybrid raw,games,43,1958,0.000782885,-0.00176919,0.00318657,417,1,ns
+hybZca_vs_hybRaw,Hybrid ZCA + popularity vs hybrid raw,games,44,1959,0.00221193,0.000642656,0.00374841,335,0.0164984,better
+hybZca_vs_hybRaw,Hybrid ZCA + popularity vs hybrid raw,games,45,1958,0.00167468,0.000233316,0.00321043,350,0.0579942,ns
+hybZca_vs_hybRaw,Hybrid ZCA + popularity vs hybrid raw,games,46,1961,0.00155757,-0.0001364,0.00342597,384,0.148985,ns
+hybZca_vs_hybRaw,Hybrid ZCA + popularity vs hybrid raw,movies,42,13458,0.00232811,0.00126432,0.00339014,1684,0.00079992,better
+hybZca_vs_hybRaw,Hybrid ZCA + popularity vs hybrid raw,movies,43,13457,0.00341371,0.00253789,0.00428218,1475,0.00079992,better
+hybZca_vs_hybRaw,Hybrid ZCA + popularity vs hybrid raw,movies,44,13455,0.0036006,0.00275595,0.00451016,1428,0.00079992,better
+hybZca_vs_hybRaw,Hybrid ZCA + popularity vs hybrid raw,movies,45,13453,0.0037038,0.00287947,0.0045597,1389,0.00079992,better
+hybZca_vs_hybRaw,Hybrid ZCA + popularity vs hybrid raw,movies,46,13457,0.00408231,0.00320945,0.00492107,1445,0.00079992,better
+hybZca_vs_hybRaw,Hybrid ZCA + popularity vs hybrid raw,music,42,4884,0.00112313,0.000295746,0.00200064,447,0.0254975,better
+hybZca_vs_hybRaw,Hybrid ZCA + popularity vs hybrid raw,music,43,4884,0.00110606,0.000215885,0.00202738,479,0.039896,better
+hybZca_vs_hybRaw,Hybrid ZCA + popularity vs hybrid raw,music,44,4884,0.000264009,-0.000635119,0.00115699,500,1,ns
+hybZca_vs_hybRaw,Hybrid ZCA + popularity vs hybrid raw,music,45,4884,0.000403202,-0.000108186,0.000923637,342,0.653435,ns
+hybZca_vs_hybRaw,Hybrid ZCA + popularity vs hybrid raw,music,46,4884,0.000202625,-0.000106923,0.000529433,197,1,ns
+knn_vs_zca,Centred kNN vs query ZCA(U),games,42,1959,0.0271537,0.0231609,0.0309207,454,0.00079992,better
+knn_vs_zca,Centred kNN vs query ZCA(U),games,43,1958,0.0239313,0.0201424,0.0277227,417,0.00079992,better
+knn_vs_zca,Centred kNN vs query ZCA(U),games,44,1959,0.0240006,0.020606,0.0276369,453,0.00079992,better
+knn_vs_zca,Centred kNN vs query ZCA(U),games,45,1958,0.0285171,0.0248013,0.0324695,449,0.00079992,better
+knn_vs_zca,Centred kNN vs query ZCA(U),games,46,1961,0.0291201,0.0250578,0.0332486,483,0.00079992,better
+knn_vs_zca,Centred kNN vs query ZCA(U),movies,42,13458,0.00900979,0.00791229,0.0101106,1618,0.00079992,better
+knn_vs_zca,Centred kNN vs query ZCA(U),movies,43,13457,0.00860659,0.00746187,0.00975694,1657,0.00079992,better
+knn_vs_zca,Centred kNN vs query ZCA(U),movies,44,13455,0.0083389,0.0072788,0.00937197,1581,0.00079992,better
+knn_vs_zca,Centred kNN vs query ZCA(U),movies,45,13453,0.00796991,0.00695834,0.0090562,1556,0.00079992,better
+knn_vs_zca,Centred kNN vs query ZCA(U),movies,46,13457,0.00819518,0.00713457,0.00924857,1671,0.00079992,better
+knn_vs_zca,Centred kNN vs query ZCA(U),music,42,4884,0.0102014,0.00868758,0.0117701,538,0.00079992,better
+knn_vs_zca,Centred kNN vs query ZCA(U),music,43,4884,0.00969654,0.00801695,0.011404,551,0.00079992,better
+knn_vs_zca,Centred kNN vs query ZCA(U),music,44,4884,0.0122767,0.0105237,0.0139395,617,0.00079992,better
+knn_vs_zca,Centred kNN vs query ZCA(U),music,45,4884,0.0107076,0.00898858,0.0124771,551,0.00079992,better
+knn_vs_zca,Centred kNN vs query ZCA(U),music,46,4884,0.0102371,0.0085388,0.0118977,533,0.00079992,better
+knn_vs_pop,Centred kNN vs popularity,games,42,1959,0.00222082,0.000439913,0.00384462,384,0.019998,better
+knn_vs_pop,Centred kNN vs popularity,games,43,1958,9.99806e-05,-0.00226139,0.00235361,426,0.935206,ns
+knn_vs_pop,Centred kNN vs popularity,games,44,1959,0.00182352,9.78536e-05,0.00355761,385,0.0829917,ns
+knn_vs_pop,Centred kNN vs popularity,games,45,1958,0.00305229,0.000918527,0.0052605,430,0.0113989,better
+knn_vs_pop,Centred kNN vs popularity,games,46,1961,0.00237644,0.000600218,0.00405626,414,0.0147985,better
+knn_vs_pop,Centred kNN vs popularity,movies,42,13458,0.00656465,0.00563038,0.00751096,1544,0.00079992,better
+knn_vs_pop,Centred kNN vs popularity,movies,43,13457,0.00641516,0.00559042,0.00732409,1516,0.00079992,better
+knn_vs_pop,Centred kNN vs popularity,movies,44,13455,0.00544516,0.00452675,0.00636807,1540,0.00079992,better
+knn_vs_pop,Centred kNN vs popularity,movies,45,13453,0.00534683,0.004468,0.00622638,1487,0.00079992,better
+knn_vs_pop,Centred kNN vs popularity,movies,46,13457,0.00611466,0.00526813,0.0069737,1567,0.00079992,better
+knn_vs_pop,Centred kNN vs popularity,music,42,4884,0.0021533,0.0011116,0.00330137,554,0.00079992,better
+knn_vs_pop,Centred kNN vs popularity,music,43,4884,0.00184516,0.000718635,0.00298912,552,0.0019998,better
+knn_vs_pop,Centred kNN vs popularity,music,44,4884,0.00290176,0.00173415,0.0041482,593,0.00079992,better
+knn_vs_pop,Centred kNN vs popularity,music,45,4884,0.00228955,0.00111831,0.00352006,564,0.00079992,better
+knn_vs_pop,Centred kNN vs popularity,music,46,4884,0.00223265,0.00133241,0.00314134,459,0.00079992,better
+knnHyb_vs_knn,kNN + ZCA vs centred kNN,games,42,1959,0.00204753,0.000815408,0.00329843,296,0.0139986,better
+knnHyb_vs_knn,kNN + ZCA vs centred kNN,games,43,1958,0.00161869,0.000449427,0.00286601,289,0.115488,ns
+knnHyb_vs_knn,kNN + ZCA vs centred kNN,games,44,1959,0,0,0,0,1,ns
+knnHyb_vs_knn,kNN + ZCA vs centred kNN,games,45,1958,0.00204585,0.000954246,0.00321414,299,0.00559944,better
+knnHyb_vs_knn,kNN + ZCA vs centred kNN,games,46,1961,0.00282621,0.00158959,0.00423494,346,0.0019998,better
+knnHyb_vs_knn,kNN + ZCA vs centred kNN,movies,42,13458,0.00176544,0.00108018,0.00248843,1488,0.0019998,better
+knnHyb_vs_knn,kNN + ZCA vs centred kNN,movies,43,13457,0.00234308,0.00159011,0.0030563,1544,0.0019998,better
+knnHyb_vs_knn,kNN + ZCA vs centred kNN,movies,44,13455,0.00201218,0.00135251,0.00270442,1440,0.0019998,better
+knnHyb_vs_knn,kNN + ZCA vs centred kNN,movies,45,13453,0.00217369,0.00144114,0.00290042,1455,0.0019998,better
+knnHyb_vs_knn,kNN + ZCA vs centred kNN,movies,46,13457,0.00192301,0.00122453,0.00267451,1587,0.0019998,better
+knnHyb_vs_knn,kNN + ZCA vs centred kNN,music,42,4884,0.000751701,0.000294769,0.00120614,292,0.0139986,better
+knnHyb_vs_knn,kNN + ZCA vs centred kNN,music,43,4884,0.0012093,0.000724433,0.00176529,313,0.0019998,better
+knnHyb_vs_knn,kNN + ZCA vs centred kNN,music,44,4884,0.000491928,1.78302e-05,0.000968563,358,0.126887,ns
+knnHyb_vs_knn,kNN + ZCA vs centred kNN,music,45,4884,0.00099872,0.000424591,0.0015893,335,0.0019998,better
+knnHyb_vs_knn,kNN + ZCA vs centred kNN,music,46,4884,0.000192103,-0.000694999,0.00110305,446,0.79942,ns
+knnHyb_vs_pop,kNN + ZCA vs popularity,games,42,1959,0.00426835,0.00228116,0.00614455,410,0.0019998,better
+knnHyb_vs_pop,kNN + ZCA vs popularity,games,43,1958,0.00171867,-0.000798002,0.00409043,454,1,ns
+knnHyb_vs_pop,kNN + ZCA vs popularity,games,44,1959,0.00182352,9.78536e-05,0.00355761,385,0.580942,ns
+knnHyb_vs_pop,kNN + ZCA vs popularity,games,45,1958,0.00509813,0.00262201,0.00763235,461,0.00319968,better
+knnHyb_vs_pop,kNN + ZCA vs popularity,games,46,1961,0.00520265,0.00296372,0.00744438,457,0.0019998,better
+knnHyb_vs_pop,kNN + ZCA vs popularity,movies,42,13458,0.00833009,0.00728258,0.0094242,1784,0.0019998,better
+knnHyb_vs_pop,kNN + ZCA vs popularity,movies,43,13457,0.00875824,0.00770722,0.00984814,1749,0.0019998,better
+knnHyb_vs_pop,kNN + ZCA vs popularity,movies,44,13455,0.00745734,0.00641613,0.00847042,1743,0.0019998,better
+knnHyb_vs_pop,kNN + ZCA vs popularity,movies,45,13453,0.00752052,0.00653439,0.00858627,1692,0.0019998,better
+knnHyb_vs_pop,kNN + ZCA vs popularity,movies,46,13457,0.00803766,0.0070668,0.00907086,1746,0.0019998,better
+knnHyb_vs_pop,kNN + ZCA vs popularity,music,42,4884,0.002905,0.00175967,0.00421733,566,0.0019998,better
+knnHyb_vs_pop,kNN + ZCA vs popularity,music,43,4884,0.00305446,0.00178583,0.00431928,582,0.0019998,better
+knnHyb_vs_pop,kNN + ZCA vs popularity,music,44,4884,0.00339368,0.00221924,0.00472571,620,0.0019998,better
+knnHyb_vs_pop,kNN + ZCA vs popularity,music,45,4884,0.00328827,0.00194306,0.00462084,595,0.0019998,better
+knnHyb_vs_pop,kNN + ZCA vs popularity,music,46,4884,0.00242475,0.00131133,0.00357404,520,0.0019998,better

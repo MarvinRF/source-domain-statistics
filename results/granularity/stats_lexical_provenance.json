@@ -1,0 +1,70 @@
+{
+  "provenance": {
+    "git_commit": "2357ccd401a12ea99b2f2a94c4de0fea273256b4",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-10T11:27:54+00:00",
+    "inputs": {
+      "results/granularity/lexical_music.csv.gz": {
+        "sha256": "716fbdda8b6fe952b50c69604c787a95044348609f330153ab520ae92fdf2f36",
+        "bytes": 1716310
+      },
+      "results/granularity/query_norm_music_gte.csv.gz": {
+        "sha256": "f313cd4e8f61ce39d9aefb3a9e7ae03cc1489ab2f5dc26bf0e79e68a0dd01fa9",
+        "bytes": 4333891
+      },
+      "results/granularity/hybrid_music_gte.csv.gz": {
+        "sha256": "421c61217e5ed08641a02ff08a87715ab921ff28d9cb2f9cbb9497105075d8c7",
+        "bytes": 993158
+      },
+      "results/granularity/lexical_movies.csv.gz": {
+        "sha256": "375c23847f5f294dfa347edd7110de6f0807b19a40c0feda630fc2144d5d82f9",
+        "bytes": 4927607
+      },
+      "results/granularity/query_norm_movies_gte.csv.gz": {
+        "sha256": "6322d6fc6db8097694cadb0e57166671623437ac857f70682d930e0c811e3576",
+        "bytes": 11809620
+      },
+      "results/granularity/hybrid_movies_gte.csv.gz": {
+        "sha256": "3e1c3422d3cc22a7faff63098d66fe00abd3f5988a6284ffff94d297a5f0cb44",
+        "bytes": 2846188
+      },
+      "results/granularity/lexical_games.csv.gz": {
+        "sha256": "b58ae330b2008f4dc3be7b38cc71fbf4a788b562b8c37ee4804723d6e47b39ad",
+        "bytes": 764295
+      },
+      "results/granularity/query_norm_games_gte.csv.gz": {
+        "sha256": "2a9e0c9cc5ebede7843f0d5e96ab45df297f242e94e32d80c1e09d482658cbd8",
+        "bytes": 1922286
+      },
+      "results/granularity/hybrid_games_gte.csv.gz": {
+        "sha256": "612ecafdba004ae0c4d5d7acbc55e8134c3b015f1bcf2beed0621e68ec2ebb3b",
+        "bytes": 433140
+      },
+      "results/granularity/lexical_music_desc.csv.gz": {
+        "sha256": "007681c7863b2f754ea383e383898d949e7165957f346d363477df6d967ea37f",
+        "bytes": 1293490
+      },
+      "results/granularity/query_norm_music_gte_desc.csv.gz": {
+        "sha256": "7c32dc06e0e397f9ad557d48864e2d21ab0836bacd84559d44c8c2951937b8b4",
+        "bytes": 4365609
+      },
+      "results/granularity/lexical_music_title.csv.gz": {
+        "sha256": "e7170a6bf6cfd9dbd6dcd32628b7df5d61be5d9dfd3569446ae3c3ae5f87cc9a",
+        "bytes": 1716316
+      },
+      "results/granularity/query_norm_music_gte_title.csv.gz": {
+        "sha256": "cba21a599bc2c406c01893286ff0233e371eb4494323b16c7f5703b0b933c973",
+        "bytes": 4193666
+      }
+    }
+  }
+}

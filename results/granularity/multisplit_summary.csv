@@ -1,0 +1,82 @@
+contrast,domain,label,n_splits,mean_diff_mean,mean_diff_sd,mean_diff_min,mean_diff_max,n_better,n_worse,n_ns,n_sign_positive,n_nonzero_mean
+qU_vs_raw,games,Query ZCA(U) vs raw,5,0.0032112,0.000384826,0.00264108,0.00358943,5,0,0,5,107.4
+qU_vs_raw,movies,Query ZCA(U) vs raw,5,0.00398831,0.00032934,0.00352544,0.00437809,5,0,0,5,595.8
+qU_vs_raw,music,Query ZCA(U) vs raw,5,0.00252435,0.000264422,0.00221585,0.0027483,5,0,0,5,137.2
+qCtr_vs_raw,games,Query centring(U) vs raw,5,0.00222887,0.00041958,0.00164704,0.00264089,5,0,0,5,95
+qCtr_vs_raw,movies,Query centring(U) vs raw,5,0.00184209,0.000195394,0.00159656,0.00205315,5,0,0,5,414.4
+qCtr_vs_raw,music,Query centring(U) vs raw,5,0.00189801,0.000335314,0.00146494,0.00225899,5,0,0,5,125.8
+a1,games,Query ZCA(U) vs items ZCA(C) (a1),5,0.00419764,0.000482534,0.00344256,0.00458053,5,0,0,5,105.8
+a1,movies,Query ZCA(U) vs items ZCA(C) (a1),5,0.00466716,0.000290823,0.00427429,0.00505627,5,0,0,5,566.4
+a1,music,Query ZCA(U) vs items ZCA(C) (a1),5,0.00322391,0.000293812,0.00283484,0.0035205,5,0,0,5,130.6
+a2,games,Query centring(U) vs items ZCA(C) (a2),5,0.00321531,0.00055618,0.00244852,0.00386813,5,0,0,5,98.4
+a2,movies,Query centring(U) vs items ZCA(C) (a2),5,0.00252094,0.00019979,0.00227698,0.00270658,5,0,0,5,397.8
+a2,music,Query centring(U) vs items ZCA(C) (a2),5,0.00259756,0.000378443,0.00221677,0.00299776,5,0,0,5,118.8
+a3,games,Query ZCA(B) vs items ZCA(C) (a3),5,0.00410177,0.000479006,0.00329854,0.0045463,5,0,0,5,98.6
+a3,movies,Query ZCA(B) vs items ZCA(C) (a3),5,0.00414037,0.000305001,0.00380547,0.00456927,5,0,0,5,498.6
+a3,music,Query ZCA(B) vs items ZCA(C) (a3),5,0.00296389,0.000466247,0.00245275,0.00360918,5,0,0,5,122.6
+a4,games,Best query arm vs best items arm (a4),5,0.000857172,0.000789112,6.24301e-05,0.00186907,2,0,3,5,90.6
+a4,movies,Best query arm vs best items arm (a4),5,0.00143657,0.000102109,0.00131345,0.00154326,5,0,0,5,557.6
+a4,music,Best query arm vs best items arm (a4),5,0.00115663,0.000250584,0.00087528,0.0014247,5,0,0,5,130
+b,games,Query ZCA(U) vs centring(U) (b),5,0.000982331,0.000362852,0.000646993,0.00154313,1,0,4,5,101.8
+b,movies,Query ZCA(U) vs centring(U) (b),5,0.00214622,0.000183593,0.00192888,0.00234968,5,0,0,5,583
+b,music,Query ZCA(U) vs centring(U) (b),5,0.000626347,0.000121826,0.000489315,0.000750907,2,0,3,5,146.8
+c,games,Both sides vs query only (c),5,-0.000640724,0.000491906,-0.00114943,-9.12094e-05,0,0,5,0,87.6
+c,movies,Both sides vs query only (c),5,0.000439428,0.000233365,0.000153094,0.000722085,3,0,2,5,582.8
+c,music,Both sides vs query only (c),5,-0.000118112,0.000204417,-0.000418548,9.09232e-05,0,0,5,1,133.4
+d1,games,Query ZCA(C) vs raw (d1),5,-0.00116827,0.00066243,-0.00186854,-0.000262416,0,3,2,0,53.6
+d1,movies,Query ZCA(C) vs raw (d1),5,-0.00103131,9.46787e-05,-0.0011688,-0.000937029,0,5,0,0,221.4
+d1,music,Query ZCA(C) vs raw (d1),5,2.38321e-05,0.000260516,-0.000348956,0.00029843,0,0,5,3,66.4
+d2,games,Query ZCA(U) vs query ZCA(C) (d2),5,0.00437947,0.000568586,0.00385184,0.00524274,5,0,0,5,97.4
+d2,movies,Query ZCA(U) vs query ZCA(C) (d2),5,0.00501962,0.000252219,0.00469424,0.00531512,5,0,0,5,549.2
+d2,music,Query ZCA(U) vs query ZCA(C) (d2),5,0.00250052,0.000156174,0.00233991,0.00272248,5,0,0,5,131
+itemsU_vs_raw,games,Items ZCA(U) vs raw,5,0.00187495,0.000441791,0.00150369,0.00250863,2,0,3,5,82
+itemsU_vs_raw,movies,Items ZCA(U) vs raw,5,0.00255274,0.000298485,0.002212,0.00290679,5,0,0,5,447.6
+itemsU_vs_raw,music,Items ZCA(U) vs raw,5,0.00117291,0.000221076,0.000965871,0.00154653,5,0,0,5,92.6
+itemsB_vs_raw,games,Items ZCA(B) vs raw,5,-0.00060199,0.00039329,-0.00123171,-0.000245311,0,1,4,0,53
+itemsB_vs_raw,movies,Items ZCA(B) vs raw,5,-0.000972737,9.27766e-05,-0.00106141,-0.000844512,0,5,0,0,199.6
+itemsB_vs_raw,music,Items ZCA(B) vs raw,5,-0.000761005,0.000131727,-0.000881921,-0.000542464,0,5,0,0,54.2
+itemsC_vs_raw,games,Items ZCA(C) vs raw,5,-0.000986448,0.00015375,-0.00122724,-0.000801485,0,1,4,0,62.2
+itemsC_vs_raw,movies,Items ZCA(C) vs raw,5,-0.000678847,9.48461e-05,-0.000781684,-0.000539438,0,5,0,0,227.6
+itemsC_vs_raw,music,Items ZCA(C) vs raw,5,-0.00069955,0.000151526,-0.000856734,-0.000508693,0,5,0,0,58.2
+sideU,games,"Query vs items, same source U",5,0.00133625,0.000615302,0.000472765,0.00197198,2,0,3,5,92.8
+sideU,movies,"Query vs items, same source U",5,0.00143557,0.000101944,0.00131345,0.00154058,5,0,0,5,556.8
+sideU,music,"Query vs items, same source U",5,0.00135145,0.000282484,0.00105592,0.00166214,5,0,0,5,128.2
+sideB,games,"Query vs items, same source B",5,0.00371732,0.00067489,0.00274237,0.00453012,5,0,0,5,92.2
+sideB,movies,"Query vs items, same source B",5,0.00443426,0.000265118,0.00411803,0.00473561,5,0,0,5,486
+sideB,music,"Query vs items, same source B",5,0.00302535,0.000449557,0.00261859,0.00363436,5,0,0,5,121.2
+sideC,games,"Query vs items, same source C",5,-0.000181818,0.000740916,-0.00106705,0.000728686,0,0,5,3,55.4
+sideC,movies,"Query vs items, same source C",5,-0.000352468,0.000127009,-0.000539827,-0.000232446,0,3,2,0,186.2
+sideC,music,"Query vs items, same source C",5,0.000723381,0.000319658,0.000468551,0.00115516,5,0,0,5,59.2
+lexIdf_vs_ctr,games,IDF overlap vs centred query,5,-0.000738411,0.000223239,-0.00102384,-0.000494368,0,0,5,0,115.4
+lexIdf_vs_ctr,movies,IDF overlap vs centred query,5,-0.000718582,0.000266897,-0.000983814,-0.0004187,0,3,2,0,554
+lexIdf_vs_ctr,music,IDF overlap vs centred query,5,-0.000554854,0.000387811,-0.00101816,-4.55729e-05,0,0,5,0,158.6
+lexBm25_vs_ctr,games,BM25 vs centred query,5,-0.00123567,0.000485386,-0.00198203,-0.000733357,0,0,5,0,106.8
+lexBm25_vs_ctr,movies,BM25 vs centred query,5,0.000458981,0.000185373,0.000256642,0.000688386,0,0,5,5,566
+lexBm25_vs_ctr,music,BM25 vs centred query,5,-0.00100152,0.00025147,-0.00131742,-0.000653014,0,4,1,0,137.2
+lexIdf_vs_zca,games,IDF overlap vs query ZCA(U),5,-0.00172074,0.000270452,-0.00219798,-0.00154711,0,1,4,0,116.8
+lexIdf_vs_zca,movies,IDF overlap vs query ZCA(U),5,-0.0028648,0.000341348,-0.00322722,-0.00234758,0,5,0,0,651.2
+lexIdf_vs_zca,music,IDF overlap vs query ZCA(U),5,-0.0011812,0.000337156,-0.00154355,-0.000663648,0,4,1,0,153.4
+lexBm25_vs_zca,games,BM25 vs query ZCA(U),5,-0.002218,0.000522229,-0.00265678,-0.00138035,0,3,2,0,109.4
+lexBm25_vs_zca,movies,BM25 vs query ZCA(U),5,-0.00168724,7.4836e-05,-0.00178938,-0.00161017,0,5,0,0,646
+lexBm25_vs_zca,music,BM25 vs query ZCA(U),5,-0.00162787,0.000242523,-0.00188708,-0.00127109,0,5,0,0,141.6
+zca_vs_pop,games,Query ZCA(U) vs popularity,5,-0.02463,0.00172563,-0.0267437,-0.0221771,0,5,0,0,437.4
+zca_vs_pop,movies,Query ZCA(U) vs popularity,5,-0.00244678,0.000327951,-0.00289374,-0.00208052,0,5,0,0,1309.2
+zca_vs_pop,music,Query ZCA(U) vs popularity,5,-0.00833937,0.000615168,-0.00937492,-0.00785138,0,5,0,0,510.6
+hybZca_vs_pop,games,Hybrid ZCA + popularity vs popularity,5,0.00218876,0.000684913,0.00127451,0.00318047,4,0,1,5,373.2
+hybZca_vs_pop,movies,Hybrid ZCA + popularity vs popularity,5,0.00418906,0.000605507,0.00336282,0.00499161,5,0,0,5,1480.2
+hybZca_vs_pop,music,Hybrid ZCA + popularity vs popularity,5,0.000682276,0.000482648,0.000203128,0.001312,2,0,3,5,396.2
+hybZca_vs_hybRaw,games,Hybrid ZCA + popularity vs hybrid raw,5,0.0015019,0.000524938,0.000782885,0.00221193,1,0,4,5,374.6
+hybZca_vs_hybRaw,movies,Hybrid ZCA + popularity vs hybrid raw,5,0.00342571,0.000660287,0.00232811,0.00408231,5,0,0,5,1484.2
+hybZca_vs_hybRaw,music,Hybrid ZCA + popularity vs hybrid raw,5,0.000619805,0.000457528,0.000202625,0.00112313,2,0,3,5,393
+knn_vs_zca,games,Centred kNN vs query ZCA(U),5,0.0265446,0.00245948,0.0239313,0.0291201,5,0,0,5,451.2
+knn_vs_zca,movies,Centred kNN vs query ZCA(U),5,0.00842407,0.000400714,0.00796991,0.00900979,5,0,0,5,1616.6
+knn_vs_zca,music,Centred kNN vs query ZCA(U),5,0.0106239,0.000990817,0.00969654,0.0122767,5,0,0,5,558
+knn_vs_pop,games,Centred kNN vs popularity,5,0.00191461,0.00110708,9.99806e-05,0.00305229,3,0,2,5,407.8
+knn_vs_pop,movies,Centred kNN vs popularity,5,0.00597729,0.00055593,0.00534683,0.00656465,5,0,0,5,1530.8
+knn_vs_pop,music,Centred kNN vs popularity,5,0.00228448,0.000385343,0.00184516,0.00290176,5,0,0,5,544.4
+knnHyb_vs_knn,games,kNN + ZCA vs centred kNN,5,0.00170766,0.00104941,0,0.00282621,3,0,2,4,246
+knnHyb_vs_knn,movies,kNN + ZCA vs centred kNN,5,0.00204348,0.000223335,0.00176544,0.00234308,5,0,0,5,1502.8
+knnHyb_vs_knn,music,kNN + ZCA vs centred kNN,5,0.00072875,0.000402621,0.000192103,0.0012093,3,0,2,5,348.8
+knnHyb_vs_pop,games,kNN + ZCA vs popularity,5,0.00362226,0.00172861,0.00171867,0.00520265,3,0,2,5,433.4
+knnHyb_vs_pop,movies,kNN + ZCA vs popularity,5,0.00802077,0.000549438,0.00745734,0.00875824,5,0,0,5,1742.8
+knnHyb_vs_pop,music,kNN + ZCA vs popularity,5,0.00301323,0.000380825,0.00242475,0.00339368,5,0,0,5,576.6

@@ -1,0 +1,130 @@
+{
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "domains": [
+    "music",
+    "movies",
+    "games"
+  ],
+  "provenance": {
+    "git_commit": "2357ccd401a12ea99b2f2a94c4de0fea273256b4",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-10T11:25:45+00:00",
+    "inputs": {
+      "results/granularity/stats_query_norm.csv": {
+        "sha256": "b88307d531d3f8ab8b5e1ec8d8482d92fc6ec57c34baa38e5e5882a68e369ef3",
+        "bytes": 156781
+      },
+      "results/granularity/stats_lexical.csv": {
+        "sha256": "fdeb8fadd49af6d751ed0e3bcbd7d269ccfa393f684dd903b22751b84ab67576",
+        "bytes": 59438
+      },
+      "results/granularity/stats_vs_popularity.csv": {
+        "sha256": "0b8ed79e5dce7bdef90f8b2c54650763863b04e6432f62096bebd9068b3823d9",
+        "bytes": 287889
+      },
+      "results/granularity/stats_hybrid.csv": {
+        "sha256": "938b883f087960a353506a32d4ae4c4e299635981053c172335981ba7d47971f",
+        "bytes": 8251
+      },
+      "results/granularity/stats_knn.csv": {
+        "sha256": "eca35694fb0ee171cc35b1ce202bd50bf3d995ae791714afb64296354785e162",
+        "bytes": 50734
+      },
+      "results/granularity/seed43/stats_query_norm.csv": {
+        "sha256": "7ee7d9121ec51363fa3656ddd3329e15d77405e42f4ddb040d5ec7a47d669f51",
+        "bytes": 37513
+      },
+      "results/granularity/seed43/stats_lexical.csv": {
+        "sha256": "49b75d69f4f5f22500dd156e18427385b71f0f0ba428b0a3ec8e21db84dc3e0c",
+        "bytes": 49174
+      },
+      "results/granularity/seed43/stats_vs_popularity.csv": {
+        "sha256": "34963f95c686052604c3b8483c760fcb37608a3707443442c63ccf2090d90828",
+        "bytes": 52082
+      },
+      "results/granularity/seed43/stats_hybrid.csv": {
+        "sha256": "de53a2c3f576c3e8208ce904f4d2c18ce85e04021f82f26401debedf30f0981c",
+        "bytes": 8231
+      },
+      "results/granularity/seed43/stats_knn.csv": {
+        "sha256": "d898f80f82b167e75c15f48d33e19312b8485f48dd9f99bd88219c31ef199402",
+        "bytes": 40950
+      },
+      "results/granularity/seed44/stats_query_norm.csv": {
+        "sha256": "45eac05dca511112db7bea06751b0f71eb9f18b9a4488470e4a2ec9cef39cd29",
+        "bytes": 38694
+      },
+      "results/granularity/seed44/stats_lexical.csv": {
+        "sha256": "53937d9586d9c394a178edf128f97708f2a4d7ab28ac6768b7b73e90b28cb46b",
+        "bytes": 48963
+      },
+      "results/granularity/seed44/stats_vs_popularity.csv": {
+        "sha256": "af4ccc59baac9998569555dfb18ed6e87e1b61cdf4e0b7ffcc317259a17030fa",
+        "bytes": 52450
+      },
+      "results/granularity/seed44/stats_hybrid.csv": {
+        "sha256": "e0d6d0fa1b1e1d300e49e3b022013abc5ebdc78581dbd65d8733279730196f11",
+        "bytes": 8232
+      },
+      "results/granularity/seed44/stats_knn.csv": {
+        "sha256": "d7b66f569dec9ee30ec0f47bae8db6dee071bedea05bb6163a42945e51f7f723",
+        "bytes": 40796
+      },
+      "results/granularity/seed45/stats_query_norm.csv": {
+        "sha256": "7be288c19c3975d9317f4ff7c06d0599861522ca7f265e9e3c86f4c8047a587d",
+        "bytes": 38406
+      },
+      "results/granularity/seed45/stats_lexical.csv": {
+        "sha256": "833c962bd7e73e473a67e70d3d70438ad632527951fa853e2bd9e95748979d98",
+        "bytes": 49105
+      },
+      "results/granularity/seed45/stats_vs_popularity.csv": {
+        "sha256": "0eda4fadf7f59269ddee29975a2980c0355c602a9ed61acdbc7ede6eccc5e29f",
+        "bytes": 52304
+      },
+      "results/granularity/seed45/stats_hybrid.csv": {
+        "sha256": "965d79dfede656e820a697f753c9c480c82e021694b27de71b3e08f422f9d57e",
+        "bytes": 8275
+      },
+      "results/granularity/seed45/stats_knn.csv": {
+        "sha256": "0b52a390e1fd4cc2d639ebf74128640163aa8f17c5b9d65ae1a95414ab1a7dfa",
+        "bytes": 41082
+      },
+      "results/granularity/seed46/stats_query_norm.csv": {
+        "sha256": "28b471a46659a9f816c54e8a3f65a156c028e62f7ebc356f24e512974e94d8d7",
+        "bytes": 37644
+      },
+      "results/granularity/seed46/stats_lexical.csv": {
+        "sha256": "0198182a94940c43d3842f05f667dc0f04352951a9ba85669533a7163114ffd7",
+        "bytes": 49134
+      },
+      "results/granularity/seed46/stats_vs_popularity.csv": {
+        "sha256": "81273a484103053beb23bce7d0063002fb81494f62b99fa0dd18db2318c8d3cd",
+        "bytes": 52555
+      },
+      "results/granularity/seed46/stats_hybrid.csv": {
+        "sha256": "06ed8fb9112263c085566cae18a44b7314ca0be1de177f7e92bb61c3f8a69ef5",
+        "bytes": 8176
+      },
+      "results/granularity/seed46/stats_knn.csv": {
+        "sha256": "8e4ae146a49d8041f834733197f20b977d4891a94b1ee94b99cabfcff700279e",
+        "bytes": 41472
+      }
+    }
+  }
+}

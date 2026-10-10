@@ -1,0 +1,344 @@
+{
+  "domain": "games",
+  "encoder": "gte",
+  "n_test_users": 1959,
+  "n_train_profiles": 6857,
+  "A": {
+    "profiles": {
+      "raw": {
+        "n": 1959,
+        "mean_pairwise_cosine": 0.7707079483701071,
+        "effective_rank": 134.59833087355875,
+        "var_share_pc1": 0.09320190231807735,
+        "var_share_top10": 0.3689247329207292
+      },
+      "zca_profile": {
+        "n": 1959,
+        "mean_pairwise_cosine": 0.00023685843027846566,
+        "effective_rank": 731.300508768509,
+        "var_share_pc1": 0.0035663713215935157,
+        "var_share_top10": 0.03420279634189155
+      }
+    },
+    "catalog": {
+      "raw": {
+        "n": 15600,
+        "mean_pairwise_cosine": 0.5070144691028514,
+        "effective_rank": 179.47816164760448,
+        "var_share_pc1": 0.08116203808370583,
+        "var_share_top10": 0.29934178118736526
+      },
+      "zca_catalog_a1.0": {
+        "n": 15600,
+        "mean_pairwise_cosine": -5.2747479164064134e-05,
+        "effective_rank": 1014.4618705452092,
+        "var_share_pc1": 0.0014885417124865146,
+        "var_share_top10": 0.013449012235253023
+      },
+      "center_catalog": {
+        "n": 15600,
+        "mean_pairwise_cosine": -1.0162033421464747e-05,
+        "effective_rank": 178.90138566511106,
+        "var_share_pc1": 0.0816342782712463,
+        "var_share_top10": 0.3002816858818209
+      }
+    }
+  },
+  "B": {
+    "n_users": 1959,
+    "n_pairs": 2000,
+    "conditions": {
+      "raw": {
+        "coverage_pct": 10.551282051282051,
+        "gini_exposure": 0.9817990798549756,
+        "mean_jaccard": 0.08264077756608715,
+        "hubness_skewness_k10": 39.26453504715523,
+        "mean_popularity_percentile": 53.12491246842319
+      },
+      "zca_catalog_a1.0": {
+        "coverage_pct": 7.878205128205128,
+        "gini_exposure": 0.9888166516145076,
+        "mean_jaccard": 0.13688857749577565,
+        "hubness_skewness_k10": 47.873891967849964,
+        "mean_popularity_percentile": 53.26350064135286
+      },
+      "zca_profile": {
+        "coverage_pct": 57.967948717948715,
+        "gini_exposure": 0.6277925419824348,
+        "mean_jaccard": 0.0006869195046439629,
+        "hubness_skewness_k10": 2.4394964859908495,
+        "mean_popularity_percentile": 51.59040686640227
+      },
+      "zca_both_separate": {
+        "coverage_pct": 63.02564102564102,
+        "gini_exposure": 0.5790897108676587,
+        "mean_jaccard": 0.0003806329549363605,
+        "hubness_skewness_k10": 1.9443412921061098,
+        "mean_popularity_percentile": 52.62115400976427
+      },
+      "popularity": {
+        "coverage_pct": 0.0641025641025641,
+        "gini_exposure": 0.9993589743589744,
+        "mean_jaccard": 1.0,
+        "hubness_skewness_k10": 39.45884744181992,
+        "mean_popularity_percentile": 99.97115384615383
+      },
+      "center_profile": {
+        "coverage_pct": 35.05769230769231,
+        "gini_exposure": 0.8459389602230336,
+        "mean_jaccard": 0.004030959752321981,
+        "hubness_skewness_k10": 11.206356629197046,
+        "mean_popularity_percentile": 53.093176136438004
+      }
+    }
+  },
+  "C": {
+    "n_items": 14742,
+    "n_categories": 27,
+    "n_sample": 5000,
+    "conditions": {
+      "raw": {
+        "between_within_ratio": 0.16287669641159425,
+        "nn10_same_category": 0.79604
+      },
+      "zca_catalog_a1.0": {
+        "between_within_ratio": 0.009196847160679325,
+        "nn10_same_category": 0.61106
+      },
+      "center_catalog": {
+        "between_within_ratio": 0.16243509522172989,
+        "nn10_same_category": 0.7987
+      },
+      "abtt_catalog_D1": {
+        "between_within_ratio": 0.10344822145839022,
+        "nn10_same_category": 0.78514
+      }
+    }
+  },
+  "D": {
+    "n_users": 1959,
+    "spearman_rho": 0.029417088155385067,
+    "p": 0.19309819349011947,
+    "n_users_nonzero_ndcg": 96,
+    "spearman_rho_nonzero": 0.2562039605213653,
+    "p_nonzero": 0.011748921447180259,
+    "mean_gain": 0.0026410791220010206
+  },
+  "E": {
+    "n_users": 1959,
+    "depth": 2,
+    "n_categories_catalog": 62,
+    "train_top5": [
+      [
+        "Games",
+        4547
+      ],
+      [
+        "Nintendo Systems",
+        4364
+      ],
+      [
+        "PlayStation Systems",
+        4014
+      ],
+      [
+        "Accessories",
+        3403
+      ],
+      [
+        "Xbox Systems",
+        3017
+      ]
+    ],
+    "concentration": {
+      "raw": {
+        "entropy_bits": 2.6057760166567867,
+        "n_distinct_categories": 35,
+        "share_top1_train_category": 0.36549397590361443,
+        "share_top5_train_categories": 0.8463614457831325,
+        "share_uncategorised": 0.47039305768249107
+      },
+      "zca_catalog_a1.0": {
+        "entropy_bits": 2.0773449696980717,
+        "n_distinct_categories": 29,
+        "share_top1_train_category": 0.18892319567734464,
+        "share_top5_train_categories": 0.9630773189244822,
+        "share_uncategorised": 0.20643185298621747
+      },
+      "zca_profile": {
+        "entropy_bits": 2.6819829365354355,
+        "n_distinct_categories": 56,
+        "share_top1_train_category": 0.3554408467594765,
+        "share_top5_train_categories": 0.9226237030084988,
+        "share_uncategorised": 0.020980091883614087
+      },
+      "zca_both_separate": {
+        "entropy_bits": 2.6969729105897704,
+        "n_distinct_categories": 55,
+        "share_top1_train_category": 0.2597152950955943,
+        "share_top5_train_categories": 0.9342269326683291,
+        "share_uncategorised": 0.017457886676875957
+      },
+      "popularity": {
+        "entropy_bits": 2.058813890331201,
+        "n_distinct_categories": 5,
+        "share_top1_train_category": 0.4444444444444444,
+        "share_top5_train_categories": 0.7777777777777778,
+        "share_uncategorised": 0.1
+      },
+      "center_profile": {
+        "entropy_bits": 2.426957365057161,
+        "n_distinct_categories": 47,
+        "share_top1_train_category": 0.4086366308588531,
+        "share_top5_train_categories": 0.9290257068034846,
+        "share_uncategorised": 0.044869831546707505
+      },
+      "top_category": {
+        "entropy_bits": 0.0,
+        "n_distinct_categories": 1,
+        "share_top1_train_category": 1.0,
+        "share_top5_train_categories": 1.0,
+        "share_uncategorised": 0.0
+      }
+    },
+    "jaccard_to_top_category": {
+      "raw": {
+        "mean_jaccard": 0.00010746621530856237,
+        "mean_d2_ndcg10": 0.26398575783563044,
+        "spearman_vs_d2_ndcg10": {
+          "rho": 0.06204577799555469,
+          "p": 0.006012901782145519
+        }
+      },
+      "zca_catalog_a1.0": {
+        "mean_jaccard": 0.0,
+        "mean_d2_ndcg10": 0.4462939087289433,
+        "spearman_vs_d2_ndcg10": {
+          "rho": null,
+          "p": null
+        }
+      },
+      "zca_profile": {
+        "mean_jaccard": 0.0008059966148142177,
+        "mean_d2_ndcg10": 0.5746159798366515,
+        "spearman_vs_d2_ndcg10": {
+          "rho": 0.042881376020333574,
+          "p": 0.05774661555932977
+        }
+      },
+      "zca_both_separate": {
+        "mean_jaccard": 0.00048359796888853066,
+        "mean_d2_ndcg10": 0.5686029006125575,
+        "spearman_vs_d2_ndcg10": {
+          "rho": 0.0512017969951048,
+          "p": 0.02343535211713004
+        }
+      },
+      "popularity": {
+        "mean_jaccard": 0.25,
+        "mean_d2_ndcg10": 0.4883507614599286,
+        "spearman_vs_d2_ndcg10": {
+          "rho": null,
+          "p": null
+        }
+      },
+      "center_profile": {
+        "mean_jaccard": 0.0006716638456785147,
+        "mean_d2_ndcg10": 0.5818177456355283,
+        "spearman_vs_d2_ndcg10": {
+          "rho": 0.004981630817392139,
+          "p": 0.8255981430849725
+        }
+      },
+      "top_category": {
+        "mean_jaccard": 1.0,
+        "mean_d2_ndcg10": 0.6539050535987749,
+        "spearman_vs_d2_ndcg10": {
+          "rho": null,
+          "p": null
+        }
+      },
+      "pooled_personalised": {
+        "n_pairs": 7836,
+        "spearman_vs_d2_ndcg10": {
+          "rho": 0.06019742363191517,
+          "p": 9.674531632455316e-08
+        }
+      },
+      "pooled_all": {
+        "n_pairs": 13713,
+        "spearman_vs_d2_ndcg10": {
+          "rho": 0.14282453518090704,
+          "p": 2.067643561289081e-63
+        }
+      }
+    }
+  },
+  "check_max_abs_diff_ndcg10": {
+    "raw": 4.80011778852818e-07,
+    "zca_catalog_a1.0": 4.505855146497151e-07,
+    "zca_profile": 4.926177558789435e-07,
+    "zca_both_separate": 4.985064938622941e-07,
+    "center_profile": 4.505855146497151e-07,
+    "popularity": 4.993714362577784e-07,
+    "top_category": 4.993714362577784e-07
+  },
+  "provenance": {
+    "git_commit": "794d2be5dfea9d6d007a8dcd464670164dccad0f",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-09T23:15:24+00:00",
+    "inputs": {
+      "results/granularity/games_gte_titlecat.csv.gz": {
+        "sha256": "ba75dd6f68f0a49b9659fd300863079a3485e9c65961d272825d1b432f139c34",
+        "bytes": 2782816
+      },
+      "results/granularity/query_norm_games_gte.csv.gz": {
+        "sha256": "fff9483dfc875770611ab9288ebf754418729d838fa7d872e16a045e95f2a6ea",
+        "bytes": 1922286
+      },
+      "data/processed/book_embeddings.npy": {
+        "sha256": "a6032009a172bdd441579a484d731a81a64185a8e48885c3269e74e513510196",
+        "bytes": 818020480
+      },
+      "data/processed/book_id_to_idx.json": {
+        "sha256": "88fc9df9caadf43c7a83ccb3e86facbfe5eb6940bab2a7ced1d4c61e3906812a",
+        "bytes": 4282554
+      },
+      "data/raw/games/user_book_history.json": {
+        "sha256": "39a5a25d517f0aef9a1a7fc1daeb0848f753620b539827bc76742485e2b97116",
+        "bytes": 3114894
+      },
+      "data/splits/games_train.json": {
+        "sha256": "d298fc36eed40f888f67cc59b24136d48c88f2d24b0f271e87cb4081e62a644b",
+        "bytes": 219818
+      },
+      "data/processed/games/games_embeddings_qwen.npy": {
+        "sha256": "5d96c9c096fb13fb5f671053e3a57a83449bb00c492602f3c1bfdd6a85b1918b",
+        "bytes": 63897728
+      },
+      "data/processed/games/games_id_to_idx_qwen.json": {
+        "sha256": "0a24b512b043e186f3d98ea7083121be6f21c2e35eb146202ee65172bb009f06",
+        "bytes": 316490
+      },
+      "data/raw/games/games_filtered.jsonl": {
+        "sha256": "2d1d459855f2bf61c5ff670f072ff61f8494e770367c37640bdcf99a011ce458",
+        "bytes": 16563104
+      },
+      "data/raw/games/ground_truth_real.json": {
+        "sha256": "e8f33ecffc5a8afc67a0b276f9cb0e9e60611dbf0928bd7ded3f5b00526deb46",
+        "bytes": 1822932
+      }
+    }
+  },
+  "runtime_s": 10.0,
+  "peak_rss_mb": 1749
+}

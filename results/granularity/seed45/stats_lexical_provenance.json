@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "git_commit": "ca0ddd96883fa9495cdaa8a935477b7a6d80d323",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-10T04:21:50+00:00",
+    "inputs": {
+      "results/granularity/seed45/lexical_music.csv.gz": {
+        "sha256": "b2d8aa4140a71aab6ae59fc9edfe2289235a2c608a6b1fb1543284d713e6051b",
+        "bytes": 1693219
+      },
+      "results/granularity/seed45/query_norm_music_gte.csv.gz": {
+        "sha256": "484ce9381af20536b038a4a919cccab3fd6ca0008c071ac85953706c99afc48f",
+        "bytes": 4346298
+      },
+      "results/granularity/seed45/hybrid_music_gte.csv.gz": {
+        "sha256": "1db11a09bc008a131b88fc9287f0b583ee2a0107f1d58a5693eb1205bd290dab",
+        "bytes": 970760
+      },
+      "results/granularity/seed45/lexical_movies.csv.gz": {
+        "sha256": "7985cf3101ed8da2a7a162d97cb8fe9f9bf896ba5dd6ecc427de3b711a1fd914",
+        "bytes": 4928996
+      },
+      "results/granularity/seed45/query_norm_movies_gte.csv.gz": {
+        "sha256": "989ab53c241ca27e595893789b0fa381dd7c1d7dc564e77f0500d92fa8816a60",
+        "bytes": 11836160
+      },
+      "results/granularity/seed45/hybrid_movies_gte.csv.gz": {
+        "sha256": "47e3ab3f6d4a470c0e3be98a0e36b890c95e9a4eec0377cfb5efc379623553d4",
+        "bytes": 2898122
+      },
+      "results/granularity/seed45/lexical_games.csv.gz": {
+        "sha256": "b8323845614886a6b4812b1638ea98ab85f077a507ad01be3245aaf4e474d847",
+        "bytes": 754714
+      },
+      "results/granularity/seed45/query_norm_games_gte.csv.gz": {
+        "sha256": "a4732c84adccb1737553115a4050ccab5ed5cd95bd239c9ed28d8133949bb133",
+        "bytes": 1916640
+      },
+      "results/granularity/seed45/hybrid_games_gte.csv.gz": {
+        "sha256": "0278762fb961a0a6bce793603e728b64bf5adf908636c4ba955165033ac84321",
+        "bytes": 410689
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "H2_raw_catalog_raw": {
+    "nDCG@5": 0.2986937619633677,
+    "nDCG@10": 0.26908075651514024,
+    "nDCG@20": 0.24694137584890585,
+    "P@5": 0.2811424386671549,
+    "P@10": 0.2477114610032955,
+    "P@20": 0.2272427682167704,
+    "n_eval": 2731
+  },
+  "H2_raw_catalog_whitened_own": {
+    "nDCG@5": 0.3993973892334939,
+    "nDCG@10": 0.34763595881174897,
+    "nDCG@20": 0.30960325148901224,
+    "P@5": 0.38015378982057857,
+    "P@10": 0.3155254485536434,
+    "P@20": 0.2778835591358477,
+    "n_eval": 2731
+  },
+  "H2_raw_catalog_whitened_books": {
+    "nDCG@5": 0.4003783268057754,
+    "nDCG@10": 0.37356973232523816,
+    "nDCG@20": 0.3476490260995069,
+    "P@5": 0.3780300256316368,
+    "P@10": 0.3507140241669718,
+    "P@20": 0.3252654705236177,
+    "n_eval": 2731
+  },
+  "H2_raw_catalog_whitened_grocery": {
+    "nDCG@5": 0.35358896350421914,
+    "nDCG@10": 0.3103273299901219,
+    "nDCG@20": 0.2785543069283915,
+    "P@5": 0.3237641889417796,
+    "P@10": 0.27700476016111314,
+    "P@20": 0.24880995972171366,
+    "n_eval": 2731
+  },
+  "eigen_conditioning": {
+    "sigma_album_n67986": {
+      "label": "\u03a3_\u00e1lbuns (n=67.986)",
+      "n_dims": 1024,
+      "lambda_max": 0.02118630069647627,
+      "lambda_min": 1.345403049388199e-09,
+      "condition_number": 15747177.551076911,
+      "effective_rank_gt_0.01": 6,
+      "frac_variance_top10": 0.2963622523682427
+    },
+    "sigma_grocery_n67986": {
+      "label": "\u03a3_grocery (n=67.986)",
+      "n_dims": 1024,
+      "lambda_max": 0.023249988988278916,
+      "lambda_min": 1.7100605065501394e-09,
+      "condition_number": 13596003.708186463,
+      "effective_rank_gt_0.01": 5,
+      "frac_variance_top10": 0.25466408932597806
+    }
+  },
+  "significance": {
+    "vs_own_whitening": {
+      "pair_id": "grocery_vs_own_whitening",
+      "family": "noncreative_catalog_covariance",
+      "description": "Grocery-covariance vs own-covariance whitening, n=2731",
+      "method_a": "H2+ZCA(grocery)",
+      "method_b": "H2+ZCA(own albums)",
+      "n_users_total": 2731,
+      "n_efetivo": 1888,
+      "mean_ndcg10_a": 0.3103,
+      "mean_ndcg10_b": 0.3476,
+      "delta_ndcg10": -0.0373,
+      "wilcoxon_stat": 1087671.5,
+      "p_wilcoxon_raw": 2.224348708105656e-49,
+      "p_wilcoxon_holm": null,
+      "p_perm_raw": 0.00019998000199980003,
+      "p_perm_holm": null,
+      "effect_size_r": 0.4169,
+      "effect_size_label": "m\u00e9dio",
+      "significant_wilcoxon_holm": null,
+      "significant_perm_holm": null,
+      "p_wilcoxon_ndcg5_raw": 0.0,
+      "p_wilcoxon_p10_raw": 0.0,
+      "p_perm_ndcg5_raw": 0.0002,
+      "p_perm_p10_raw": 0.0002
+    },
+    "vs_raw": {
+      "pair_id": "grocery_vs_raw",
+      "family": "noncreative_catalog_covariance",
+      "description": "Grocery-covariance whitening vs raw catalog, n=2731",
+      "method_a": "H2+ZCA(grocery)",
+      "method_b": "H2 raw",
+      "n_users_total": 2731,
+      "n_efetivo": 1749,
+      "mean_ndcg10_a": 0.3103,
+      "mean_ndcg10_b": 0.2691,
+      "delta_ndcg10": 0.0412,
+      "wilcoxon_stat": 1035840.0,
+      "p_wilcoxon_raw": 2.260053814016751e-48,
+      "p_wilcoxon_holm": null,
+      "p_perm_raw": 0.00019998000199980003,
+      "p_perm_holm": null,
+      "effect_size_r": 0.4447,
+      "effect_size_label": "m\u00e9dio",
+      "significant_wilcoxon_holm": null,
+      "significant_perm_holm": null,
+      "p_wilcoxon_ndcg5_raw": 0.0,
+      "p_wilcoxon_p10_raw": 0.0,
+      "p_perm_ndcg5_raw": 0.0002,
+      "p_perm_p10_raw": 0.0002
+    }
+  }
+}

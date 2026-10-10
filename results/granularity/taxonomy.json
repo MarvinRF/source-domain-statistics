@@ -1,0 +1,361 @@
+{
+  "domains": {
+    "music": {
+      "n_items": 67986,
+      "positions": {
+        "0": {
+          "n_labels": 1,
+          "share_without_label": 0.0,
+          "top": [
+            [
+              "CDs & Vinyl",
+              1.0
+            ]
+          ]
+        },
+        "1": {
+          "n_labels": 59,
+          "share_without_label": 0.0,
+          "top": [
+            [
+              "Pop",
+              0.20121789780248875
+            ],
+            [
+              "Today's Deals in Music",
+              0.09793192716147442
+            ],
+            [
+              "Rock",
+              0.08604712734974848
+            ],
+            [
+              "Indie & Alternative",
+              0.07725119877621864
+            ],
+            [
+              "Country",
+              0.06104197923101815
+            ]
+          ]
+        },
+        "2": {
+          "n_labels": 223,
+          "share_without_label": 0.19268672962080424,
+          "top": [
+            [
+              "Progressive",
+              0.04050833995234313
+            ],
+            [
+              "Europe",
+              0.03393345688818286
+            ],
+            [
+              "Oldies",
+              0.0318300826640779
+            ],
+            [
+              "Album-Oriented Rock (AOR)",
+              0.03143294207630983
+            ],
+            [
+              "Today's Country",
+              0.031035801488541757
+            ]
+          ]
+        },
+        "3": {
+          "n_labels": 257,
+          "share_without_label": 0.6508692966198923,
+          "top": [
+            [
+              "Progressive Rock",
+              0.03165357573618098
+            ],
+            [
+              "Indie Rock",
+              0.018400847233253904
+            ],
+            [
+              "Traditional Pop",
+              0.01507663342452858
+            ],
+            [
+              "British Isles",
+              0.012458447327390933
+            ],
+            [
+              "Country General",
+              0.011384696849351337
+            ]
+          ]
+        }
+      },
+      "position0": {
+        "modal_label": "CDs & Vinyl",
+        "share_modal": 1.0,
+        "n_not_modal": 0
+      },
+      "n_catalog": 67986
+    },
+    "movies": {
+      "n_items": 91105,
+      "positions": {
+        "0": {
+          "n_labels": 30,
+          "share_without_label": 0.0,
+          "top": [
+            [
+              "Movies & TV",
+              0.9250315569946764
+            ],
+            [
+              "Comedy",
+              0.018681740848471545
+            ],
+            [
+              "Drama",
+              0.01435706053454805
+            ],
+            [
+              "Suspense",
+              0.013314307666977663
+            ],
+            [
+              "Science Fiction",
+              0.007650513144174305
+            ]
+          ]
+        },
+        "1": {
+          "n_labels": 180,
+          "share_without_label": 0.009757971571263901,
+          "top": [
+            [
+              "Featured Categories",
+              0.20543329125734044
+            ],
+            [
+              "Genre for Featured Categories",
+              0.2001317161516931
+            ],
+            [
+              "Studio Specials",
+              0.15473354920147084
+            ],
+            [
+              "Blu-ray",
+              0.11636024367488063
+            ],
+            [
+              "Boxed Sets",
+              0.03544262115141869
+            ]
+          ]
+        },
+        "2": {
+          "n_labels": 370,
+          "share_without_label": 0.05994182536633552,
+          "top": [
+            [
+              "DVD",
+              0.15219801328137864
+            ],
+            [
+              "Movies",
+              0.0986005158882608
+            ],
+            [
+              "Drama",
+              0.06066626420064761
+            ],
+            [
+              "Blu-ray",
+              0.05104000878107678
+            ],
+            [
+              "Comedy",
+              0.045079852916963946
+            ]
+          ]
+        },
+        "3": {
+          "n_labels": 256,
+          "share_without_label": 0.5773448219087866,
+          "top": [
+            [
+              "All Titles",
+              0.04836178036331705
+            ],
+            [
+              "All Sony Pictures Titles",
+              0.041336918939684976
+            ],
+            [
+              "Drama",
+              0.04025026068821689
+            ],
+            [
+              "Action & Adventure",
+              0.03657318478678448
+            ],
+            [
+              "Comedy",
+              0.03333516272432907
+            ]
+          ]
+        }
+      },
+      "position0": {
+        "modal_label": "Movies & TV",
+        "share_modal": 0.9250315569946764,
+        "n_not_modal": 6830
+      },
+      "n_catalog": 91164
+    },
+    "games": {
+      "n_items": 15169,
+      "positions": {
+        "0": {
+          "n_labels": 2,
+          "share_without_label": 0.0,
+          "top": [
+            [
+              "Video Games",
+              0.9994726086096645
+            ],
+            [
+              "Purchase Circles",
+              0.0005273913903355527
+            ]
+          ]
+        },
+        "1": {
+          "n_labels": 44,
+          "share_without_label": 0.0,
+          "top": [
+            [
+              "Legacy Systems",
+              0.5222493242797811
+            ],
+            [
+              "PC",
+              0.21491199156173776
+            ],
+            [
+              "Nintendo Switch",
+              0.08649218801503065
+            ],
+            [
+              "PlayStation 4",
+              0.0753510448941921
+            ],
+            [
+              "Xbox One",
+              0.05893598786999802
+            ]
+          ]
+        },
+        "2": {
+          "n_labels": 27,
+          "share_without_label": 0.028149515459160113,
+          "top": [
+            [
+              "Nintendo Systems",
+              0.23969938690750872
+            ],
+            [
+              "Accessories",
+              0.21504383940932165
+            ],
+            [
+              "Games",
+              0.20185905465093282
+            ],
+            [
+              "PlayStation Systems",
+              0.16929263629771243
+            ],
+            [
+              "Xbox Systems",
+              0.09170017799459423
+            ]
+          ]
+        },
+        "3": {
+          "n_labels": 55,
+          "share_without_label": 0.27147471817522584,
+          "top": [
+            [
+              "Xbox 360",
+              0.06467136923989716
+            ],
+            [
+              "PlayStation 3",
+              0.05939745533654163
+            ],
+            [
+              "Wii",
+              0.05484870459489749
+            ],
+            [
+              "PlayStation 2",
+              0.05003625815808557
+            ],
+            [
+              "Headsets",
+              0.048981475377414464
+            ]
+          ]
+        }
+      },
+      "position0": {
+        "modal_label": "Video Games",
+        "share_modal": 0.9994726086096645,
+        "n_not_modal": 8
+      },
+      "n_catalog": 15600
+    }
+  },
+  "provenance": {
+    "git_commit": "794d2be5dfea9d6d007a8dcd464670164dccad0f",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-09T23:18:22+00:00",
+    "inputs": {
+      "data/processed/album_id_to_idx.json": {
+        "sha256": "30b057b3838b9385c9199dae4252870f1d5b00860d86e848c89164034a5facb1",
+        "bytes": 1416596
+      },
+      "data/raw/albums_filtered.jsonl": {
+        "sha256": "2c5fbc00322ea35b88e75dbcb78c55e57dfe282714666c4bc71e0dc3cce0ffdf",
+        "bytes": 41994184
+      },
+      "data/processed/movies/movies_id_to_idx_qwen.json": {
+        "sha256": "c7591659b8280655a5f8b2eaf4dceaff8b8427f4e4f6b4e7e164ee48685e13ce",
+        "bytes": 1903334
+      },
+      "data/raw/movies/movies_filtered.jsonl": {
+        "sha256": "d6bdaebb1bda633126abf0fa280392a17c69bb50d5e47a9375a90b9ae655f4f9",
+        "bytes": 65651222
+      },
+      "data/processed/games/games_id_to_idx_qwen.json": {
+        "sha256": "0a24b512b043e186f3d98ea7083121be6f21c2e35eb146202ee65172bb009f06",
+        "bytes": 316490
+      },
+      "data/raw/games/games_filtered.jsonl": {
+        "sha256": "2d1d459855f2bf61c5ff670f072ff61f8494e770367c37640bdcf99a011ce458",
+        "bytes": 16563104
+      }
+    }
+  }
+}

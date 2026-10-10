@@ -1,0 +1,30 @@
+{
+  "provenance": {
+    "git_commit": "c4cdf2add8197b209bdd0ff103c37c21c59e1a43",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-10T06:57:44+00:00",
+    "inputs": {
+      "results/granularity/lexical_overlap_music.csv.gz": {
+        "sha256": "b896352310c44040efa6dea2146a173410ad80fd84e9e94116810861f10c38ae",
+        "bytes": 1580415
+      },
+      "results/granularity/lexical_overlap_movies.csv.gz": {
+        "sha256": "20bb9f3099f717f1f3c02f7f39e5df8a4d1eadb110e94682eef55786157009eb",
+        "bytes": 4329285
+      },
+      "results/granularity/lexical_overlap_games.csv.gz": {
+        "sha256": "57425cef39d46f38171cefe786186c060041b26b7dd6a7b406f7b86d67f385b3",
+        "bytes": 625706
+      }
+    }
+  }
+}

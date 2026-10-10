@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "acw"
+version = "0.1.0"
+description = "Geometric corrections of frozen text embeddings for zero-shot cross-domain recommendation: evaluation protocol and experiments"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+# Exact pins: every number in the paper was produced with these versions.
+dependencies = [
+    "numpy==2.4.4",
+    "scipy==1.17.1",
+    "pandas==3.0.3",
+    "statsmodels==0.15.0",
+    "scikit-learn==1.8.0",    # Ledoit-Wolf shrinkage of the query-normalisation family
+    "torch==2.11.0",
+    "transformers==5.8.0",
+    "sentence-transformers==5.4.1",
+    "einops==0.8.2",          # remote code of some encoders in the backbone sweep
+    "faiss-cpu==1.13.2",
+    "tqdm==4.67.3",
+    "matplotlib==3.11.2",
+]
+
+[project.optional-dependencies]
+# LLM-mediated profiles (H3/H4): talks to a vLLM / Ollama server.
+llm = ["httpx==0.28.1", "requests==2.34.0"]
+# Query-side register analysis; also run: python -m spacy download en_core_web_sm
+dla = ["spacy==3.8.16"]
+dev = ["pytest>=8", "ruff>=0.7"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/acw"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501", "B905"]  # long log strings; zip truncation is intentional in places
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]  # tests import the experiments scripts

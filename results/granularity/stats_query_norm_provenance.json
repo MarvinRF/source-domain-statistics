@@ -1,0 +1,80 @@
+{
+  "runs": [
+    "query_norm_music_gte.csv.gz",
+    "query_norm_music_gte_desc.csv.gz",
+    "query_norm_music_gte_title.csv.gz",
+    "query_norm_music_bge-large.csv.gz",
+    "query_norm_music_bge-m3.csv.gz",
+    "query_norm_music_e5-large-v2.csv.gz",
+    "query_norm_music_minilm.csv.gz",
+    "query_norm_music_nomic.csv.gz",
+    "query_norm_music_snowflake-arctic-embed-l.csv.gz",
+    "query_norm_music_uae-large-v1.csv.gz",
+    "query_norm_movies_gte.csv.gz",
+    "query_norm_games_gte.csv.gz"
+  ],
+  "provenance": {
+    "git_commit": "6f5c24006fa2886d70d9aa47906e8d406a1e8587",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-10T00:50:01+00:00",
+    "inputs": {
+      "results/granularity/query_norm_music_gte.csv.gz": {
+        "sha256": "f313cd4e8f61ce39d9aefb3a9e7ae03cc1489ab2f5dc26bf0e79e68a0dd01fa9",
+        "bytes": 4333891
+      },
+      "results/granularity/query_norm_music_gte_desc.csv.gz": {
+        "sha256": "7c32dc06e0e397f9ad557d48864e2d21ab0836bacd84559d44c8c2951937b8b4",
+        "bytes": 4365609
+      },
+      "results/granularity/query_norm_music_gte_title.csv.gz": {
+        "sha256": "cba21a599bc2c406c01893286ff0233e371eb4494323b16c7f5703b0b933c973",
+        "bytes": 4193666
+      },
+      "results/granularity/query_norm_music_bge-large.csv.gz": {
+        "sha256": "6ee753eb382542a2d14542d8eb8b0e097452b1c00a54944ee894a2fefbcbc2f6",
+        "bytes": 4263930
+      },
+      "results/granularity/query_norm_music_bge-m3.csv.gz": {
+        "sha256": "4ef5b43077b437881894b6f3edbc746b60a97a66d7e15f43f1b4a6d48f76a68f",
+        "bytes": 4232324
+      },
+      "results/granularity/query_norm_music_e5-large-v2.csv.gz": {
+        "sha256": "9f205c324e437f83eb310f28846985f9469266a7e3e6cff9170b0c3430553bf2",
+        "bytes": 4237566
+      },
+      "results/granularity/query_norm_music_minilm.csv.gz": {
+        "sha256": "ed56d751e976efb6aafd7f1a18b5ee48731eb41d2810cc5ae20ca5e186e55aa3",
+        "bytes": 4257013
+      },
+      "results/granularity/query_norm_music_nomic.csv.gz": {
+        "sha256": "5b9c7a348fa5f35fe1e47af219f3d2864e68318437ce9d1b272e36faf87ee13f",
+        "bytes": 4249643
+      },
+      "results/granularity/query_norm_music_snowflake-arctic-embed-l.csv.gz": {
+        "sha256": "2cf6f81283632c7c9ef71354bd488eebb67b1a56b6a4099c1436c1007d9a06e4",
+        "bytes": 4345698
+      },
+      "results/granularity/query_norm_music_uae-large-v1.csv.gz": {
+        "sha256": "d39d2bfbfb442b17ebfbabd04426c5fd10bd95e73bbb619e86ed88dd263f2b30",
+        "bytes": 4276784
+      },
+      "results/granularity/query_norm_movies_gte.csv.gz": {
+        "sha256": "6322d6fc6db8097694cadb0e57166671623437ac857f70682d930e0c811e3576",
+        "bytes": 11809620
+      },
+      "results/granularity/query_norm_games_gte.csv.gz": {
+        "sha256": "2a9e0c9cc5ebede7843f0d5e96ab45df297f242e94e32d80c1e09d482658cbd8",
+        "bytes": 1922286
+      }
+    }
+  }
+}

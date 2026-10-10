@@ -1,0 +1,344 @@
+{
+  "domain": "music",
+  "encoder": "gte",
+  "n_test_users": 4884,
+  "n_train_profiles": 17094,
+  "A": {
+    "profiles": {
+      "raw": {
+        "n": 4884,
+        "mean_pairwise_cosine": 0.8136157401716588,
+        "effective_rank": 126.59187518895456,
+        "var_share_pc1": 0.11119044488627888,
+        "var_share_top10": 0.4036252417267288
+      },
+      "zca_profile": {
+        "n": 4884,
+        "mean_pairwise_cosine": 5.889946287710989e-05,
+        "effective_rank": 882.4702224752615,
+        "var_share_pc1": 0.002442959908001155,
+        "var_share_top10": 0.023641511637398818
+      }
+    },
+    "catalog": {
+      "raw": {
+        "n": 67986,
+        "mean_pairwise_cosine": 0.600292595777055,
+        "effective_rank": 194.4356096415861,
+        "var_share_pc1": 0.053004520047444666,
+        "var_share_top10": 0.296362252450128
+      },
+      "zca_catalog_a1.0": {
+        "n": 67986,
+        "mean_pairwise_cosine": 1.34925710603529e-05,
+        "effective_rank": 1010.1405814973868,
+        "var_share_pc1": 0.001903671530343779,
+        "var_share_top10": 0.01643004559079002
+      },
+      "center_catalog": {
+        "n": 67986,
+        "mean_pairwise_cosine": 0.0001344765673288446,
+        "effective_rank": 192.40986355714088,
+        "var_share_pc1": 0.05418845579207272,
+        "var_share_top10": 0.2994386405952417
+      }
+    }
+  },
+  "B": {
+    "n_users": 3000,
+    "n_pairs": 2000,
+    "conditions": {
+      "raw": {
+        "coverage_pct": 2.9770835171947168,
+        "gini_exposure": 0.9959294894046813,
+        "mean_jaccard": 0.18389840551605258,
+        "hubness_skewness_k10": 100.4149660419933,
+        "mean_popularity_percentile": 51.44959690230341
+      },
+      "zca_catalog_a1.0": {
+        "coverage_pct": 1.578266113611626,
+        "gini_exposure": 0.9987503378146481,
+        "mean_jaccard": 0.3402717536591376,
+        "hubness_skewness_k10": 90.84538799030604,
+        "mean_popularity_percentile": 51.485272016787775
+      },
+      "zca_profile": {
+        "coverage_pct": 28.969199541081984,
+        "gini_exposure": 0.7880051245844732,
+        "mean_jaccard": 0.0001871345029239766,
+        "hubness_skewness_k10": 3.556521591653625,
+        "mean_popularity_percentile": 50.24299823983369
+      },
+      "zca_both_separate": {
+        "coverage_pct": 29.857617744829817,
+        "gini_exposure": 0.7778433020523832,
+        "mean_jaccard": 0.00016081871345029238,
+        "hubness_skewness_k10": 3.271962631310301,
+        "mean_popularity_percentile": 50.14633973661243
+      },
+      "popularity": {
+        "coverage_pct": 0.014708910658076663,
+        "gini_exposure": 0.9998529108934191,
+        "mean_jaccard": 1.0,
+        "hubness_skewness_k10": 82.43543016877365,
+        "mean_popularity_percentile": 99.99338099020387
+      },
+      "center_profile": {
+        "coverage_pct": 16.788750625128703,
+        "gini_exposure": 0.9179248051069337,
+        "mean_jaccard": 0.0019189456484348122,
+        "hubness_skewness_k10": 25.871948705879085,
+        "mean_popularity_percentile": 51.83755964463273
+      }
+    }
+  },
+  "C": {
+    "n_items": 54886,
+    "n_categories": 223,
+    "n_sample": 5000,
+    "conditions": {
+      "raw": {
+        "between_within_ratio": 0.6094103279387351,
+        "nn10_same_category": 0.83924
+      },
+      "zca_catalog_a1.0": {
+        "between_within_ratio": 0.07813045171973537,
+        "nn10_same_category": 0.38454
+      },
+      "center_catalog": {
+        "between_within_ratio": 0.6148141313454902,
+        "nn10_same_category": 0.82128
+      },
+      "abtt_catalog_D1": {
+        "between_within_ratio": 0.5384727247275596,
+        "nn10_same_category": 0.79962
+      }
+    }
+  },
+  "D": {
+    "n_users": 4884,
+    "spearman_rho": 0.024952025029122672,
+    "p": 0.08122662013077636,
+    "n_users_nonzero_ndcg": 139,
+    "spearman_rho_nonzero": 0.16615929435998966,
+    "p_nonzero": 0.050593601288683884,
+    "mean_gain": 0.002258803787878788
+  },
+  "E": {
+    "n_users": 3000,
+    "depth": 2,
+    "n_categories_catalog": 261,
+    "train_top5": [
+      [
+        "Pop",
+        9720
+      ],
+      [
+        "Album-Oriented Rock (AOR)",
+        4581
+      ],
+      [
+        "Today's Country",
+        4496
+      ],
+      [
+        "Oldies",
+        4214
+      ],
+      [
+        "Europe",
+        4053
+      ]
+    ],
+    "concentration": {
+      "raw": {
+        "entropy_bits": 3.6154029137850694,
+        "n_distinct_categories": 134,
+        "share_top1_train_category": 0.38516666666666666,
+        "share_top5_train_categories": 0.3931,
+        "share_uncategorised": 0.0
+      },
+      "zca_catalog_a1.0": {
+        "entropy_bits": 2.715911185076476,
+        "n_distinct_categories": 116,
+        "share_top1_train_category": 0.5928,
+        "share_top5_train_categories": 0.6444333333333333,
+        "share_uncategorised": 0.0
+      },
+      "zca_profile": {
+        "entropy_bits": 6.442100526081942,
+        "n_distinct_categories": 239,
+        "share_top1_train_category": 0.07686666666666667,
+        "share_top5_train_categories": 0.2149,
+        "share_uncategorised": 0.0
+      },
+      "zca_both_separate": {
+        "entropy_bits": 6.029822149112254,
+        "n_distinct_categories": 225,
+        "share_top1_train_category": 0.1446,
+        "share_top5_train_categories": 0.26976666666666665,
+        "share_uncategorised": 0.0
+      },
+      "popularity": {
+        "entropy_bits": 3.121928094887362,
+        "n_distinct_categories": 9,
+        "share_top1_train_category": 0.2,
+        "share_top5_train_categories": 0.4,
+        "share_uncategorised": 0.0
+      },
+      "center_profile": {
+        "entropy_bits": 6.3944492749237565,
+        "n_distinct_categories": 214,
+        "share_top1_train_category": 0.07323333333333333,
+        "share_top5_train_categories": 0.15986666666666666,
+        "share_uncategorised": 0.0
+      },
+      "top_category": {
+        "entropy_bits": 0.0,
+        "n_distinct_categories": 1,
+        "share_top1_train_category": 1.0,
+        "share_top5_train_categories": 1.0,
+        "share_uncategorised": 0.0
+      }
+    },
+    "jaccard_to_top_category": {
+      "raw": {
+        "mean_jaccard": 1.7543859649122806e-05,
+        "mean_d2_ndcg10": 0.34609838846666663,
+        "spearman_vs_d2_ndcg10": {
+          "rho": 0.022650799595817714,
+          "p": 0.21487278273866653
+        }
+      },
+      "zca_catalog_a1.0": {
+        "mean_jaccard": 0.0,
+        "mean_d2_ndcg10": 0.4358457686,
+        "spearman_vs_d2_ndcg10": {
+          "rho": null,
+          "p": null
+        }
+      },
+      "zca_profile": {
+        "mean_jaccard": 0.00010526315789473683,
+        "mean_d2_ndcg10": 0.18573175423333335,
+        "spearman_vs_d2_ndcg10": {
+          "rho": -0.0021304458924531373,
+          "p": 0.9071446810665824
+        }
+      },
+      "zca_both_separate": {
+        "mean_jaccard": 0.00019298245614035088,
+        "mean_d2_ndcg10": 0.2105793181333333,
+        "spearman_vs_d2_ndcg10": {
+          "rho": 0.009990728572925213,
+          "p": 0.5843784977728603
+        }
+      },
+      "popularity": {
+        "mean_jaccard": 0.11111111111111112,
+        "mean_d2_ndcg10": 0.2789869361333333,
+        "spearman_vs_d2_ndcg10": {
+          "rho": null,
+          "p": null
+        }
+      },
+      "center_profile": {
+        "mean_jaccard": 1.7543859649122806e-05,
+        "mean_d2_ndcg10": 0.18233626823333332,
+        "spearman_vs_d2_ndcg10": {
+          "rho": 0.013093003034591676,
+          "p": 0.47345729327484537
+        }
+      },
+      "top_category": {
+        "mean_jaccard": 1.0,
+        "mean_d2_ndcg10": 0.575,
+        "spearman_vs_d2_ndcg10": {
+          "rho": null,
+          "p": null
+        }
+      },
+      "pooled_personalised": {
+        "n_pairs": 12000,
+        "spearman_vs_d2_ndcg10": {
+          "rho": -0.004434038315312778,
+          "p": 0.6271966544288748
+        }
+      },
+      "pooled_all": {
+        "n_pairs": 21000,
+        "spearman_vs_d2_ndcg10": {
+          "rho": 0.16769461663694327,
+          "p": 2.8432206845563356e-132
+        }
+      }
+    }
+  },
+  "check_max_abs_diff_ndcg10": {
+    "raw": 4.71166271151513e-07,
+    "zca_catalog_a1.0": 4.71166271151513e-07,
+    "zca_profile": 4.924330643529817e-07,
+    "zca_both_separate": 4.71166271151513e-07,
+    "center_profile": 4.956053198945654e-07,
+    "popularity": 4.926177558789435e-07,
+    "top_category": 4.820111717540598e-07
+  },
+  "provenance": {
+    "git_commit": "794d2be5dfea9d6d007a8dcd464670164dccad0f",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-09T23:16:01+00:00",
+    "inputs": {
+      "results/granularity/music_gte_titlecat.csv.gz": {
+        "sha256": "b0666d20ebc53d4894bd0c778a285c63f6bae34bc6a31d785a1e44574eb19d80",
+        "bytes": 4771354
+      },
+      "results/granularity/query_norm_music_gte.csv.gz": {
+        "sha256": "0e85c2f6488f1109f52c029aaff374741101d07e9d16492b7f150fa309b9c2e0",
+        "bytes": 4333891
+      },
+      "data/processed/book_embeddings.npy": {
+        "sha256": "a6032009a172bdd441579a484d731a81a64185a8e48885c3269e74e513510196",
+        "bytes": 818020480
+      },
+      "data/processed/book_id_to_idx.json": {
+        "sha256": "88fc9df9caadf43c7a83ccb3e86facbfe5eb6940bab2a7ced1d4c61e3906812a",
+        "bytes": 4282554
+      },
+      "data/raw/user_book_history.json": {
+        "sha256": "b64cc4ed73ae6cac60c30f5f493214572d41f1eb928697eb140c8cab8764e5f6",
+        "bytes": 7556244
+      },
+      "data/splits/music_train.json": {
+        "sha256": "94a6231b857d58390054a9a616abafb773152e8b65b4f0d70a8508add333f3e8",
+        "bytes": 547008
+      },
+      "data/processed/album_embeddings.npy": {
+        "sha256": "ec70534162d4edf1aac8b009bb89492b67dbe793383e3727a2f0083837b7b7cb",
+        "bytes": 278470784
+      },
+      "data/processed/album_id_to_idx.json": {
+        "sha256": "30b057b3838b9385c9199dae4252870f1d5b00860d86e848c89164034a5facb1",
+        "bytes": 1416596
+      },
+      "data/raw/albums_filtered.jsonl": {
+        "sha256": "2c5fbc00322ea35b88e75dbcb78c55e57dfe282714666c4bc71e0dc3cce0ffdf",
+        "bytes": 41994184
+      },
+      "data/raw/ground_truth_real.json": {
+        "sha256": "cba4ad3b72110a0928bab1dd881183c0b3225093462f16d5a11702d81369c25f",
+        "bytes": 6061058
+      }
+    }
+  },
+  "runtime_s": 35.8,
+  "peak_rss_mb": 2101
+}

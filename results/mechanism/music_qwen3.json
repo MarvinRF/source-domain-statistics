@@ -1,0 +1,62 @@
+{
+  "domain": "music",
+  "encoder": "qwen3",
+  "n_test_users": 4884,
+  "n_train_profiles": 17094,
+  "A": {
+    "profiles": {
+      "raw": {
+        "n": 4884,
+        "mean_pairwise_cosine": 0.827632893104323,
+        "effective_rank": 159.98771252272022,
+        "var_share_pc1": 0.1202484266935326,
+        "var_share_top10": 0.4267788188887582
+      },
+      "zca_profile": {
+        "n": 4884,
+        "mean_pairwise_cosine": 5.4632246023914214e-05,
+        "effective_rank": 2364.4022670598447,
+        "var_share_pc1": 0.0012125243697708834,
+        "var_share_top10": 0.011832866265451717
+      }
+    }
+  },
+  "provenance": {
+    "git_commit": "db1c8540a08bdfd851cf5659aa5d906e0895164d",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-09T11:30:27+00:00",
+    "inputs": {
+      "results/granularity/music_qwen3_titlecat.csv.gz": {
+        "sha256": "b07e73c41010b0b7d8917607ede9c768f04183436c95beb6d2aac26fb3aaf9f8",
+        "bytes": 4431152
+      },
+      "data/processed/book_embeddings_qwen3.npy": {
+        "sha256": "0ab2c5ca9a16dc2d2654501a0750dbf15af6c4d254a4847c202ceec06d010018",
+        "bytes": 3272081536
+      },
+      "data/processed/book_id_to_idx.json": {
+        "sha256": "88fc9df9caadf43c7a83ccb3e86facbfe5eb6940bab2a7ced1d4c61e3906812a",
+        "bytes": 4282554
+      },
+      "data/raw/user_book_history.json": {
+        "sha256": "b64cc4ed73ae6cac60c30f5f493214572d41f1eb928697eb140c8cab8764e5f6",
+        "bytes": 7556244
+      },
+      "data/splits/music_train.json": {
+        "sha256": "94a6231b857d58390054a9a616abafb773152e8b65b4f0d70a8508add333f3e8",
+        "bytes": 547008
+      }
+    }
+  },
+  "runtime_s": 25.1,
+  "peak_rss_mb": 6433
+}

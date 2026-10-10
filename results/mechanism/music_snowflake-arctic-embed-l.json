@@ -1,0 +1,62 @@
+{
+  "domain": "music",
+  "encoder": "snowflake-arctic-embed-l",
+  "n_test_users": 4884,
+  "n_train_profiles": 17094,
+  "A": {
+    "profiles": {
+      "raw": {
+        "n": 4884,
+        "mean_pairwise_cosine": 0.7549669059113996,
+        "effective_rank": 216.97510420395096,
+        "var_share_pc1": 0.08273235059736529,
+        "var_share_top10": 0.2999498682150199
+      },
+      "zca_profile": {
+        "n": 4884,
+        "mean_pairwise_cosine": 6.0236011604576265e-05,
+        "effective_rank": 889.1975233392592,
+        "var_share_pc1": 0.0023725506959141073,
+        "var_share_top10": 0.023069760350989257
+      }
+    }
+  },
+  "provenance": {
+    "git_commit": "db1c8540a08bdfd851cf5659aa5d906e0895164d",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-09T11:30:30+00:00",
+    "inputs": {
+      "results/granularity/music_snowflake-arctic-embed-l_titlecat.csv.gz": {
+        "sha256": "3e0c79577c22529a0dd1d416478983fe0cba4fa664bec84857856be00ff473ca",
+        "bytes": 4621313
+      },
+      "data/processed/backbone_screening/books_embeddings_snowflake-arctic-embed-l.npy": {
+        "sha256": "17e7c7ae4a3e5e87697587131f6333618321eff8e5b76a7d3d0ff463b3bd0e5d",
+        "bytes": 818020480
+      },
+      "data/processed/backbone_screening/books_id_to_idx_snowflake-arctic-embed-l.json": {
+        "sha256": "88fc9df9caadf43c7a83ccb3e86facbfe5eb6940bab2a7ced1d4c61e3906812a",
+        "bytes": 4282554
+      },
+      "data/raw/user_book_history.json": {
+        "sha256": "b64cc4ed73ae6cac60c30f5f493214572d41f1eb928697eb140c8cab8764e5f6",
+        "bytes": 7556244
+      },
+      "data/splits/music_train.json": {
+        "sha256": "94a6231b857d58390054a9a616abafb773152e8b65b4f0d70a8508add333f3e8",
+        "bytes": 547008
+      }
+    }
+  },
+  "runtime_s": 2.6,
+  "peak_rss_mb": 1750
+}

@@ -1,0 +1,62 @@
+{
+  "provenance": {
+    "git_commit": "c4cdf2add8197b209bdd0ff103c37c21c59e1a43",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-10T06:46:24+00:00",
+    "inputs": {
+      "results/granularity/knn_music_gte.csv.gz": {
+        "sha256": "2aeca1e189bd01f7c85925eba04f7b20f380207736f14a0a38a7374b1516af1a",
+        "bytes": 1614717
+      },
+      "results/granularity/query_norm_music_gte.csv.gz": {
+        "sha256": "f313cd4e8f61ce39d9aefb3a9e7ae03cc1489ab2f5dc26bf0e79e68a0dd01fa9",
+        "bytes": 4333891
+      },
+      "results/granularity/hybrid_music_gte.csv.gz": {
+        "sha256": "421c61217e5ed08641a02ff08a87715ab921ff28d9cb2f9cbb9497105075d8c7",
+        "bytes": 993158
+      },
+      "results/granularity/knn_movies_gte.csv.gz": {
+        "sha256": "2b28f1794998c720488f72c42588d585f62cfd404528bbfeaf5ebf2a1986285e",
+        "bytes": 4537045
+      },
+      "results/granularity/query_norm_movies_gte.csv.gz": {
+        "sha256": "6322d6fc6db8097694cadb0e57166671623437ac857f70682d930e0c811e3576",
+        "bytes": 11809620
+      },
+      "results/granularity/hybrid_movies_gte.csv.gz": {
+        "sha256": "3e1c3422d3cc22a7faff63098d66fe00abd3f5988a6284ffff94d297a5f0cb44",
+        "bytes": 2846188
+      },
+      "results/granularity/knn_games_gte.csv.gz": {
+        "sha256": "ff02397f280ba8d251564372ced1505a07f9fe69db1364721e70414f662d90ea",
+        "bytes": 707990
+      },
+      "results/granularity/query_norm_games_gte.csv.gz": {
+        "sha256": "2a9e0c9cc5ebede7843f0d5e96ab45df297f242e94e32d80c1e09d482658cbd8",
+        "bytes": 1922286
+      },
+      "results/granularity/hybrid_games_gte.csv.gz": {
+        "sha256": "612ecafdba004ae0c4d5d7acbc55e8134c3b015f1bcf2beed0621e68ec2ebb3b",
+        "bytes": 433140
+      },
+      "results/granularity/knn_music_gte_title.csv.gz": {
+        "sha256": "0a042dd521abdcdecc481dba9e1467a41cbd6443a8d0bdbf995c7aa19e078fb7",
+        "bytes": 1617037
+      },
+      "results/granularity/query_norm_music_gte_title.csv.gz": {
+        "sha256": "cba21a599bc2c406c01893286ff0233e371eb4494323b16c7f5703b0b933c973",
+        "bytes": 4193666
+      }
+    }
+  }
+}

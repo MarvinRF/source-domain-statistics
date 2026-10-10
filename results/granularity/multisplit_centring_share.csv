@@ -1,0 +1,4 @@
+domain,n_splits,share_mean,share_sd,share_min,share_max
+games,5,0.694073,0.103231,0.557709,0.796495
+movies,5,0.461544,0.02346,0.428547,0.492406
+music,5,0.747742,0.0650907,0.661119,0.821959

@@ -1,0 +1,79 @@
+{
+  "GTE-large": {
+    "erank": 194.4,
+    "top20_var_pct": 40.1,
+    "whitening_effect": "+",
+    "ndcg_delta": "+29.2%"
+  },
+  "Qwen3-8B": {
+    "erank": 360.6,
+    "top20_var_pct": 37.2,
+    "whitening_effect": "+",
+    "ndcg_delta": "+59.6%"
+  },
+  "BGE-large": {
+    "erank": 290.9,
+    "top20_var_pct": 28.3,
+    "whitening_effect": "+",
+    "ndcg_delta": "+7.9%"
+  },
+  "all-MiniLM": {
+    "erank": 172.2,
+    "top20_var_pct": 33.6,
+    "whitening_effect": "-",
+    "ndcg_delta": "-10.1%"
+  },
+  "nomic-embed": {
+    "erank": 242.5,
+    "top20_var_pct": 31.7,
+    "whitening_effect": "-",
+    "ndcg_delta": "-13.0%"
+  },
+  "e5-large-v2": {
+    "erank": 346.6,
+    "top20_var_pct": 26.3,
+    "whitening_effect": "-",
+    "ndcg_delta": "-31.4%"
+  },
+  "snowflake-arctic-embed-l": {
+    "erank": 325.1,
+    "top20_var_pct": 27.2,
+    "whitening_effect": "+",
+    "ndcg_delta": "+20.8%"
+  },
+  "bge-m3": {
+    "erank": 288.3,
+    "top20_var_pct": 27.0,
+    "whitening_effect": "+",
+    "ndcg_delta": "+2.2%"
+  },
+  "uae-large-v1": {
+    "erank": 299.2,
+    "top20_var_pct": 27.2,
+    "whitening_effect": "-",
+    "ndcg_delta": "-5.0%"
+  },
+  "_spearman_summary": {
+    "n": 9,
+    "backbones": [
+      "GTE-large",
+      "Qwen3-8B",
+      "BGE-large",
+      "all-MiniLM",
+      "nomic-embed",
+      "e5-large-v2",
+      "snowflake-arctic-embed-l",
+      "bge-m3",
+      "uae-large-v1"
+    ],
+    "erank_vs_delta": {
+      "rho": 0.2,
+      "p": 0.6059
+    },
+    "top20_vs_delta": {
+      "rho": 0.527,
+      "p": 0.1447
+    },
+    "power_caveat": "n=9 gives a Spearman test very limited power; a non-significant p-value here reflects absence of power, not evidence of no relationship between spectral properties and whitening direction."
+  }
+}

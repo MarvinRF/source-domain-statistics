@@ -1,0 +1,5 @@
+pair_id,method_a,method_b,n_common,mean_ndcg10_a,mean_ndcg10_b,delta_ndcg10,p_wilcoxon_raw,p_wilcoxon_holm,p_perm_raw,p_perm_holm,effect_size_r,effect_size_label,significant_wilcoxon_holm,significant_perm_holm
+C1,H3-concrete,H3,2731,0.112,0.1506,-0.0387,7.397239192122716e-25,0.0,0.00019998000199980003,0.00079992,0.2933,pequeno,True,True
+C2,H4-concrete,H4,1794,0.108,0.1177,-0.0097,2.81276245431426e-05,2.813e-05,0.008999100089991,0.0089991,0.219,pequeno,True,True
+C3,H3-concrete,H2+albuns-whitened,2731,0.112,0.3476,-0.2357,1.7216540561963303e-159,0.0,0.00019998000199980003,0.00079992,0.6472,grande,True,True
+C4,H4-concrete,H2+albuns-whitened,1794,0.108,0.345,-0.2371,1.4842707405913612e-113,0.0,0.00019998000199980003,0.00079992,0.6762,grande,True,True

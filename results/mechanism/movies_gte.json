@@ -1,0 +1,344 @@
+{
+  "domain": "movies",
+  "encoder": "gte",
+  "n_test_users": 13458,
+  "n_train_profiles": 47105,
+  "A": {
+    "profiles": {
+      "raw": {
+        "n": 13458,
+        "mean_pairwise_cosine": 0.7809729983722266,
+        "effective_rank": 140.58191392893622,
+        "var_share_pc1": 0.11045886773083685,
+        "var_share_top10": 0.3782530193203565
+      },
+      "zca_profile": {
+        "n": 13458,
+        "mean_pairwise_cosine": 5.176241006494129e-05,
+        "effective_rank": 960.7456068730672,
+        "var_share_pc1": 0.0018449050366946512,
+        "var_share_top10": 0.0179398766407747
+      }
+    },
+    "catalog": {
+      "raw": {
+        "n": 91164,
+        "mean_pairwise_cosine": 0.5260270434422618,
+        "effective_rank": 221.0243774742593,
+        "var_share_pc1": 0.054441473700143114,
+        "var_share_top10": 0.2544433300905274
+      },
+      "zca_catalog_a1.0": {
+        "n": 91164,
+        "mean_pairwise_cosine": 5.605677194345862e-07,
+        "effective_rank": 1017.6637004879886,
+        "var_share_pc1": 0.0014044359919164018,
+        "var_share_top10": 0.012693625140224127
+      },
+      "center_catalog": {
+        "n": 91164,
+        "mean_pairwise_cosine": 7.475375607512339e-05,
+        "effective_rank": 221.1517193155481,
+        "var_share_pc1": 0.05381393273426006,
+        "var_share_top10": 0.2545067259989075
+      }
+    }
+  },
+  "B": {
+    "n_users": 3000,
+    "n_pairs": 2000,
+    "conditions": {
+      "raw": {
+        "coverage_pct": 4.090430433065684,
+        "gini_exposure": 0.9915070393283898,
+        "mean_jaccard": 0.03444228359359938,
+        "hubness_skewness_k10": 69.68086029430195,
+        "mean_popularity_percentile": 44.85337987948459
+      },
+      "zca_catalog_a1.0": {
+        "coverage_pct": 3.176692554078364,
+        "gini_exposure": 0.9954812981732555,
+        "mean_jaccard": 0.1409744114244888,
+        "hubness_skewness_k10": 124.72147395650556,
+        "mean_popularity_percentile": 45.10029582218127
+      },
+      "zca_profile": {
+        "coverage_pct": 22.989337896538107,
+        "gini_exposure": 0.825999167800155,
+        "mean_jaccard": 0.00018421052631578945,
+        "hubness_skewness_k10": 3.9740699435424673,
+        "mean_popularity_percentile": 49.73404498120604
+      },
+      "zca_both_separate": {
+        "coverage_pct": 23.10012724321004,
+        "gini_exposure": 0.8241121188188321,
+        "mean_jaccard": 0.00010526315789473683,
+        "hubness_skewness_k10": 4.417520455310231,
+        "mean_popularity_percentile": 52.49191477264417
+      },
+      "popularity": {
+        "coverage_pct": 0.010969242244745733,
+        "gini_exposure": 0.9998903075775525,
+        "mean_jaccard": 1.0,
+        "hubness_skewness_k10": 95.46412996358613,
+        "mean_popularity_percentile": 99.99506384098986
+      },
+      "center_profile": {
+        "coverage_pct": 13.311175463998948,
+        "gini_exposure": 0.9327426879031195,
+        "mean_jaccard": 0.002079334365325077,
+        "hubness_skewness_k10": 20.793287476043158,
+        "mean_popularity_percentile": 44.891532275167094
+      }
+    }
+  },
+  "C": {
+    "n_items": 85644,
+    "n_categories": 370,
+    "n_sample": 5000,
+    "conditions": {
+      "raw": {
+        "between_within_ratio": 0.28240153660542316,
+        "nn10_same_category": 0.5842
+      },
+      "zca_catalog_a1.0": {
+        "between_within_ratio": 0.04236682922428452,
+        "nn10_same_category": 0.31084
+      },
+      "center_catalog": {
+        "between_within_ratio": 0.27512390018296184,
+        "nn10_same_category": 0.57438
+      },
+      "abtt_catalog_D1": {
+        "between_within_ratio": 0.22623935531632325,
+        "nn10_same_category": 0.51862
+      }
+    }
+  },
+  "D": {
+    "n_users": 13458,
+    "spearman_rho": 0.027398399404215023,
+    "p": 0.001479105998975664,
+    "n_users_nonzero_ndcg": 604,
+    "spearman_rho_nonzero": 0.24536266002763465,
+    "p_nonzero": 9.882036382871278e-10,
+    "mean_gain": 0.00405448863129737
+  },
+  "E": {
+    "n_users": 3000,
+    "depth": 2,
+    "n_categories_catalog": 415,
+    "train_top5": [
+      [
+        "DVD",
+        31537
+      ],
+      [
+        "Drama",
+        20413
+      ],
+      [
+        "Sony Pictures Home Entertainment",
+        18068
+      ],
+      [
+        "Movies",
+        17323
+      ],
+      [
+        "20th Century Fox Home Entertainment",
+        16346
+      ]
+    ],
+    "concentration": {
+      "raw": {
+        "entropy_bits": 4.447450675409003,
+        "n_distinct_categories": 157,
+        "share_top1_train_category": 0.22965933237370623,
+        "share_top5_train_categories": 0.352320241277675,
+        "share_uncategorised": 0.0274
+      },
+      "zca_catalog_a1.0": {
+        "entropy_bits": 4.064736250850231,
+        "n_distinct_categories": 135,
+        "share_top1_train_category": 0.2863157894736842,
+        "share_top5_train_categories": 0.5362071846282372,
+        "share_uncategorised": 0.0025
+      },
+      "zca_profile": {
+        "entropy_bits": 5.540407022597742,
+        "n_distinct_categories": 325,
+        "share_top1_train_category": 0.1562322425376876,
+        "share_top5_train_categories": 0.3801851789952201,
+        "share_uncategorised": 0.002766666666666667
+      },
+      "zca_both_separate": {
+        "entropy_bits": 4.911335072214904,
+        "n_distinct_categories": 272,
+        "share_top1_train_category": 0.1761723700887199,
+        "share_top5_train_categories": 0.4611099993329331,
+        "share_uncategorised": 0.0006
+      },
+      "popularity": {
+        "entropy_bits": 3.321928094887362,
+        "n_distinct_categories": 10,
+        "share_top1_train_category": 0.1,
+        "share_top5_train_categories": 0.3,
+        "share_uncategorised": 0.0
+      },
+      "center_profile": {
+        "entropy_bits": 5.959965757392577,
+        "n_distinct_categories": 274,
+        "share_top1_train_category": 0.10788742763444098,
+        "share_top5_train_categories": 0.2367566844025031,
+        "share_uncategorised": 0.0039
+      },
+      "top_category": {
+        "entropy_bits": 0.0,
+        "n_distinct_categories": 1,
+        "share_top1_train_category": 1.0,
+        "share_top5_train_categories": 1.0,
+        "share_uncategorised": 0.0
+      }
+    },
+    "jaccard_to_top_category": {
+      "raw": {
+        "mean_jaccard": 5.263157894736842e-05,
+        "mean_d2_ndcg10": 0.29837599183333335,
+        "spearman_vs_d2_ndcg10": {
+          "rho": -0.014927020294559976,
+          "p": 0.4137619331923631
+        }
+      },
+      "zca_catalog_a1.0": {
+        "mean_jaccard": 0.0,
+        "mean_d2_ndcg10": 0.36653867073333335,
+        "spearman_vs_d2_ndcg10": {
+          "rho": null,
+          "p": null
+        }
+      },
+      "zca_profile": {
+        "mean_jaccard": 8.771929824561403e-05,
+        "mean_d2_ndcg10": 0.2976823738666667,
+        "spearman_vs_d2_ndcg10": {
+          "rho": 0.010431979196303941,
+          "p": 0.5678908843296174
+        }
+      },
+      "zca_both_separate": {
+        "mean_jaccard": 0.00015789473684210527,
+        "mean_d2_ndcg10": 0.33492049076666663,
+        "spearman_vs_d2_ndcg10": {
+          "rho": 0.011187359503172286,
+          "p": 0.540193294771312
+        }
+      },
+      "popularity": {
+        "mean_jaccard": 0.05263157894736842,
+        "mean_d2_ndcg10": 0.2025648880333333,
+        "spearman_vs_d2_ndcg10": {
+          "rho": null,
+          "p": null
+        }
+      },
+      "center_profile": {
+        "mean_jaccard": 5.263157894736842e-05,
+        "mean_d2_ndcg10": 0.2135194903,
+        "spearman_vs_d2_ndcg10": {
+          "rho": 0.013743225216226155,
+          "p": 0.451768900058375
+        }
+      },
+      "top_category": {
+        "mean_jaccard": 1.0,
+        "mean_d2_ndcg10": 0.671,
+        "spearman_vs_d2_ndcg10": {
+          "rho": null,
+          "p": null
+        }
+      },
+      "pooled_personalised": {
+        "n_pairs": 12000,
+        "spearman_vs_d2_ndcg10": {
+          "rho": 0.002251519326548774,
+          "p": 0.8052052626569606
+        }
+      },
+      "pooled_all": {
+        "n_pairs": 21000,
+        "spearman_vs_d2_ndcg10": {
+          "rho": 0.13212431249030773,
+          "p": 2.0824188128148813e-82
+        }
+      }
+    }
+  },
+  "check_max_abs_diff_ndcg10": {
+    "raw": 4.820111717540598e-07,
+    "zca_catalog_a1.0": 4.993714362577784e-07,
+    "zca_profile": 4.987298764247416e-07,
+    "zca_both_separate": 4.997385993354975e-07,
+    "center_profile": 4.926177558789435e-07,
+    "popularity": 4.926177558789435e-07,
+    "top_category": 4.926177558789435e-07
+  },
+  "provenance": {
+    "git_commit": "794d2be5dfea9d6d007a8dcd464670164dccad0f",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-09T23:17:40+00:00",
+    "inputs": {
+      "results/granularity/movies_gte_titlecat.csv.gz": {
+        "sha256": "4b69b66fe46baeca77b83b86892cb4265af661c54993416a35c7c132ada1e108",
+        "bytes": 13670603
+      },
+      "results/granularity/query_norm_movies_gte.csv.gz": {
+        "sha256": "d6064bca3bc695be0becde45353b41011d342b565e5730ffcdb97a74fdd4b084",
+        "bytes": 11809620
+      },
+      "data/processed/book_embeddings.npy": {
+        "sha256": "a6032009a172bdd441579a484d731a81a64185a8e48885c3269e74e513510196",
+        "bytes": 818020480
+      },
+      "data/processed/book_id_to_idx.json": {
+        "sha256": "88fc9df9caadf43c7a83ccb3e86facbfe5eb6940bab2a7ced1d4c61e3906812a",
+        "bytes": 4282554
+      },
+      "data/raw/movies/user_book_history.json": {
+        "sha256": "d32295375a4e293638d45d308c56d58141e2db0f9d71914acfc6d847a96c815a",
+        "bytes": 18754734
+      },
+      "data/splits/movies_train.json": {
+        "sha256": "6c5c102a3925a1232a1c0a81ead5760a296cfab45b20eb72304335448e4e5d7c",
+        "bytes": 1508838
+      },
+      "data/processed/movies/movies_embeddings_qwen.npy": {
+        "sha256": "2f51607961d67cf61a5f91e97fde284d5e74c3201a7e2dbf0d00871a9d9b0050",
+        "bytes": 373407872
+      },
+      "data/processed/movies/movies_id_to_idx_qwen.json": {
+        "sha256": "c7591659b8280655a5f8b2eaf4dceaff8b8427f4e4f6b4e7e164ee48685e13ce",
+        "bytes": 1903334
+      },
+      "data/raw/movies/movies_filtered.jsonl": {
+        "sha256": "d6bdaebb1bda633126abf0fa280392a17c69bb50d5e47a9375a90b9ae655f4f9",
+        "bytes": 65651222
+      },
+      "data/raw/movies/ground_truth_real.json": {
+        "sha256": "1c43fa62630ddfd47c2510062af9c3bf459eb9b32b110c6fb951ae6ce472f100",
+        "bytes": 15805984
+      }
+    }
+  },
+  "runtime_s": 98.4,
+  "peak_rss_mb": 3182
+}

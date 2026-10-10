@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "git_commit": "ca0ddd96883fa9495cdaa8a935477b7a6d80d323",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-10T02:11:08+00:00",
+    "inputs": {
+      "results/granularity/seed43/lexical_music.csv.gz": {
+        "sha256": "86c7934956cb162a6daff714b8fbed1d80fe87d055455418c72ac6c7c2827983",
+        "bytes": 1723214
+      },
+      "results/granularity/seed43/query_norm_music_gte.csv.gz": {
+        "sha256": "0fce80588dcd084a686fae41d9644915c59a976626aed24cf9f7f719a85ed49e",
+        "bytes": 4382107
+      },
+      "results/granularity/seed43/hybrid_music_gte.csv.gz": {
+        "sha256": "97fce17eed9e384cf7b941513ba4cc29aaa13965746f5f704daa7e3e92a31d71",
+        "bytes": 1004357
+      },
+      "results/granularity/seed43/lexical_movies.csv.gz": {
+        "sha256": "fee943170f81e042e6bf7f0eee69d1c9679a51b5c98d823da61cd92954db813c",
+        "bytes": 4905557
+      },
+      "results/granularity/seed43/query_norm_movies_gte.csv.gz": {
+        "sha256": "12b37e89393e4cc4f4222d558cb57ac1ab094be2eb5aa1550388615dd30ef7bc",
+        "bytes": 11840205
+      },
+      "results/granularity/seed43/hybrid_movies_gte.csv.gz": {
+        "sha256": "e3c764f41ea988ac127d24615d3fb16ed5a256af61d59b3932eedb8331c218b7",
+        "bytes": 2858774
+      },
+      "results/granularity/seed43/lexical_games.csv.gz": {
+        "sha256": "016731f731218dae5c101830a43da7f2d29ed123c8f38421242d0deec73828c1",
+        "bytes": 758815
+      },
+      "results/granularity/seed43/query_norm_games_gte.csv.gz": {
+        "sha256": "1476e897cf98b55ffb2f68374b99f02757e1b9b9552a28c3a9056139ab761ecc",
+        "bytes": 1921802
+      },
+      "results/granularity/seed43/hybrid_games_gte.csv.gz": {
+        "sha256": "263d56ab22444733dbd0391315f3e426a51b2a31588b70787f52ba935f687da6",
+        "bytes": 432189
+      }
+    }
+  }
+}

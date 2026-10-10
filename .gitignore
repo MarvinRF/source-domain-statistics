@@ -1,0 +1,26 @@
+*.pyc
+__pycache__/
+venv/
+data/processed/
+data/raw/
+data/synthetic/
+*.npy
+*.pt
+*.npz
+
+# Exception: concrete-profile JSONs (plain text, ~1MB, needed to reproduce the prompt-style ablation)
+!data/processed/user_profiles_h3_concrete__*.json
+!data/processed/user_profiles_h4_concrete__*.json
+!data/processed/user_profile_index_h3_concrete__*.json
+!data/processed/user_profile_index_h4_concrete__*.json
+# internal research notes and local agent config stay out of the public repo
+docs/notes/
+CLAUDE.md
+.claude/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+data/splits/
+
+# per-user metric dumps are large and regenerable (experiments/granularity/run_corrections.py)
+results/granularity/**/*.csv.gz

@@ -1,0 +1,123 @@
+{
+  "n_encoders": 10,
+  "per_encoder": {
+    "bge-large": {
+      "raw_profile_mean_pairwise_cosine": 0.7905297432456104,
+      "raw_profile_effective_rank": 188.5842447668875,
+      "zca_profile_exact_relative_gain": 0.4513395755389425
+    },
+    "bge-m3": {
+      "raw_profile_mean_pairwise_cosine": 0.7851659039900586,
+      "raw_profile_effective_rank": 198.99265026441762,
+      "zca_profile_exact_relative_gain": 0.8894846408946768
+    },
+    "e5-large-v2": {
+      "raw_profile_mean_pairwise_cosine": 0.9351058315528692,
+      "raw_profile_effective_rank": 255.3430892778471,
+      "zca_profile_exact_relative_gain": 1.744567505424398
+    },
+    "gte": {
+      "raw_profile_mean_pairwise_cosine": 0.8136157401716588,
+      "raw_profile_effective_rank": 126.59187518895456,
+      "zca_profile_exact_relative_gain": 1.5760425897112078
+    },
+    "minilm": {
+      "raw_profile_mean_pairwise_cosine": 0.5386125542153051,
+      "raw_profile_effective_rank": 108.75546504482305,
+      "zca_profile_exact_relative_gain": 1.628918017707256
+    },
+    "minilm-l12": {
+      "raw_profile_mean_pairwise_cosine": 0.6534426235524053,
+      "raw_profile_effective_rank": 124.70335957108075,
+      "zca_profile_exact_relative_gain": 1.8255974577181016
+    },
+    "nomic": {
+      "raw_profile_mean_pairwise_cosine": 0.8812925447177872,
+      "raw_profile_effective_rank": 152.75286072464107,
+      "zca_profile_exact_relative_gain": 1.3112096224192447
+    },
+    "qwen3": {
+      "raw_profile_mean_pairwise_cosine": 0.827632893104323,
+      "raw_profile_effective_rank": 159.98771252272022,
+      "zca_profile_exact_relative_gain": 2.584719067194652
+    },
+    "snowflake-arctic-embed-l": {
+      "raw_profile_mean_pairwise_cosine": 0.7549669059113996,
+      "raw_profile_effective_rank": 216.97510420395096,
+      "zca_profile_exact_relative_gain": 2.2755797896824
+    },
+    "uae-large-v1": {
+      "raw_profile_mean_pairwise_cosine": 0.7366527709335734,
+      "raw_profile_effective_rank": 171.43442871202183,
+      "zca_profile_exact_relative_gain": 0.46484561389388723
+    }
+  },
+  "provenance": {
+    "git_commit": "db1c8540a08bdfd851cf5659aa5d906e0895164d",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-09T11:30:34+00:00",
+    "inputs": {
+      "results/granularity/summary_test.csv": {
+        "sha256": "f991e30ce5d3532f5b625f6d8f3f2fa76403bae6d55f4f67085c01b0396e84df",
+        "bytes": 154122
+      },
+      "results/mechanism/music_bge-large.json": {
+        "sha256": "6439fa93212e19a6ca2561f6d1d55d36733ae569203153feed6cb35895b1224f",
+        "bytes": 1942
+      },
+      "results/mechanism/music_bge-m3.json": {
+        "sha256": "710a040979ae9583978e000ae143c2d0142fe136a93a2b760705c8cdf4cc99ea",
+        "bytes": 1947
+      },
+      "results/mechanism/music_e5-large-v2.json": {
+        "sha256": "6f297c608ed1b4859dd895bc7022ef3a0b255378c45b9f70108b8f8202ce729b",
+        "bytes": 1967
+      },
+      "results/mechanism/music_gte.json": {
+        "sha256": "6b0e9cbd8cad1f41d9c2b03d05471ae060a0f3860383af4f506941772990a2b4",
+        "bytes": 9488
+      },
+      "results/mechanism/music_minilm.json": {
+        "sha256": "2e93619878fee96f79001ab4422865981b2182641c73ce0a4da5467b3bfda2b2",
+        "bytes": 1946
+      },
+      "results/mechanism/music_minilm-l12.json": {
+        "sha256": "812c08763632fb874d0ad08802f24ef6693532180fc088845979f7c7a42b7592",
+        "bytes": 1928
+      },
+      "results/mechanism/music_nomic.json": {
+        "sha256": "78c8b34dec9a8879b3543c9ec3bc84909b958babad1cd7ca5d2cf79008613345",
+        "bytes": 1943
+      },
+      "results/mechanism/music_qwen3.json": {
+        "sha256": "e8d1ef2b41066e17d398bc8759e362082aa329885a59715c1dbca1401ef61148",
+        "bytes": 1899
+      },
+      "results/mechanism/music_snowflake-arctic-embed-l.json": {
+        "sha256": "66d26b8d9ac5558aeeba545595cafb957b947e4251d2910c10db4af2bc656885",
+        "bytes": 2020
+      },
+      "results/mechanism/music_uae-large-v1.json": {
+        "sha256": "6207a6572d47d8c84b505db1b39957203cc0936c59a5c6b4b386c3a3fc183da0",
+        "bytes": 1972
+      }
+    }
+  },
+  "spearman_raw_profile_mean_pairwise_cosine_vs_gain": {
+    "rho": 0.04242424242424241,
+    "p": 0.9073638178128159
+  },
+  "spearman_raw_profile_effective_rank_vs_gain": {
+    "rho": -0.06666666666666665,
+    "p": 0.8548130882487427
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "runs": [
+    "query_norm_music_gte_val.csv.gz",
+    "query_norm_movies_gte_val.csv.gz",
+    "query_norm_games_gte_val.csv.gz"
+  ],
+  "provenance": {
+    "git_commit": "ca0ddd96883fa9495cdaa8a935477b7a6d80d323",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-10T05:25:34+00:00",
+    "inputs": {
+      "results/granularity/seed46/query_norm_music_gte_val.csv.gz": {
+        "sha256": "653d6fb2a2e8e0d1b59868096e92542c4f50b5253f4a3fabe7d10c3ec5c906db",
+        "bytes": 390715
+      },
+      "results/granularity/seed46/query_norm_movies_gte_val.csv.gz": {
+        "sha256": "d84551266e5068ad34ce2df34d1d205d7d66a99afd9c8e9e01db5480f39080ca",
+        "bytes": 1078082
+      },
+      "results/granularity/seed46/query_norm_games_gte_val.csv.gz": {
+        "sha256": "c1f51b9e67b0d96ff03d02bd6e6ac72b364561deb9d573a8f06846452215720e",
+        "bytes": 168108
+      }
+    }
+  }
+}

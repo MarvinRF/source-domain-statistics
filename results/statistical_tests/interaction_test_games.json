@@ -1,0 +1,26 @@
+{
+  "PW": {
+    "module": "PW",
+    "n_users_common": 68,
+    "h3_zb_effect_mean": -0.0764,
+    "h4_zb_effect_mean": 0.1466,
+    "interaction_mean": 0.223,
+    "wilcoxon_stat": 434.0,
+    "p_wilcoxon": 6.315227627559006e-06,
+    "p_permutation": 0.00019998000199980003,
+    "r_rank_biserial": 0.63,
+    "significant_both": true
+  },
+  "MoE": {
+    "module": "MoE",
+    "n_users_common": 68,
+    "h3_zb_effect_mean": -0.0334,
+    "h4_zb_effect_mean": 0.2051,
+    "interaction_mean": 0.2385,
+    "wilcoxon_stat": 487.0,
+    "p_wilcoxon": 2.768689110308937e-05,
+    "p_permutation": 0.00019998000199980003,
+    "r_rank_biserial": 0.585,
+    "significant_both": true
+  }
+}

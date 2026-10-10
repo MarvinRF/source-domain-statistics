@@ -1,0 +1,35 @@
+{
+  "runs": [
+    "games_gte_titlecat",
+    "movies_gte_titlecat",
+    "music_gte_titlecat"
+  ],
+  "provenance": {
+    "git_commit": "ca0ddd96883fa9495cdaa8a935477b7a6d80d323",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-10T05:25:08+00:00",
+    "inputs": {
+      "results/granularity/seed46/games_gte_titlecat.csv.gz": {
+        "sha256": "115bd86973e01670df8fcb088cbd04c00f89c2a8946fbb21e309c734281e8191",
+        "bytes": 2786796
+      },
+      "results/granularity/seed46/movies_gte_titlecat.csv.gz": {
+        "sha256": "e691639526eda9a4c9878e21560aa9a6420b12831cf1882b43ad63c2c6d45c62",
+        "bytes": 13660205
+      },
+      "results/granularity/seed46/music_gte_titlecat.csv.gz": {
+        "sha256": "3f42f048274c8a7eebf6f964f55c21ad9599bba9eebd705100327ce19b313a31",
+        "bytes": 4777855
+      }
+    }
+  }
+}

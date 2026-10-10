@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "Source-Domain Statistics, Not the Target Catalog: What Geometric Corrections Do in Zero-Shot Text-Based Cross-Domain Recommendation"
+authors:
+  - family-names: "Ferreira"
+    given-names: "Marvin Rocha Sousa"
+    orcid: "https://orcid.org/0009-0003-1312-5611"
+    affiliation: "Universidade Federal da Bahia"
+  - family-names: "Durão"
+    given-names: "Frederico Araújo"
+    orcid: "https://orcid.org/0000-0002-7766-6666"
+    affiliation: "Universidade Federal da Bahia"
+license: MIT
+type: software
+repository-code: "https://github.com/MarvinRF/source-domain-statistics"
+preferred-citation:
+  type: article
+  title: "Source-Domain Statistics, Not the Target Catalog: What Geometric Corrections Do in Zero-Shot Text-Based Cross-Domain Recommendation"
+  authors:
+    - family-names: "Ferreira"
+      given-names: "Marvin Rocha Sousa"
+    - family-names: "Durão"
+      given-names: "Frederico Araújo"
+  journal: "ACM Transactions on Information Systems"
+  status: submitted

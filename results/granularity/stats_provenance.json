@@ -1,0 +1,110 @@
+{
+  "runs": [
+    "games_bge-large_titlecat",
+    "games_gte_titlecat",
+    "games_qwen3_titlecat",
+    "movies_bge-large_titlecat",
+    "movies_gte_titlecat",
+    "movies_qwen3_titlecat",
+    "music_bge-large_titlecat",
+    "music_bge-m3_titlecat",
+    "music_e5-large-v2_titlecat",
+    "music_gte_desc",
+    "music_gte_title",
+    "music_gte_titlecat",
+    "music_minilm-l12_titlecat",
+    "music_minilm_titlecat",
+    "music_nomic_titlecat",
+    "music_qwen3_titlecat",
+    "music_snowflake-arctic-embed-l_titlecat",
+    "music_uae-large-v1_titlecat"
+  ],
+  "provenance": {
+    "git_commit": "6f5c24006fa2886d70d9aa47906e8d406a1e8587",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-10T00:48:59+00:00",
+    "inputs": {
+      "results/granularity/games_bge-large_titlecat.csv.gz": {
+        "sha256": "00447926cf4cd871ea6552f62545ebff22e5adbc68d7d8713c3bcd31fe62e61d",
+        "bytes": 2649790
+      },
+      "results/granularity/games_gte_titlecat.csv.gz": {
+        "sha256": "ba75dd6f68f0a49b9659fd300863079a3485e9c65961d272825d1b432f139c34",
+        "bytes": 2782816
+      },
+      "results/granularity/games_qwen3_titlecat.csv.gz": {
+        "sha256": "f47635d6137ee1aa4b2cc397720821a57c7746da86e58a513c0e72012772cc0a",
+        "bytes": 2654381
+      },
+      "results/granularity/movies_bge-large_titlecat.csv.gz": {
+        "sha256": "72f2d7624b1057f1889557e610ade7529316180242b8db719d97b9841453fc6a",
+        "bytes": 12418340
+      },
+      "results/granularity/movies_gte_titlecat.csv.gz": {
+        "sha256": "4b69b66fe46baeca77b83b86892cb4265af661c54993416a35c7c132ada1e108",
+        "bytes": 13670603
+      },
+      "results/granularity/movies_qwen3_titlecat.csv.gz": {
+        "sha256": "b99c96fea9d08fcb08e875ac46ce424f283730df80fe03b36d7ed39c38916ddf",
+        "bytes": 12883509
+      },
+      "results/granularity/music_bge-large_titlecat.csv.gz": {
+        "sha256": "7bb3f9eb1775ca0262c4370b0f42d6ffdaa0fd27432ad9ee423eebf3e5dade49",
+        "bytes": 4475893
+      },
+      "results/granularity/music_bge-m3_titlecat.csv.gz": {
+        "sha256": "584dbabd8aace7e39c24d3e6338589dd731fad04e667988caf883974e9eadab6",
+        "bytes": 4464263
+      },
+      "results/granularity/music_e5-large-v2_titlecat.csv.gz": {
+        "sha256": "d0984db2c96a58dd4a2c0d5d1b2a8a200f926d4a265f0418ae1f79130104736e",
+        "bytes": 4440386
+      },
+      "results/granularity/music_gte_desc.csv.gz": {
+        "sha256": "7fd9196080a46d3038a2d4e47cb28ab7ded0a0062055aac1ad1e877cb72f5655",
+        "bytes": 4613114
+      },
+      "results/granularity/music_gte_title.csv.gz": {
+        "sha256": "e0accd8a4eb2972944ad67ac63373e657cfdaad4c073600af89c680a035d5039",
+        "bytes": 4413121
+      },
+      "results/granularity/music_gte_titlecat.csv.gz": {
+        "sha256": "b0666d20ebc53d4894bd0c778a285c63f6bae34bc6a31d785a1e44574eb19d80",
+        "bytes": 4771354
+      },
+      "results/granularity/music_minilm-l12_titlecat.csv.gz": {
+        "sha256": "33226e37cb8810d7d9fea6aed93cc2e8fe84134777d0c6cede6f4ee4b8d41cd2",
+        "bytes": 4456250
+      },
+      "results/granularity/music_minilm_titlecat.csv.gz": {
+        "sha256": "39d614453702a66503524b7f7ed7c2df5ae129f812477d04ea35a375c05e4113",
+        "bytes": 4500191
+      },
+      "results/granularity/music_nomic_titlecat.csv.gz": {
+        "sha256": "37ad559091889a423f1df9682036f4011bf4d156cfaa74b8727317b6fd183c4e",
+        "bytes": 4458432
+      },
+      "results/granularity/music_qwen3_titlecat.csv.gz": {
+        "sha256": "b07e73c41010b0b7d8917607ede9c768f04183436c95beb6d2aac26fb3aaf9f8",
+        "bytes": 4431152
+      },
+      "results/granularity/music_snowflake-arctic-embed-l_titlecat.csv.gz": {
+        "sha256": "3e0c79577c22529a0dd1d416478983fe0cba4fa664bec84857856be00ff473ca",
+        "bytes": 4621313
+      },
+      "results/granularity/music_uae-large-v1_titlecat.csv.gz": {
+        "sha256": "00fb5afade6ee6727eceafcb0e96ca70995c41d3cc8fe0bd205233c7f0b2edbb",
+        "bytes": 4501440
+      }
+    }
+  }
+}

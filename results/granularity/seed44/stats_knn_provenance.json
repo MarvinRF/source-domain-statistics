@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "git_commit": "2357ccd401a12ea99b2f2a94c4de0fea273256b4",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-10T10:53:35+00:00",
+    "inputs": {
+      "results/granularity/seed44/knn_music_gte.csv.gz": {
+        "sha256": "296f00b88d2f3f462d5db5a9b2def6abf64fb46e0dc30331dac389231fdbb8a9",
+        "bytes": 1648553
+      },
+      "results/granularity/seed44/query_norm_music_gte.csv.gz": {
+        "sha256": "bcb14b09a1190c0668a5da394dc24212ed20b298467d2404088a8c2e94bd7453",
+        "bytes": 4377064
+      },
+      "results/granularity/seed44/hybrid_music_gte.csv.gz": {
+        "sha256": "5d3ff8e4dab17cc41cd8be4d455a088070c2a3fcb8cf11a8505445ef9b0102a3",
+        "bytes": 963141
+      },
+      "results/granularity/seed44/knn_movies_gte.csv.gz": {
+        "sha256": "04edb668df5052570e237cfbe0bd81d0735eb1a8d3478a0f507f5b6796fb6e3e",
+        "bytes": 4524348
+      },
+      "results/granularity/seed44/query_norm_movies_gte.csv.gz": {
+        "sha256": "9bfc78d674059fa7df5887a252e4468dbc5360b1428de47d3a27f937a1acb427",
+        "bytes": 11809881
+      },
+      "results/granularity/seed44/hybrid_movies_gte.csv.gz": {
+        "sha256": "2193b892ceb495cf52a7b5178cbcd81ff311d2d7b84ed7852e68869c0c9c1801",
+        "bytes": 2785949
+      },
+      "results/granularity/seed44/knn_games_gte.csv.gz": {
+        "sha256": "61280c8a8165e3bb20d9c93eb20a4602aeb90d41a50b834c954dc6b77e8fc574",
+        "bytes": 663672
+      },
+      "results/granularity/seed44/query_norm_games_gte.csv.gz": {
+        "sha256": "dbfb7847e3b0dfc15fe0eb09ebbc4755fe3013f6bc38c8f9e17f2d5499f92ab4",
+        "bytes": 1923168
+      },
+      "results/granularity/seed44/hybrid_games_gte.csv.gz": {
+        "sha256": "564342942470eb6df5d5b6c7bf12e7c3cfaaa2f897707135496829a61534cad8",
+        "bytes": 416769
+      }
+    }
+  }
+}
