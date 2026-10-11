@@ -248,7 +248,8 @@ def run(domain: str, text: str = "titlecat") -> None:
     indexes = build_indexes(pop, text)
     base_specs = DESC_SPECS if text == "desc" else BASE_SPECS
     bases = tuple(b for b, _, _ in base_specs)
-    titles = book_titles(BOOKS_PATH, h2_window_books(pop))
+    books_path = pop.cfg.source_meta_path or BOOKS_PATH
+    titles = book_titles(books_path, h2_window_books(pop))
     queries = {s: user_queries(pop, u, titles) for s, u in pop.eval_users.items()}
     n_empty = {s: sum(1 for q in qs if not q) for s, qs in queries.items()}
     log.info(
@@ -266,7 +267,7 @@ def run(domain: str, text: str = "titlecat") -> None:
     # four characters, short stop list, idf = ln(N / (1 + df)), ties broken by train popularity).
     # STRICT_FULL queries with ALL of the last MAX_BOOKS_PROFILE history entries, titles from the
     # domain's books file (an unknown book has no title); STRICT_H2 uses the H2 window instead.
-    dom_books = pop.cfg.raw_dir / "books_filtered.jsonl"
+    dom_books = pop.cfg.source_meta_path or pop.cfg.raw_dir / "books_filtered.jsonl"
     last = {
         s: [pop.history.get(u, [])[-MAX_BOOKS_PROFILE:] for u in users]
         for s, users in pop.eval_users.items()
@@ -328,7 +329,7 @@ def run(domain: str, text: str = "titlecat") -> None:
         "test_curve_diagnostic": curve(test_curve),
         "val": C.block_means(val_sel),
         "test": C.block_means(test),
-        "provenance": C.provenance_of(pop, BOOKS_PATH, dom_books),
+        "provenance": C.provenance_of(pop, books_path, dom_books),
         **C.run_info(t0),
     }
     C.write_run(f"lexical_{domain}{C.text_tag(text)}", test, summary)
@@ -346,9 +347,10 @@ HY_REFS = (
 )  # conditions of hybrid (gte)
 
 
-def stats() -> None:
+def stats(pairset: str = "books") -> None:
+    ptag, domains = C.PAIRSETS[pairset]
     rows, summ_rows, files = [], [], []
-    for domain, text in C.gte_runs():
+    for domain, text in C.gte_runs(domains):
         tag = C.text_tag(text)
         stem = f"lexical_{domain}{tag}"
         if not (C.OUT_DIR / f"{stem}.json").exists():
@@ -357,7 +359,7 @@ def stats() -> None:
         summ = json.loads((C.OUT_DIR / f"{stem}.json").read_text())
         summ_rows += C.flat_rows(summ)
         # the popularity hybrids of the embeddings exist for the title+categories text only
-        hy_refs = HY_REFS if text == "titlecat" else ()
+        hy_refs = HY_REFS if text == "titlecat" and pairset == "books" else ()
         qn_stem, hy_stem = f"query_norm_{domain}_gte{tag}", f"hybrid_{domain}_gte"
         used = [stem, qn_stem, *([hy_stem] if hy_refs else [])]
         files += [C.OUT_DIR / f"{s}.csv.gz" for s in used]
@@ -380,24 +382,25 @@ def stats() -> None:
             rows += C.paired_rows(wide, hybrid, meta, "lexical_hybrid")
         log.info(f"{stem}: tested")
     df = pd.DataFrame(rows)
-    df.to_csv(C.OUT_DIR / "stats_lexical.csv", index=False, float_format="%.6g")
+    df.to_csv(C.OUT_DIR / f"stats_lexical{ptag}.csv", index=False, float_format="%.6g")
     pd.DataFrame(summ_rows).to_csv(
-        C.OUT_DIR / "summary_lexical.csv", index=False, float_format="%.6g"
+        C.OUT_DIR / f"summary_lexical{ptag}.csv", index=False, float_format="%.6g"
     )
     prov = {"provenance": provenance(files)}
-    (C.OUT_DIR / "stats_lexical_provenance.json").write_text(json.dumps(prov, indent=2))
+    (C.OUT_DIR / f"stats_lexical_provenance{ptag}.json").write_text(json.dumps(prov, indent=2))
     log.info(f"saved stats_lexical.csv ({len(df)} rows) and summary_lexical.csv")
 
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    ap.add_argument("--domain", choices=C.DOMAINS)
+    ap.add_argument("--domain", choices=C.DOMAINS + C.DOMAINS2)
     ap.add_argument("--text", choices=C.ITEM_TEXTS, default="titlecat")
+    ap.add_argument("--pairset", choices=list(C.PAIRSETS), default="books")
     ap.add_argument("--stats", action="store_true", help="paired tests over the finished runs")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(message)s", datefmt="%H:%M:%S")
     if args.stats:
-        stats()
+        stats(args.pairset)
     elif args.domain:
         run(args.domain, args.text)
     else:

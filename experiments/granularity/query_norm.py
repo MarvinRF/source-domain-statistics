@@ -267,13 +267,14 @@ def matrix() -> list[tuple[str, str, str]]:
     ]
 
 
-def stats(split: str = "test") -> None:
+def stats(split: str = "test", pairset: str = "books") -> None:
     """Paired tests of the finished runs on the TEST users, or (``split="val"``) the replication
     on the VAL users: the same families without the tests that use the VAL-selected arms."""
     val = split == "val"
     suffix = "_val" if val else ""
+    ptag, domains = C.PAIRSETS[pairset]
     rows, summ_rows, files = [], [], []
-    for domain, encoder, text in C.verified_runs():
+    for domain, encoder, text in C.verified_runs(domains):
         stem = f"query_norm_{domain}_{encoder}{C.text_tag(text)}"
         path = C.OUT_DIR / f"{stem}.json"
         if not path.exists() or (val and not (C.OUT_DIR / f"{stem}_val.csv.gz").exists()):
@@ -296,18 +297,18 @@ def stats(split: str = "test") -> None:
         log.info(f"{stem}{suffix}: tested")
     df = pd.DataFrame(rows)
     if val:
-        df.to_csv(C.OUT_DIR / "stats_query_norm_val.csv", index=False, float_format="%.6g")
+        df.to_csv(C.OUT_DIR / f"stats_query_norm_val{ptag}.csv", index=False, float_format="%.6g")
         prov = {"runs": [p.name for p in files], "provenance": provenance(files)}
-        (C.OUT_DIR / "stats_query_norm_val_provenance.json").write_text(json.dumps(prov, indent=2))
-        log.info(f"saved stats_query_norm_val.csv ({len(df)} rows)")
+        (C.OUT_DIR / f"stats_query_norm_val_provenance{ptag}.json").write_text(json.dumps(prov, indent=2))
+        log.info(f"saved stats_query_norm_val{ptag}.csv ({len(df)} rows)")
         return
-    df.to_csv(C.OUT_DIR / "stats_query_norm.csv", index=False, float_format="%.6g")
+    df.to_csv(C.OUT_DIR / f"stats_query_norm{ptag}.csv", index=False, float_format="%.6g")
     tl = C.tally(rows, ["domain", "text", "family", "test", "metric"])
-    tl.to_csv(C.OUT_DIR / "tally_query_norm.csv", index=False)
-    pd.DataFrame(summ_rows).to_csv(C.OUT_DIR / "summary_query_norm.csv", index=False,
+    tl.to_csv(C.OUT_DIR / f"tally_query_norm{ptag}.csv", index=False)
+    pd.DataFrame(summ_rows).to_csv(C.OUT_DIR / f"summary_query_norm{ptag}.csv", index=False,
                                    float_format="%.6g")  # fmt: skip
     prov = {"runs": [p.name for p in files], "provenance": provenance(files)}
-    (C.OUT_DIR / "stats_query_norm_provenance.json").write_text(json.dumps(prov, indent=2))
+    (C.OUT_DIR / f"stats_query_norm_provenance{ptag}.json").write_text(json.dumps(prov, indent=2))
     log.info(
         f"saved stats_query_norm.csv ({len(df)} rows), tally_query_norm.csv, summary_query_norm.csv"
     )
@@ -315,17 +316,18 @@ def stats(split: str = "test") -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    ap.add_argument("--domain", choices=C.DOMAINS)
+    ap.add_argument("--domain", choices=C.DOMAINS + C.DOMAINS2)
     ap.add_argument("--encoder", default="gte")
     ap.add_argument("--text", choices=C.ITEM_TEXTS, default="titlecat")
     ap.add_argument("--stats", action="store_true", help="paired tests over the finished runs")
+    ap.add_argument("--pairset", choices=list(C.PAIRSETS), default="books")
     ap.add_argument("--stats-val", action="store_true", help="the same tests on the VAL users")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(message)s", datefmt="%H:%M:%S")
     if args.stats_val:
-        stats("val")
+        stats("val", args.pairset)
     elif args.stats:
-        stats()
+        stats(pairset=args.pairset)
     elif args.domain:
         run(args.domain, args.encoder, args.text)
     else:

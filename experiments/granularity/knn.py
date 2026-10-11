@@ -237,9 +237,10 @@ QN_EXTRA = "center_train_users"  # the other conditions of query_norm are the pu
 HY_REFS = ("hybrid_raw", "hybrid_zca_profile")  # hybrid (gte): content + popularity
 
 
-def stats(encoder: str = "gte") -> None:
+def stats(encoder: str = "gte", pairset: str = "books") -> None:
+    ptag, domains = C.PAIRSETS[pairset]
     rows, summ_rows, files = [], [], []
-    for domain, text in C.gte_runs():
+    for domain, text in C.gte_runs(domains):
         tag = C.text_tag(text)
         stem = f"knn_{domain}_{encoder}{tag}"
         path = C.OUT_DIR / f"{stem}.json"
@@ -250,7 +251,7 @@ def stats(encoder: str = "gte") -> None:
         summ_rows += C.flat_rows(summ)
         k = summ["selected_k"]
         # the popularity hybrids exist for the title+categories text only
-        hy_refs = HY_REFS if text == "titlecat" else ()
+        hy_refs = HY_REFS if text == "titlecat" and pairset == "books" else ()
         qn_stem, hy_stem = f"query_norm_{domain}_{encoder}{tag}", f"hybrid_{domain}_{encoder}"
         used = [stem, qn_stem, *([hy_stem] if hy_refs else [])]
         files += [C.OUT_DIR / f"{s}.csv.gz" for s in used]
@@ -279,23 +280,24 @@ def stats(encoder: str = "gte") -> None:
             rows += C.paired_rows(wide, t_hyb, meta, "knn_hybrid")
         log.info(f"{stem}: tested")
     df = pd.DataFrame(rows)
-    df.to_csv(C.OUT_DIR / "stats_knn.csv", index=False, float_format="%.6g")
-    pd.DataFrame(summ_rows).to_csv(C.OUT_DIR / "summary_knn.csv", index=False, float_format="%.6g")
+    df.to_csv(C.OUT_DIR / f"stats_knn{ptag}.csv", index=False, float_format="%.6g")
+    pd.DataFrame(summ_rows).to_csv(C.OUT_DIR / f"summary_knn{ptag}.csv", index=False, float_format="%.6g")
     prov = {"provenance": provenance(files)}
-    (C.OUT_DIR / "stats_knn_provenance.json").write_text(json.dumps(prov, indent=2))
+    (C.OUT_DIR / f"stats_knn_provenance{ptag}.json").write_text(json.dumps(prov, indent=2))
     log.info(f"saved stats_knn.csv ({len(df)} rows) and summary_knn.csv")
 
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    ap.add_argument("--domain", choices=C.DOMAINS)
+    ap.add_argument("--domain", choices=C.DOMAINS + C.DOMAINS2)
     ap.add_argument("--encoder", default="gte")
     ap.add_argument("--text", choices=C.ITEM_TEXTS, default="titlecat")
+    ap.add_argument("--pairset", choices=list(C.PAIRSETS), default="books")
     ap.add_argument("--stats", action="store_true", help="paired tests over the finished runs")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(message)s", datefmt="%H:%M:%S")
     if args.stats:
-        stats(args.encoder)
+        stats(args.encoder, args.pairset)
     elif args.domain:
         run(args.domain, args.encoder, args.text)
     else:

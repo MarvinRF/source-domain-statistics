@@ -51,7 +51,10 @@ log = logging.getLogger("granularity")
 
 OUT_DIR = GRANULARITY_DIR  # results/granularity/, or seed{S}/ under ACW_SPLIT_SEED=S
 DOMAINS = ("music", "movies", "games")
+DOMAINS2 = ("movies2music", "movies2games")  # movies as SOURCE (second source scenario)
 ITEM_TEXTS = ("titlecat", "desc", "title")  # item text variants of run_corrections (--text)
+# --pairset of the --stats modes: output-file suffix and domains (the suffix keeps the books files)
+PAIRSETS = {"books": ("", DOMAINS), "source2": ("_source2", DOMAINS2)}
 SOURCES = ("train_users", "books_catalog", "target_catalog")
 N_BOOT = 2_000
 N_FLIP = 10_000
@@ -65,24 +68,25 @@ def text_tag(text: str) -> str:
     return "" if text == "titlecat" else f"_{text}"
 
 
-def verified_runs() -> list[tuple[str, str, str]]:
+def verified_runs(domains: tuple[str, ...] = DOMAINS) -> list[tuple[str, str, str]]:
     """(domain, encoder, text) of the runs of the query-normalisation family whose embeddings
     passed the audit of docs/EMBEDDINGS.md: the title+categories text of gte in every domain and
     of every verified music encoder, and every other text of music/gte."""
     return [
         (d, e, t)
         for (d, e, t) in REGISTRY
-        if e not in UNVERIFIED_ENCODERS
+        if d in domains
+        and e not in UNVERIFIED_ENCODERS
         and (d == "music" or e == "gte")
         and (t == "titlecat" or (d, e) == ("music", "gte"))
     ]
 
 
-def gte_runs() -> list[tuple[str, str]]:
+def gte_runs(domains: tuple[str, ...] = DOMAINS) -> list[tuple[str, str]]:
     """(domain, text) of the gte runs of lexical, kNN and controls: the three domains with the
     title+categories text, then the other texts of the REGISTRY (a missing result is skipped)."""
-    return [(d, "titlecat") for d in DOMAINS] + [
-        (d, t) for (d, e, t) in REGISTRY if e == "gte" and t != "titlecat"
+    return [(d, "titlecat") for d in domains] + [
+        (d, t) for (d, e, t) in REGISTRY if d in domains and e == "gte" and t != "titlecat"
     ]
 
 
@@ -123,9 +127,9 @@ def load_ids(src: Source, cfg: DomainConfig) -> tuple[dict[str, int], dict[str, 
     with open(cfg.items_idx_path) as f:
         if set(json.load(f)) != set(item_idx):
             raise ValueError("encoder item ids differ from the domain catalog")
-    with open(PROCESSED_DIR / "book_id_to_idx.json") as f:
+    with open(cfg.source_idx_path) as f:
         if set(json.load(f)) != set(book_idx):
-            raise ValueError("encoder book ids differ from the canonical book catalog")
+            raise ValueError("encoder book ids differ from the canonical source catalog")
     return item_idx, book_idx
 
 
@@ -171,7 +175,7 @@ def build_population(domain: str, src: Source) -> Population:
         user_history_path(domain),
         PROCESSED_DIR / src.items_idx,
         PROCESSED_DIR / src.books_idx,
-        PROCESSED_DIR / "book_id_to_idx.json",
+        cfg.source_idx_path,
         *[split_path(domain, s) for s in SPLIT_NAMES],
     ]
     log.info(

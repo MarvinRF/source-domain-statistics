@@ -2,6 +2,7 @@
 # Run from the repository root with the virtualenv active.
 PY ?= python
 DOMAINS := music movies games
+DOMAINS2 := movies2music movies2games  # movies as SOURCE (second source scenario)
 MODEL := Alibaba-NLP/gte-large-en-v1.5
 # domain:encoder:text of every run in results/granularity/ (music_gte_titlecat_legacy is added below)
 GRID := music:gte:titlecat music:gte:desc music:gte:title music:bge-large:titlecat music:bge-m3:titlecat \
@@ -17,7 +18,7 @@ QN_RUNS := music:gte music:gte:desc music:gte:title music:bge-large music:bge-m3
 SEEDS := 43 44 45 46  # additional user splits of `multisplit` (the main split is seed 42)
 MECH_ENCODERS := bge-large bge-m3 e5-large-v2 minilm minilm-l12 nomic qwen3 snowflake-arctic-embed-l uae-large-v1
 
-.PHONY: install test lint data splits splits-new embeddings profiles whitening evaluate significance robustness figures grid stats hybrid mechanism query-norm lexical knn controls taxonomy lexical-overlap bridge splits-seeds multisplit reproduce-check paper-assets
+.PHONY: install test lint data splits splits-new embeddings profiles whitening evaluate significance robustness figures grid stats hybrid mechanism query-norm lexical knn controls taxonomy lexical-overlap bridge splits-seeds multisplit reproduce-check paper-assets source2
 
 install:
 	pip install -e ".[dev]"
@@ -139,6 +140,21 @@ taxonomy:  ## category labels of the three target catalogs (results/granularity/
 
 reproduce-check:  ## rerun music/gte/titlecat and compare with the committed summary
 	$(PY) -m experiments.granularity.reproduce_check
+
+source2:  ## movies as SOURCE (movies2music, movies2games): users, splits, grid, query-norm, kNN, lexical, bridge, stats
+	$(PY) -m acw.data.movies_source
+	for d in $(DOMAINS2); do $(PY) -m acw.data.splits --domain $$d || exit 1; done
+	for d in $(DOMAINS2); do $(PY) -m experiments.granularity.run_corrections --domain $$d --encoder gte --text titlecat || exit 1; done
+	for d in $(DOMAINS2); do $(PY) -m experiments.granularity.query_norm --domain $$d --encoder gte || exit 1; done
+	$(PY) -m experiments.granularity.query_norm --stats --pairset source2
+	$(PY) -m experiments.granularity.query_norm --stats-val --pairset source2
+	for d in $(DOMAINS2); do $(PY) -m experiments.granularity.knn --domain $$d --encoder gte || exit 1; done
+	$(PY) -m experiments.granularity.knn --stats --pairset source2
+	for d in $(DOMAINS2); do $(PY) -m experiments.granularity.lexical --domain $$d || exit 1; done
+	$(PY) -m experiments.granularity.lexical --stats --pairset source2
+	for d in $(DOMAINS2); do $(PY) -m experiments.granularity.bridge --domain $$d --encoder gte || exit 1; done
+	$(PY) -m experiments.granularity.bridge --stats --pairset source2
+	$(PY) -m experiments.granularity.stats --runs $(addsuffix _gte_titlecat,$(DOMAINS2)) --tag _source2
 
 PAPER_DIR ?= paper
 paper-assets:  ## LaTeX tables and PDF figures of the article, from results/ only (PAPER_DIR=<article dir>)

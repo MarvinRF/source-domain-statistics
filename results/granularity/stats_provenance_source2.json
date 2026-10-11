@@ -1,0 +1,30 @@
+{
+  "runs": [
+    "movies2music_gte_titlecat",
+    "movies2games_gte_titlecat"
+  ],
+  "provenance": {
+    "git_commit": "9e47137411bf96c66f83ab1004811a43f1860399",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-11T01:05:14+00:00",
+    "inputs": {
+      "results/granularity/movies2music_gte_titlecat.csv.gz": {
+        "sha256": "3df2628a0f68b60a554752faa1cd78ebae0e9a5e2073e49932357d9e68cbf63f",
+        "bytes": 2380516
+      },
+      "results/granularity/movies2games_gte_titlecat.csv.gz": {
+        "sha256": "6cbd85b20b1912f96677ef60c1d996c0763a3177fe32f202b368e8670ebebbe2",
+        "bytes": 1147125
+      }
+    }
+  }
+}

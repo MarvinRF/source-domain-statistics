@@ -208,11 +208,13 @@ def tallies(vs_raw: pd.DataFrame, vs_pop: pd.DataFrame, vs_top: pd.DataFrame) ->
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--runs", nargs="*", help="run stems (domain_encoder_text); default: all")
+    ap.add_argument("--tag", default="", help="suffix of the output files (e.g. _source2)")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(message)s", datefmt="%H:%M:%S")
 
     vs_raw, vs_pop, vs_top, gap = [], [], [], []
     stems = args.runs or run_stems()
+    assert not args.tag or args.runs, "--tag needs --runs"
     for stem in stems:
         a, b, c, d = analyse(stem)
         vs_raw += a
@@ -241,10 +243,10 @@ def main() -> None:
         ("stats_tally", tallies(vs_raw_df, vs_pop_df, vs_top_df)),
         ("summary_test", summary),
     ):
-        frame.to_csv(OUT_DIR / f"{name}.csv", index=False, float_format="%.6g")
-        log.info(f"saved {OUT_DIR / name}.csv ({len(frame)} rows)")
+        frame.to_csv(OUT_DIR / f"{name}{args.tag}.csv", index=False, float_format="%.6g")
+        log.info(f"saved {OUT_DIR / (name + args.tag)}.csv ({len(frame)} rows)")
     prov = {"runs": stems, "provenance": provenance([OUT_DIR / f"{s}.csv.gz" for s in stems])}
-    (OUT_DIR / "stats_provenance.json").write_text(json.dumps(prov, indent=2))
+    (OUT_DIR / f"stats_provenance{args.tag}.json").write_text(json.dumps(prov, indent=2))
 
 
 if __name__ == "__main__":

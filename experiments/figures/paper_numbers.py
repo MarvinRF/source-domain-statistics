@@ -1863,6 +1863,55 @@ def round3(a: A) -> None:
         sel = json.loads((GRAN / f"bridge_{d}_gte.json").read_text())["selected_scale"]
         N(f"BrScale{L}", f"{sel:g}", GL + f"bridge_{d}_gte.json", "selected_scale (lambda / mean eigenvalue)")  # fmt: skip
 
+    # nonlinear (MLP) bridge of the books pairs, against raw, the ZCA query and the ridge bridge
+    for L, d in D.items():
+        src = GL + "stats_bridge.csv"
+        N(f"BrMlpNd{L}", f(float(R.br.loc[(d, TC, "bridge_mlp")]["ndcg10"]), 4), GL + "summary_bridge.csv", f"{d} bridge_mlp ndcg10")  # fmt: skip
+        for ref, tag in (("raw", "Raw"), ("zca_train_users_a1.0", "Zca"), ("bridge_ridge", "Ridge")):
+            r = pt._stat_row(R.br_stats, domain=d, metric="ndcg10", test=f"bridge_mlp_vs_{ref}")
+            N(f"BrMlp{tag}Diff{L}", u3(r["mean_diff"]), src, f"{d} bridge_mlp_vs_{ref}: mean_diff")
+            N(f"BrMlp{tag}Ci{L}", u3ci(r["ci95_low"], r["ci95_high"]), src, "ci95")
+            N(f"BrMlp{tag}P{L}", pv(r["p_holm_signflip"]), src, "p_holm_signflip")
+        sel = json.loads((GRAN / f"bridge_{d}_gte.json").read_text())["mlp_selected"]
+        N(f"BrMlpSel{L}", sel.removeprefix("bridge_mlp_").replace("_", ", "), GL + f"bridge_{d}_gte.json", "mlp_selected (width, weight decay)")  # fmt: skip
+    source2_numbers(a)
+
+
+def source2_numbers(a: A) -> None:
+    """Movies as SOURCE (movies2music, movies2games): sizes, baselines, the side x source matrix,
+    kNN, lexical and the bridges, from the ``*_source2`` result files."""
+    R2 = pt.Results("_source2")
+    for L, d in {"MovMus": "movies2music", "MovGam": "movies2games"}.items():
+        qn = lambda c, d=d: R2.qn.loc[(d, GTE, TC, c)]  # noqa: E731
+        qs, qsrc = R2.qn_stats, GL + "stats_query_norm_source2.csv"
+        N(f"STwoUsers{L}", th(int(qn("raw")["n_users"])), GL + "summary_query_norm_source2.csv", f"{d} test users")  # fmt: skip
+        for c, tag in (("raw", "Raw"), ("popularity", "Pop"), ("zca_train_users_a1.0", "ZcaQ")):
+            N(f"STwo{tag}Nd{L}", f(float(qn(c)["ndcg10"]), 4), GL + "summary_query_norm_source2.csv", f"{d} {c} ndcg10")  # fmt: skip
+        kk = json.loads((GRAN / f"knn_{d}_gte.json").read_text())["selected_k"]
+        N(f"STwoKnnNd{L}", f(float(R2.knn.loc[(d, TC, f"knn_raw_k{kk['raw']}")]["ndcg10"]), 4), GL + "summary_knn_source2.csv", f"{d} knn_raw_k{kk['raw']} ndcg10")  # fmt: skip
+        N(f"STwoKnnK{L}", str(kk["raw"]), GL + f"knn_{d}_gte.json", "selected_k.raw")
+        N(f"STwoBmNd{L}", f(float(R2.lex.loc[(d, TC, "bm25_title")]["ndcg10"]), 4), GL + "summary_lexical_source2.csv", f"{d} bm25_title ndcg10")  # fmt: skip
+        for key, tag in (("query_U", "QU"), ("query_B", "QM"), ("query_C", "QC"),
+                         ("items_U", "IU"), ("items_B", "IM"), ("items_C", "IC")):  # fmt: skip
+            r = pt.matrix_test(R2, d, f"matrix:{key}_vs_raw")
+            N(f"STwo{tag}Diff{L}", u3(r["mean_diff"]), qsrc, f"{d} matrix:{key}_vs_raw: mean_diff")
+            N(f"STwo{tag}P{L}", pv(r["p_holm_signflip"]), qsrc, "p_holm_signflip")
+        for src, tag in (("U", "U"), ("B", "M"), ("C", "C")):
+            r = pt.matrix_test(R2, d, f"matrix:side_{src}")
+            N(f"STwoSide{tag}Diff{L}", u3(r["mean_diff"]), qsrc, f"{d} matrix:side_{src}: mean_diff")
+            N(f"STwoSide{tag}P{L}", pv(r["p_holm_signflip"]), qsrc, "p_holm_signflip")
+        r = pt._stat_row(qs, domain=d, metric="ndcg10", test="post_hoc:zca_target_catalog_vs_raw")
+        N(f"STwoTargetQDiff{L}", u3(r["mean_diff"]), qsrc, f"{d} post_hoc:zca_target_catalog_vs_raw: mean_diff")  # fmt: skip
+        N(f"STwoTargetQP{L}", pv(r["p_holm_signflip"]), qsrc, "p_holm_signflip")
+        bsrc = GL + "stats_bridge_source2.csv"
+        for c, tag in (("bridge_ridge", "Ridge"), ("bridge_mlp", "Mlp")):
+            N(f"STwoBr{tag}Nd{L}", f(float(R2.br.loc[(d, TC, c)]["ndcg10"]), 4), GL + "summary_bridge_source2.csv", f"{d} {c} ndcg10")  # fmt: skip
+        for b, ref, tag in (("mlp", "raw", "MlpRaw"), ("mlp", "zca_train_users_a1.0", "MlpZca"),
+                            ("mlp", "bridge_ridge", "MlpRidge"), ("ridge", "raw", "RidgeRaw")):  # fmt: skip
+            r = pt._stat_row(R2.br_stats, domain=d, metric="ndcg10", test=f"bridge_{b}_vs_{ref}")
+            N(f"STwoBr{tag}Diff{L}", u3(r["mean_diff"]), bsrc, f"{d} bridge_{b}_vs_{ref}: mean_diff")
+            N(f"STwoBr{tag}P{L}", pv(r["p_holm_signflip"]), bsrc, "p_holm_signflip")
+
 
 def tex_value(v: str) -> str:
     return v

@@ -49,6 +49,9 @@ class DomainConfig:
     canonical_val_path: Path  # evaluation split (~20% of eligible users)
     canonical_train_path: Path  # training split (~80% of eligible users)
     category_depth: int
+    # source catalog of the pair: the canonical books by default, the movies for ``movies2*``
+    source_idx_path: Path = PROCESSED / "book_id_to_idx.json"
+    source_meta_path: Path | None = None  # its titles (jsonl); None = the books file of the domain
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -91,7 +94,22 @@ _DOMAIN_DEFAULTS: dict[str, dict] = {
     },
 }
 
-KNOWN_DOMAINS: frozenset[str] = frozenset(_DOMAIN_DEFAULTS)
+# Movies as SOURCE (second source scenario): the history is the user's movies, the target the
+# existing music / games catalogs. Users: the existing movies x target overlap with >= 5 items in
+# each (``acw.data.movies_source``); items, embeddings and metadata are the existing files.
+for _t, _m in (("music", "albums_filtered.jsonl"), ("games", "games_filtered.jsonl")):
+    _DOMAIN_DEFAULTS[f"movies2{_t}"] = {
+        **_DOMAIN_DEFAULTS[_t],
+        "raw_dir": ROOT / "data" / "raw" / f"movies2{_t}",
+        "items_meta_filename": str(_DOMAIN_DEFAULTS[_t]["raw_dir"] / _m),
+        "canonical_users_filename": f"canonical_test_users_movies2{_t}.json",  # unused (legacy)
+        "canonical_val_filename": f"canonical_val_users_movies2{_t}.json",
+        "canonical_train_filename": f"canonical_train_users_movies2{_t}.json",
+        "source_idx_path": PROCESSED / "movies" / "movies_id_to_idx_qwen.json",
+        "source_meta_path": ROOT / "data" / "raw" / "movies" / "movies_filtered.jsonl",
+    }
+
+KNOWN_DOMAINS: frozenset[str] = frozenset(d for d in _DOMAIN_DEFAULTS if not d.startswith("movies2"))
 
 # ─────────────────────────────────────────────────────────────────────────────
 # KNOWN_METHODS per domain
@@ -620,4 +638,6 @@ def resolve_paths(
         canonical_val_path=_p(canonical_val_path, PROCESSED / d["canonical_val_filename"]),
         canonical_train_path=_p(canonical_train_path, PROCESSED / d["canonical_train_filename"]),
         category_depth=d["category_depth"],
+        source_idx_path=d.get("source_idx_path", PROCESSED / "book_id_to_idx.json"),
+        source_meta_path=d.get("source_meta_path"),
     )

@@ -1,0 +1,26 @@
+{
+  "provenance": {
+    "git_commit": "9e47137411bf96c66f83ab1004811a43f1860399",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-11T01:16:57+00:00",
+    "inputs": {
+      "results/granularity/bridge_movies2music_gte.csv.gz": {
+        "sha256": "709572472319dd6d9c8c168696ad5e5d71e8ed261d1818702504b2fd0406e6d1",
+        "bytes": 561549
+      },
+      "results/granularity/bridge_movies2games_gte.csv.gz": {
+        "sha256": "7fe3b8da860463ebd4b6612ad9a39fa1ebcf41ec885c9cacb38ef7da6c3dfd0b",
+        "bytes": 205332
+      }
+    }
+  }
+}

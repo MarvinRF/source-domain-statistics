@@ -1,0 +1,30 @@
+{
+  "runs": [
+    "query_norm_movies2music_gte_val.csv.gz",
+    "query_norm_movies2games_gte_val.csv.gz"
+  ],
+  "provenance": {
+    "git_commit": "9e47137411bf96c66f83ab1004811a43f1860399",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-11T01:00:57+00:00",
+    "inputs": {
+      "results/granularity/query_norm_movies2music_gte_val.csv.gz": {
+        "sha256": "5e254c7cbe13ae60350ead884b3eafc7a65daf58e42fa6ee71a9a95759b4442b",
+        "bytes": 198120
+      },
+      "results/granularity/query_norm_movies2games_gte_val.csv.gz": {
+        "sha256": "2ce782efb60273d456efa81e7aad2bbefce1eaebe6e60670086f7da277d788b9",
+        "bytes": 69973
+      }
+    }
+  }
+}

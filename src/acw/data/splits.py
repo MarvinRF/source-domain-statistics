@@ -28,12 +28,12 @@ import numpy as np
 from acw.embeddings.generate_h2_profiles.io import load_user_history
 from acw.evaluation.config import resolve_paths
 from acw.evaluation.loader import build_exact_ground_truth
-from acw.settings import MAX_BOOKS_PROFILE, PROCESSED_DIR, ROOT, SEED, SPLIT_SEED
+from acw.settings import MAX_BOOKS_PROFILE, ROOT, SEED, SPLIT_SEED
 
 SPLITS_DIR = ROOT / "data" / "splits"
 SPLIT_NAMES = ("train", "val", "test")
 FRACTIONS = (0.7, 0.1, 0.2)
-DOMAINS = ("music", "movies", "games")
+DOMAINS = ("music", "movies", "games", "movies2music", "movies2games")
 
 
 def split_users(
@@ -78,7 +78,7 @@ def make_splits(domain: str, seed: int = SEED) -> dict:
     cfg = resolve_paths(domain)
     exact = build_exact_ground_truth(cfg)
     history = load_user_history(domain)
-    with open(PROCESSED_DIR / "book_id_to_idx.json") as f:
+    with open(cfg.source_idx_path) as f:
         book_idx = json.load(f)
 
     has_book = {u for u, books in history.items() if any(a in book_idx for a in books)}

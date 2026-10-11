@@ -41,6 +41,8 @@ GRAN = RESULTS_DIR / "granularity"
 MECH = RESULTS_DIR / "mechanism"
 DOMAINS = ("music", "movies", "games")
 DNAME = {"music": "Music", "movies": "Movies", "games": "Games"}
+DOMAINS2 = ("movies2music", "movies2games")  # movies as SOURCE (source2 files)
+DNAME2 = {"movies2music": r"Movies$\to$Music", "movies2games": r"Movies$\to$Games"}
 ALPHA = 0.05
 UP, DOWN, STAR, DAGGER = r"$^{\uparrow}$", r"$^{\downarrow}$", r"$^{*}$", r"$^{\dagger}$"
 
@@ -206,8 +208,10 @@ def wrap(body: str, cols: str) -> str:
 
 
 class Results:
-    def __init__(self) -> None:
-        rd = lambda n: pd.read_csv(GRAN / n)  # noqa: E731
+    def __init__(self, tag: str = "") -> None:
+        """``tag="_source2"`` loads the files of the movies-as-source pairs (only the families
+        that were run for them); the default loads the books-source files."""
+        rd = lambda n: pd.read_csv(GRAN / n.replace(".csv", f"{tag}.csv"))  # noqa: E731
         self.summary = rd("summary_test.csv").set_index(
             ["domain", "encoder", "text", "granularity", "condition"]
         )
@@ -222,6 +226,11 @@ class Results:
         self.lex_stats = rd("stats_lexical.csv")
         self.knn = rd("summary_knn.csv").set_index(["domain", "text", "condition"])
         self.knn_stats = rd("stats_knn.csv")
+        self.br_stats = rd("stats_bridge.csv")
+        self.br = rd("summary_bridge.csv").set_index(["domain", "text", "condition"])
+        if tag:
+            self.qn_val = rd("stats_query_norm_val.csv")
+            return
         self.ctl = rd("summary_controls.csv").set_index(["domain", "text", "condition"])
         self.ctl_stats = rd("stats_controls.csv")
         self.hyb_stats = rd("stats_hybrid.csv")
@@ -231,8 +240,6 @@ class Results:
         self.ms_share = rd("multisplit_centring_share.csv")
         self.lo_stats = rd("stats_lexical_overlap.csv")
         self.lo_sum = rd("summary_lexical_overlap.csv")
-        self.br_stats = rd("stats_bridge.csv")
-        self.br = rd("summary_bridge.csv").set_index(["domain", "text", "condition"])
         self.lo = {d: json.loads((GRAN / f"lexical_overlap_{d}.json").read_text()) for d in DOMAINS}
 
     def row(self, domain, enc, text, gran, cond) -> pd.Series:
@@ -1928,26 +1935,82 @@ def table_overlap_null(R: Results) -> str:
     return wrap(body, "ll" + "r" * 4)
 
 
-def table_bridge(R: Results) -> str:
-    """Closed-form ridge bridge (book profile to the mean embedding of the user's train target
-    items, lambda on VAL) against raw and the ZCA query: TEST exact nDCG@10 (x1000) and paired
-    differences x10^3 [95% CI]."""
+def table_bridge(R: Results, R2: Results | None = None) -> str:
+    """EMCDR-style bridges (book profile, for the movies pairs the movie profile, to the mean
+    embedding of the user's train target items; ridge with lambda on VAL, one-hidden-layer MLP
+    with width, weight decay and early stopping on VAL) against raw and the ZCA query: TEST exact
+    nDCG@10 (x1000) and paired differences x10^3 [95% CI]."""
     head = (
-        "Domain & ridge bridge & raw & ZCA query & bridge $-$ raw & bridge $-$ ZCA query \\\\\n"
-        "\\midrule\n"
+        "Pair & ridge & MLP & raw & ZCA query & ridge $-$ raw & MLP $-$ raw & MLP $-$ ZCA query"
+        " & MLP $-$ ridge \\\\\n\\midrule\n"
     )
     body = head
-    for d in DOMAINS:
-        cells = [fnum(1e3 * R.br.loc[(d, TC, c)]["ndcg10"], 2) for c in
-                 ("bridge_ridge", "raw", "zca_train_users_a1.0")]  # fmt: skip
-        for ref in ("raw", "zca_train_users_a1.0"):
-            t = _stat_row(R.br_stats, domain=d, metric="ndcg10", test=f"bridge_ridge_vs_{ref}")
-            cells.append(
-                dci(t["mean_diff"], t["ci95_low"], t["ci95_high"])
-                + mark(t["p_holm_signflip"], t["mean_diff"])
-            )
-        body += f"{DNAME[d]} & " + " & ".join(cells) + " \\\\\n"
-    return wrap(body, "lrrrrr")
+    R2 = R2 or Results("_source2")
+    for res, doms, names in ((R, DOMAINS, DNAME), (R2, DOMAINS2, DNAME2)):
+        for d in doms:
+            cells = [fnum(1e3 * res.br.loc[(d, TC, c)]["ndcg10"], 2) for c in
+                     ("bridge_ridge", "bridge_mlp", "raw", "zca_train_users_a1.0")]  # fmt: skip
+            for b, ref in (("ridge", "raw"), ("mlp", "raw"), ("mlp", "zca_train_users_a1.0"),
+                           ("mlp", "bridge_ridge")):  # fmt: skip
+                t = _stat_row(res.br_stats, domain=d, metric="ndcg10",
+                              test=f"bridge_{b}_vs_{ref}")  # fmt: skip
+                cells.append(
+                    dci(t["mean_diff"], t["ci95_low"], t["ci95_high"])
+                    + mark(t["p_holm_signflip"], t["mean_diff"])
+                )
+            body += f"{names[d]} & " + " & ".join(cells) + " \\\\\n"
+        if res is R:
+            body += "\\midrule\n"
+    return wrap(body, "lrrrrrrrr")
+
+
+def table_source2(R: Results, R2: Results | None = None) -> str:
+    """Movies as SOURCE (movies to music, movies to games), GTE, exact nDCG@10 x1000 on the TEST
+    users: baselines, then the side x source matrix of ZCA (alpha 1): the query or the items
+    transformed with the statistics of the training users U, the source (movie) catalog M or the
+    target catalog C, and the matched-source side contrast (query minus items). Arrows: Holm
+    sign-flip against raw."""
+    R2 = R2 or Results("_source2")
+    D = DOMAINS2
+    n = {d: int(qn_row(R2, d, "raw")["n_users"]) for d in D}
+    body = (
+        "Condition & "
+        + " & ".join(f"{DNAME2[d]} ($n={thousands(n[d])}$)" for d in D)
+        + " \\\\\n\\midrule\n"
+    )
+
+    def row(label: str, cells: list[str]) -> str:
+        return f"{label} & " + " & ".join(cells) + " \\\\\n"
+
+    ks = {d: json.loads((GRAN / f"knn_{d}_gte.json").read_text())["selected_k"] for d in D}
+    for label, getter in (
+        ("Popularity list", lambda d: qn_row(R2, d, "popularity")),
+        ("Raw (no correction)", lambda d: qn_row(R2, d, "raw")),
+        ("Profile kNN, raw (k on VAL)", lambda d: R2.knn.loc[(d, TC, f"knn_raw_k{ks[d]['raw']}")]),
+        ("BM25, source titles vs target titles", lambda d: R2.lex.loc[(d, TC, "bm25_title")]),
+    ):
+        body += row(label, [fnum(1e3 * getter(d)["ndcg10"], 2) for d in D])
+    body += "\\midrule\n"
+    best = {
+        d: max(qn_row(R2, d, MATRIX_KEY[(side, src)])["ndcg10"] for side in ("query", "items")
+               for src in SOURCES3)
+        for d in D
+    }  # fmt: skip
+    for side, label in (("query", "Query"), ("items", "Items")):
+        for src, sl in (("U", "train users U"), ("B", "movie catalog M"), ("C", "target catalog C")):
+            cells = []
+            for d in D:
+                v = qn_row(R2, d, MATRIX_KEY[(side, src)])["ndcg10"]
+                cells.append(bold(fnum(1e3 * v, 2), v >= best[d]) + matrix_mark(R2, d, side, src))
+            body += row(f"{label}, statistics of {sl}", cells)
+    body += "\\midrule\n"
+    for src, sl in (("U", "train users U"), ("B", "movie catalog M"), ("C", "target catalog C")):
+        cells = []
+        for d in D:
+            r = matrix_test(R2, d, f"matrix:side_{src}")
+            cells.append(signed(1e3 * r["mean_diff"], 2) + mark(r["p_holm_signflip"], r["mean_diff"]))
+        body += row(f"Query $-$ items, {sl}", cells)
+    return wrap(body, "lrr")
 
 
 TABLES = {
@@ -1983,7 +2046,8 @@ TABLES = {
     "tab_residual": table_residual,
     "tab_residual_masked": table_residual_masked,
     "tab_overlap_null": table_overlap_null,
-    "tab_bridge": table_bridge,
+    "tab_bridge": lambda R: table_bridge(R),
+    "tab_source2": table_source2,
 }
 
 
@@ -1992,7 +2056,7 @@ TABLES = {
 WIDE = {
     "tab_qnorm_tests", "tab_encoders", "tab_text_format", "tab_lexical", "tab_coldwarm", "tab_knn",
     "tab_multisplit", "tab_lexical_desc", "tab_val_replication", "tab_residual",
-    "tab_residual_masked", "tab_hybrid", "tab_signal",
+    "tab_residual_masked", "tab_hybrid", "tab_signal", "tab_bridge",
 }  # fmt: skip
 
 

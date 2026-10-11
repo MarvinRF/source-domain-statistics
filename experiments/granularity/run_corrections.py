@@ -195,6 +195,16 @@ for _d in ("movies", "games"):
     )  # fmt: skip
 
 
+# Movies as SOURCE (second source scenario): the "books" fields of Source hold the source catalog,
+# here the movies; the target catalogs are the music / games ones above (same GTE title+categories)
+for _t, _src in (("music", REGISTRY[("music", "gte", "titlecat")]),
+                 ("games", REGISTRY[("games", "gte", "titlecat")])):  # fmt: skip
+    REGISTRY[(f"movies2{_t}", "gte", "titlecat")] = Source(
+        _GTE, _src.items, _src.items_idx,
+        "movies/movies_embeddings_qwen.npy", "movies/movies_id_to_idx_qwen.json", *_GROCERY,
+    )  # fmt: skip
+
+
 # Encoders whose embeddings failed or could not run the re-encoding audit of docs/EMBEDDINGS.md
 UNVERIFIED_ENCODERS = frozenset({"qwen3", "minilm-l12"})
 
@@ -354,7 +364,7 @@ def score_split(
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    ap.add_argument("--domain", choices=["music", "movies", "games"], required=True)
+    ap.add_argument("--domain", choices=sorted({d for d, _, _ in REGISTRY}), required=True)
     ap.add_argument("--encoder", required=True)
     ap.add_argument("--text", choices=["titlecat", "desc", "title"], default="titlecat")
     ap.add_argument("--legacy-population", action="store_true")
@@ -374,9 +384,9 @@ def main() -> None:
     with open(cfg.items_idx_path) as f:
         if set(json.load(f)) != set(item_idx):
             raise ValueError("encoder item ids differ from the domain catalog")
-    with open(PROCESSED_DIR / "book_id_to_idx.json") as f:
+    with open(cfg.source_idx_path) as f:
         if set(json.load(f)) != set(book_idx):
-            raise ValueError("encoder book ids differ from the canonical book catalog")
+            raise ValueError("encoder book ids differ from the canonical source catalog")
     idx_to_item = {v: k for k, v in item_idx.items()}
     log.info(f"items {items.shape}, books {books.shape} ({src.model})")
 
@@ -520,8 +530,8 @@ def main() -> None:
     counts = grp.size()
     inputs = [
         PROCESSED_DIR / f
-        for f in (src.items, src.items_idx, src.books, src.books_idx, "book_id_to_idx.json")
-    ]
+        for f in (src.items, src.items_idx, src.books, src.books_idx)
+    ] + [cfg.source_idx_path]
     if mom_g is not None:
         inputs += [PROCESSED_DIR / src.grocery, PROCESSED_DIR / src.grocery_idx]
     inputs += [cfg.items_idx_path, cfg.items_meta_path, cfg.gt_path, user_history_path(args.domain)]

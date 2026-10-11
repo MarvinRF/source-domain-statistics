@@ -1,0 +1,34 @@
+{
+  "provenance": {
+    "git_commit": "9e47137411bf96c66f83ab1004811a43f1860399",
+    "git_dirty": false,
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "torch": "2.11.0",
+      "transformers": "5.8.0",
+      "sentence-transformers": "5.4.1"
+    },
+    "timestamp_utc": "2026-10-11T01:04:34+00:00",
+    "inputs": {
+      "results/granularity/lexical_movies2music.csv.gz": {
+        "sha256": "c091d3ff1e908aec394050bf900053cbd5611d610345af4b03ac02e11602c006",
+        "bytes": 896152
+      },
+      "results/granularity/query_norm_movies2music_gte.csv.gz": {
+        "sha256": "00ca34602047b8110f98b86bfb01c8872d8e9231758f0da27d9ab15061414f4d",
+        "bytes": 2266815
+      },
+      "results/granularity/lexical_movies2games.csv.gz": {
+        "sha256": "ea843fb5807d4981a2ebedfec66fb01ce84ee2ff68eb5f499b8941652e38759b",
+        "bytes": 314550
+      },
+      "results/granularity/query_norm_movies2games_gte.csv.gz": {
+        "sha256": "bdfdd4e6fa7a0a68ef8546ca88e11814bd62bbc2e08c1d56d0564f92f6b6b0d6",
+        "bytes": 843024
+      }
+    }
+  }
+}
