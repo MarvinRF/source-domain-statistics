@@ -1,6 +1,6 @@
 {
   "provenance": {
-    "git_commit": "9e47137411bf96c66f83ab1004811a43f1860399",
+    "git_commit": "2a32c004eb64e1dcb396632298db48ca5f05d792",
     "git_dirty": false,
     "python": "3.14.4",
     "packages": {
@@ -11,7 +11,7 @@
       "transformers": "5.8.0",
       "sentence-transformers": "5.4.1"
     },
-    "timestamp_utc": "2026-10-11T01:03:01+00:00",
+    "timestamp_utc": "2026-10-11T02:52:27+00:00",
     "inputs": {
       "results/granularity/knn_movies2music_gte.csv.gz": {
         "sha256": "d81bba5ff535d53df724732f61b7d12934e46be7b66e15546edf25be7e2901d0",

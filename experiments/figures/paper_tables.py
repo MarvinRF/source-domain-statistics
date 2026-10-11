@@ -1935,33 +1935,51 @@ def table_overlap_null(R: Results) -> str:
     return wrap(body, "ll" + "r" * 4)
 
 
+def _dcell(t: pd.Series) -> str:
+    """Paired difference x10^3 [95% CI] with the Holm arrow and, when the CI and the Holm test
+    disagree, the circle."""
+    return (dci(t["mean_diff"], t["ci95_low"], t["ci95_high"])
+            + mark(t["p_holm_signflip"], t["mean_diff"])
+            + (CIFLAG if ci_holm_disagree(t) else ""))  # fmt: skip
+
+
 def table_bridge(R: Results, R2: Results | None = None) -> str:
-    """EMCDR-style bridges (book profile, for the movies pairs the movie profile, to the mean
-    embedding of the user's train target items; ridge with lambda on VAL, one-hidden-layer MLP
-    with width, weight decay and early stopping on VAL) against raw and the ZCA query: TEST exact
-    nDCG@10 (x1000) and paired differences x10^3 [95% CI]."""
+    """EMCDR-style bridges (book profile, for the movies pairs the movie profile, to the target
+    embedding space): closed-form ridge, one-hidden-layer MLP (MSE to the mean embedding of the
+    user's train items) and the contrastive MLP (InfoNCE, mean of 3 seeds; plain and with the
+    query centred after the bridge), all with their hyper-parameters chosen on VAL, against raw
+    and the ZCA query: TEST exact nDCG@10 (x1000) and paired differences x10^3 [95% CI]. A circle
+    marks a CI that disagrees with the Holm test. Last block: sanity check, nDCG@10 (x1000) of
+    one held-out train target item per train user for the contrastive bridge, raw, query ZCA and
+    a random ranking."""
     head = (
-        "Pair & ridge & MLP & raw & ZCA query & ridge $-$ raw & MLP $-$ raw & MLP $-$ ZCA query"
-        " & MLP $-$ ridge \\\\\n\\midrule\n"
+        "Pair & ridge & MLP & CL & CL centred & raw & ZCA query & ridge $-$ raw & MLP $-$ raw"
+        " & CL $-$ raw & CL $-$ ZCA query & CL $-$ ridge & CL centred $-$ ZCA query \\\\\n\\midrule\n"
     )
     body = head
     R2 = R2 or Results("_source2")
+    allp = []
     for res, doms, names in ((R, DOMAINS, DNAME), (R2, DOMAINS2, DNAME2)):
         for d in doms:
+            allp.append((d, names[d]))
             cells = [fnum(1e3 * res.br.loc[(d, TC, c)]["ndcg10"], 2) for c in
-                     ("bridge_ridge", "bridge_mlp", "raw", "zca_train_users_a1.0")]  # fmt: skip
-            for b, ref in (("ridge", "raw"), ("mlp", "raw"), ("mlp", "zca_train_users_a1.0"),
-                           ("mlp", "bridge_ridge")):  # fmt: skip
-                t = _stat_row(res.br_stats, domain=d, metric="ndcg10",
-                              test=f"bridge_{b}_vs_{ref}")  # fmt: skip
-                cells.append(
-                    dci(t["mean_diff"], t["ci95_low"], t["ci95_high"])
-                    + mark(t["p_holm_signflip"], t["mean_diff"])
-                )
+                     ("bridge_ridge", "bridge_mlp", "bridge_cl", "bridge_cl_centred", "raw",
+                      "zca_train_users_a1.0")]  # fmt: skip
+            for test in ("bridge_ridge_vs_raw", "bridge_mlp_vs_raw", "bridge_cl_vs_raw",
+                         "bridge_cl_vs_zca_train_users_a1.0", "bridge_cl_vs_bridge_ridge",
+                         "bridge_cl_centred_vs_zca_train_users_a1.0"):  # fmt: skip
+                cells.append(_dcell(_stat_row(res.br_stats, domain=d, metric="ndcg10", test=test)))
             body += f"{names[d]} & " + " & ".join(cells) + " \\\\\n"
         if res is R:
             body += "\\midrule\n"
-    return wrap(body, "lrrrrrrrr")
+    body += ("\\midrule\n\\multicolumn{13}{l}{Sanity: nDCG@10 $\\times10^{3}$ of one held-out train "
+             "target item per train user, model refitted without it} \\\\\n")  # fmt: skip
+    for d, name in allp:
+        s_ = json.loads((GRAN / f"bridgecl_{d}_gte.json").read_text())["sanity"]
+        body += (f"{name} & \\multicolumn{{12}}{{l}}{{contrastive {fnum(1e3 * s_['bridge_cl'], 2)}; "
+                 f"raw {fnum(1e3 * s_['raw'], 2)}; ZCA query {fnum(1e3 * s_['zca_train_users_a1.0'], 2)}; "
+                 f"random {fnum(1e3 * s_['random'], 2)} ($n={thousands(s_['n_users'])}$ users)}} \\\\\n")  # fmt: skip
+    return wrap(body, "l" + "r" * 12)
 
 
 def table_source2(R: Results, R2: Results | None = None) -> str:
@@ -1987,7 +2005,9 @@ def table_source2(R: Results, R2: Results | None = None) -> str:
         ("Popularity list", lambda d: qn_row(R2, d, "popularity")),
         ("Raw (no correction)", lambda d: qn_row(R2, d, "raw")),
         ("Profile kNN, raw (k on VAL)", lambda d: R2.knn.loc[(d, TC, f"knn_raw_k{ks[d]['raw']}")]),
+        ("Profile kNN, centred (k on VAL)", lambda d: R2.knn.loc[(d, TC, f"knn_center_train_users_k{ks[d]['center_train_users']}")]),
         ("BM25, source titles vs target titles", lambda d: R2.lex.loc[(d, TC, "bm25_title")]),
+        ("IDF overlap, source titles vs target titles", lambda d: R2.lex.loc[(d, TC, "idf_overlap_title")]),
     ):
         body += row(label, [fnum(1e3 * getter(d)["ndcg10"], 2) for d in D])
     body += "\\midrule\n"
@@ -2003,6 +2023,9 @@ def table_source2(R: Results, R2: Results | None = None) -> str:
                 v = qn_row(R2, d, MATRIX_KEY[(side, src)])["ndcg10"]
                 cells.append(bold(fnum(1e3 * v, 2), v >= best[d]) + matrix_mark(R2, d, side, src))
             body += row(f"{label}, statistics of {sl}", cells)
+    both = "zca_both_separate"
+    body += row("Both sides (query: users U, items: target catalog C)", [
+        fnum(1e3 * qn_row(R2, d, both)["ndcg10"], 2) + qn_mark(R2, d, both, False) for d in D])  # fmt: skip
     body += "\\midrule\n"
     for src, sl in (("U", "train users U"), ("B", "movie catalog M"), ("C", "target catalog C")):
         cells = []
@@ -2010,7 +2033,45 @@ def table_source2(R: Results, R2: Results | None = None) -> str:
             r = matrix_test(R2, d, f"matrix:side_{src}")
             cells.append(signed(1e3 * r["mean_diff"], 2) + mark(r["p_holm_signflip"], r["mean_diff"]))
         body += row(f"Query $-$ items, {sl}", cells)
+    body += "\\midrule\n"
+    z = "zca_train_users_a1.0"
+    for label, df, test_of in (
+        ("Popularity $-$ query ZCA (U)", R2.knn_stats, lambda d: f"popularity_vs_{z}"),
+        ("kNN raw $-$ query ZCA (U)", R2.knn_stats, lambda d: f"knn_raw_k{ks[d]['raw']}_vs_{z}"),
+        ("kNN centred $-$ query ZCA (U)", R2.knn_stats,
+         lambda d: f"knn_center_train_users_k{ks[d]['center_train_users']}_vs_{z}"),
+        ("BM25 $-$ query ZCA (U)", R2.lex_stats, lambda d: f"bm25_title_vs_{z}"),
+        ("IDF overlap $-$ query ZCA (U)", R2.lex_stats, lambda d: f"idf_overlap_title_vs_{z}"),
+    ):  # fmt: skip
+        body += row(label, [_dcell(_test(df, d, test_of(d))) for d in D])
+    body += row("Both sides $-$ query only (U)", [
+        _dcell(qn_contrast(R2, d, GTE, TC, "c_both_sides_vs_query_only")) for d in D])  # fmt: skip
     return wrap(body, "lrr")
+
+
+def _flip(t: pd.Series) -> pd.Series:
+    """The same paired test with the roles exchanged (reference minus condition)."""
+    t = t.copy()
+    t["mean_diff"], t["ci95_low"], t["ci95_high"] = -t["mean_diff"], -t["ci95_high"], -t["ci95_low"]
+    return t
+
+
+def table_popularity_compact(R: Results) -> str:
+    """Popularity list against the content queries and the profile kNN in the three books pairs
+    (GTE, TEST exact nDCG@10 x1000); paired differences (content minus popularity) x10^3
+    [95% CI], arrows for the Holm sign-flip test, circle where the CI and Holm disagree."""
+    body = ("Pair & Popularity & Raw & ZCA query & kNN raw & Raw $-$ pop. & ZCA query $-$ pop."
+            " & kNN raw $-$ pop. \\\\\n\\midrule\n")  # fmt: skip
+    z = "zca_train_users_a1.0"
+    for d in DOMAINS:
+        k = knn_sel(d)["raw"]
+        cells = [fnum(1e3 * qn_row(R, d, c)["ndcg10"], 2) for c in ("popularity", "raw", z)]
+        cells.append(fnum(1e3 * R.knn.loc[(d, TC, f"knn_raw_k{k}")]["ndcg10"], 2))
+        cells += [_dcell(_flip(_test(R.knn_stats, d, f"popularity_vs_{c}"))) for c in ("raw", z)]
+        cells.append(_dcell(_test(R.knn_stats, d, f"knn_raw_k{k}_vs_popularity",
+                                  "knn_vs_references")))  # fmt: skip
+        body += f"{DNAME[d]} & " + " & ".join(cells) + " \\\\\n"
+    return wrap(body, "lrrrrrrr")
 
 
 TABLES = {
@@ -2048,6 +2109,7 @@ TABLES = {
     "tab_overlap_null": table_overlap_null,
     "tab_bridge": lambda R: table_bridge(R),
     "tab_source2": table_source2,
+    "tab_popularity_compact": table_popularity_compact,
 }
 
 
@@ -2056,7 +2118,8 @@ TABLES = {
 WIDE = {
     "tab_qnorm_tests", "tab_encoders", "tab_text_format", "tab_lexical", "tab_coldwarm", "tab_knn",
     "tab_multisplit", "tab_lexical_desc", "tab_val_replication", "tab_residual",
-    "tab_residual_masked", "tab_hybrid", "tab_signal", "tab_bridge",
+    "tab_residual_masked", "tab_hybrid", "tab_signal", "tab_bridge", "tab_source2",
+    "tab_popularity_compact",
 }  # fmt: skip
 
 

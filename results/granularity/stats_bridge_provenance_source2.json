@@ -1,6 +1,6 @@
 {
   "provenance": {
-    "git_commit": "9e47137411bf96c66f83ab1004811a43f1860399",
+    "git_commit": "2a32c004eb64e1dcb396632298db48ca5f05d792",
     "git_dirty": false,
     "python": "3.14.4",
     "packages": {
@@ -11,15 +11,23 @@
       "transformers": "5.8.0",
       "sentence-transformers": "5.4.1"
     },
-    "timestamp_utc": "2026-10-11T01:16:57+00:00",
+    "timestamp_utc": "2026-10-11T02:52:46+00:00",
     "inputs": {
       "results/granularity/bridge_movies2music_gte.csv.gz": {
         "sha256": "709572472319dd6d9c8c168696ad5e5d71e8ed261d1818702504b2fd0406e6d1",
         "bytes": 561549
       },
+      "results/granularity/bridgecl_movies2music_gte.csv.gz": {
+        "sha256": "4d03f8d00fe321709160df77a8b2453de066fb7b1398a5a25850a6c47d641034",
+        "bytes": 845958
+      },
       "results/granularity/bridge_movies2games_gte.csv.gz": {
         "sha256": "7fe3b8da860463ebd4b6612ad9a39fa1ebcf41ec885c9cacb38ef7da6c3dfd0b",
         "bytes": 205332
+      },
+      "results/granularity/bridgecl_movies2games_gte.csv.gz": {
+        "sha256": "240c8b4d763266d01ab6d3570eb67d61f395e14748a443a642403897fc82110d",
+        "bytes": 302099
       }
     }
   }

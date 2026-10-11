@@ -1874,7 +1874,44 @@ def round3(a: A) -> None:
             N(f"BrMlp{tag}P{L}", pv(r["p_holm_signflip"]), src, "p_holm_signflip")
         sel = json.loads((GRAN / f"bridge_{d}_gte.json").read_text())["mlp_selected"]
         N(f"BrMlpSel{L}", sel.removeprefix("bridge_mlp_").replace("_", ", "), GL + f"bridge_{d}_gte.json", "mlp_selected (width, weight decay)")  # fmt: skip
+    for L, d in D.items():
+        bridge_cl_numbers(R, d, L, "")
+        z = "zca_train_users_a1.0"
+        for ref, tag in (("raw", "Raw"), (z, "Zca")):  # popularity list against the content queries
+            r = pt._flip(pt._test(R.knn_stats, d, f"popularity_vs_{ref}"))
+            N(f"PopC{tag}Diff{L}", u3(r["mean_diff"]), GL + "stats_knn.csv", f"{d} {ref} minus popularity: mean_diff")  # fmt: skip
+            N(f"PopC{tag}Ci{L}", u3ci(r["ci95_low"], r["ci95_high"]), GL + "stats_knn.csv", "ci95")
+            N(f"PopC{tag}P{L}", pv(r["p_holm_signflip"]), GL + "stats_knn.csv", "p_holm_signflip")
+    N("CiHolmLegend", r"$^{\circ}$ the 95\% CI and the Holm test disagree", "paper_tables.ci_holm_disagree", "legend of the circle marker")  # fmt: skip
     source2_numbers(a)
+
+
+def bridge_cl_numbers(Rx, d: str, L: str, pre: str) -> None:
+    """Contrastive bridge (plain and query-centred after the bridge): TEST nDCG@10, the paired
+    tests against raw, the ZCA query, the ridge and MLP bridges, the VAL selection and the sanity
+    check, for the pair ``d`` (``pre="STwo"`` for the movies-as-source files)."""
+    sfx = "_source2" if pre else ""
+    src, z = GL + f"stats_bridge{sfx}.csv", "zca_train_users_a1.0"
+    for c, tag in (("bridge_cl", "Cl"), ("bridge_cl_centred", "ClC")):
+        N(f"{pre}Br{tag}Nd{L}", f(float(Rx.br.loc[(d, TC, c)]["ndcg10"]), 4), GL + f"summary_bridge{sfx}.csv", f"{d} {c} ndcg10")  # fmt: skip
+    for b, ref, tag in (("cl", "raw", "ClRaw"), ("cl", z, "ClZca"), ("cl", "bridge_ridge", "ClRidge"),
+                        ("cl", "bridge_mlp", "ClMlp"), ("cl_centred", "raw", "ClCRaw"),
+                        ("cl_centred", z, "ClCZca"), ("cl_centred", "bridge_ridge", "ClCRidge"),
+                        ("cl_centred", "bridge_cl", "ClCCl")):  # fmt: skip
+        r = pt._stat_row(Rx.br_stats, domain=d, metric="ndcg10", test=f"bridge_{b}_vs_{ref}")
+        N(f"{pre}Br{tag}Diff{L}", u3(r["mean_diff"]), src, f"{d} bridge_{b}_vs_{ref}: mean_diff")
+        N(f"{pre}Br{tag}Ci{L}", u3ci(r["ci95_low"], r["ci95_high"]), src, "ci95")
+        N(f"{pre}Br{tag}P{L}", pv(r["p_holm_signflip"]), src, "p_holm_signflip")
+        N(f"{pre}Br{tag}CiHolm{L}", str(int(pt.ci_holm_disagree(r))), src, "CI excludes 0 xor Holm p < 0.05")  # fmt: skip
+    j = json.loads((GRAN / f"bridgecl_{d}_gte.json").read_text())
+    js = GL + f"bridgecl_{d}_gte.json"
+    w, t, wd = j["selected"]
+    N(f"{pre}BrClSel{L}", f"{w}, {t:g}, {wd:g}", js, "selected (width, temperature, weight decay)")
+    s_ = j["sanity"]
+    for key, tag in (("bridge_cl", "Cl"), ("raw", "Raw"), (z, "Zca"), ("random", "Rand")):
+        N(f"{pre}BrSan{tag}{L}", f(1e3 * s_[key], 2), js, f"sanity.{key} (nDCG@10 x1000, held-out train item)")  # fmt: skip
+    N(f"{pre}BrSanN{L}", th(s_["n_users"]), js, "sanity.n_users")
+    N(f"{pre}BrSanRatio{L}", f(s_["bridge_cl"] / s_["random"], 0), js, "sanity: bridge_cl / random")
 
 
 def source2_numbers(a: A) -> None:
@@ -1903,6 +1940,25 @@ def source2_numbers(a: A) -> None:
         r = pt._stat_row(qs, domain=d, metric="ndcg10", test="post_hoc:zca_target_catalog_vs_raw")
         N(f"STwoTargetQDiff{L}", u3(r["mean_diff"]), qsrc, f"{d} post_hoc:zca_target_catalog_vs_raw: mean_diff")  # fmt: skip
         N(f"STwoTargetQP{L}", pv(r["p_holm_signflip"]), qsrc, "p_holm_signflip")
+        kn_c = f"knn_center_train_users_k{kk['center_train_users']}"
+        N(f"STwoKnnCNd{L}", f(float(R2.knn.loc[(d, TC, kn_c)]["ndcg10"]), 4), GL + "summary_knn_source2.csv", f"{d} {kn_c} ndcg10")  # fmt: skip
+        N(f"STwoIdfNd{L}", f(float(R2.lex.loc[(d, TC, "idf_overlap_title")]["ndcg10"]), 4), GL + "summary_lexical_source2.csv", f"{d} idf_overlap_title ndcg10")  # fmt: skip
+        N(f"STwoBothNd{L}", f(float(qn("zca_both_separate")["ndcg10"]), 4), GL + "summary_query_norm_source2.csv", f"{d} zca_both_separate ndcg10")  # fmt: skip
+        zz = "zca_train_users_a1.0"
+        for tag, df, fsrc, test in (
+            ("PopZca", R2.knn_stats, "stats_knn_source2.csv", f"popularity_vs_{zz}"),
+            ("KnnZca", R2.knn_stats, "stats_knn_source2.csv", f"knn_raw_k{kk['raw']}_vs_{zz}"),
+            ("KnnCZca", R2.knn_stats, "stats_knn_source2.csv", f"{kn_c}_vs_{zz}"),
+            ("BmZca", R2.lex_stats, "stats_lexical_source2.csv", f"bm25_title_vs_{zz}"),
+            ("IdfZca", R2.lex_stats, "stats_lexical_source2.csv", f"idf_overlap_title_vs_{zz}"),
+            ("BothQ", R2.qn_stats, "stats_query_norm_source2.csv", "c_both_sides_vs_query_only"),
+            ("BothRaw", R2.qn_stats, "stats_query_norm_source2.csv", "vs_raw:zca_both_separate"),
+        ):  # fmt: skip
+            r = pt._test(df, d, test)
+            N(f"STwo{tag}Diff{L}", u3(r["mean_diff"]), GL + fsrc, f"{d} {test}: mean_diff")
+            N(f"STwo{tag}Ci{L}", u3ci(r["ci95_low"], r["ci95_high"]), GL + fsrc, "ci95")
+            N(f"STwo{tag}P{L}", pv(r["p_holm_signflip"]), GL + fsrc, "p_holm_signflip")
+        bridge_cl_numbers(R2, d, L, "STwo")
         bsrc = GL + "stats_bridge_source2.csv"
         for c, tag in (("bridge_ridge", "Ridge"), ("bridge_mlp", "Mlp")):
             N(f"STwoBr{tag}Nd{L}", f(float(R2.br.loc[(d, TC, c)]["ndcg10"]), 4), GL + "summary_bridge_source2.csv", f"{d} {c} ndcg10")  # fmt: skip

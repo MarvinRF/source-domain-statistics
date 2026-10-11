@@ -108,6 +108,7 @@ controls:  ## shuffled-profile control (gte, three domains), then the paired tes
 
 bridge:  ## closed-form ridge bridge (book profile -> mean target embedding of the train users), lambda on VAL, then the paired tests
 	for d in $(DOMAINS); do $(PY) -m experiments.granularity.bridge --domain $$d --encoder gte || exit 1; done
+	for d in $(DOMAINS); do $(PY) -m experiments.granularity.bridge --domain $$d --encoder gte --contrastive || exit 1; done
 	$(PY) -m experiments.granularity.bridge --stats
 
 lexical-overlap:  ## hit overlap of the query arms with the lexical scorers, reachability of the hits, semantic residual (after `query-norm`)
@@ -153,6 +154,7 @@ source2:  ## movies as SOURCE (movies2music, movies2games): users, splits, grid,
 	for d in $(DOMAINS2); do $(PY) -m experiments.granularity.lexical --domain $$d || exit 1; done
 	$(PY) -m experiments.granularity.lexical --stats --pairset source2
 	for d in $(DOMAINS2); do $(PY) -m experiments.granularity.bridge --domain $$d --encoder gte || exit 1; done
+	for d in $(DOMAINS2); do $(PY) -m experiments.granularity.bridge --domain $$d --encoder gte --contrastive || exit 1; done
 	$(PY) -m experiments.granularity.bridge --stats --pairset source2
 	$(PY) -m experiments.granularity.stats --runs $(addsuffix _gte_titlecat,$(DOMAINS2)) --tag _source2
 

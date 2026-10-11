@@ -277,6 +277,9 @@ def stats(encoder: str = "gte", pairset: str = "books") -> None:
                         *[(f"{h}_vs_{r}", h, r) for r in hy_refs],
                     ]
             rows += C.paired_rows(wide, t_pure, meta, "knn_vs_references")
+            # the popularity list against the content queries (its own family, Holm among them)
+            t_pop = [(f"popularity_vs_{c}", "popularity", c) for c in CONTENT]
+            rows += C.paired_rows(wide, t_pop, meta, "popularity_vs_content")
             rows += C.paired_rows(wide, t_hyb, meta, "knn_hybrid")
         log.info(f"{stem}: tested")
     df = pd.DataFrame(rows)

@@ -44,6 +44,10 @@ def test_source2_table_and_macros_render_from_the_committed_results():
     R = pt.Results()
     for tab in (pt.table_source2(R), pt.table_bridge(R)):
         assert "nan" not in tab and "Movies$\\to$Music" in tab
+    assert "nan" not in pt.table_popularity_compact(R)
     pn.NUMS.clear()
     pn.build()
     assert "STwoQUDiffMovMus" in pn.NUMS and "BrMlpRawDiffMusic" in pn.NUMS
+    assert {"BrClZcaDiffGames", "STwoBrClRawDiffMovGam", "STwoPopZcaDiffMovMus", "STwoKnnCZcaPMovMus",
+            "STwoIdfNdMovGam", "STwoBothQDiffMovMus", "PopCZcaDiffMusic", "BrSanClMusic",
+            "CiHolmLegend"} <= set(pn.NUMS)

@@ -1,6 +1,6 @@
 {
   "provenance": {
-    "git_commit": "c4cdf2add8197b209bdd0ff103c37c21c59e1a43",
+    "git_commit": "2a32c004eb64e1dcb396632298db48ca5f05d792",
     "git_dirty": false,
     "python": "3.14.4",
     "packages": {
@@ -11,7 +11,7 @@
       "transformers": "5.8.0",
       "sentence-transformers": "5.4.1"
     },
-    "timestamp_utc": "2026-10-10T06:46:24+00:00",
+    "timestamp_utc": "2026-10-11T02:52:23+00:00",
     "inputs": {
       "results/granularity/knn_music_gte.csv.gz": {
         "sha256": "2aeca1e189bd01f7c85925eba04f7b20f380207736f14a0a38a7374b1516af1a",
