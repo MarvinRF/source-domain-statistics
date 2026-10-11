@@ -1,4 +1,7 @@
+from pathlib import Path
+
 import numpy as np
+import pytest
 
 from acw.data.splits import DOMAINS as SPLIT_DOMAINS
 from acw.evaluation.config import KNOWN_DOMAINS, resolve_paths
@@ -33,6 +36,7 @@ def test_mlp_bridge_shapes_and_learns_a_nonlinear_map():
     assert ((out - Y[500:]) ** 2).mean() < Y[500:].var(0).mean()  # better than the mean
 
 
+@pytest.mark.skipif(not (Path(__file__).parents[1] / "data/splits/music_stats.json").exists(), reason="needs data/splits (make splits-new)")
 def test_source2_table_and_macros_render_from_the_committed_results():
     from experiments.figures import paper_numbers as pn
     from experiments.figures import paper_tables as pt

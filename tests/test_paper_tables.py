@@ -60,7 +60,7 @@ def test_query_norm_tables_report_discordant_users_and_the_verified_tally():
     assert "nan" not in q and q.count("\\multicolumn{4}{c}") >= 6
 
 
-@pytest.mark.skipif(not (pt.GRAN / "stats_knn.csv").exists(), reason="results absent")
+@pytest.mark.skipif(not (pt.GRAN / "hybrid_music_gte.csv.gz").exists(), reason="per-user files absent (not committed)")
 def test_lexical_controls_knn_and_cold_tables_build_without_nan():
     R = pt.Results()
     for fn in (pt.table_lexical, pt.table_controls, pt.table_coldwarm, pt.table_knn,

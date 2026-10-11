@@ -1,3 +1,5 @@
+[![ci](https://github.com/MarvinRF/source-domain-statistics/actions/workflows/ci.yml/badge.svg)](https://github.com/MarvinRF/source-domain-statistics/actions/workflows/ci.yml)
+
 # Source-Domain Statistics, Not the Target Catalog
 
 Code for the paper *"Source-Domain Statistics, Not the Target Catalog: What Geometric Corrections Do in
@@ -26,7 +28,7 @@ item or category). Summary of the findings:
 
 ```bash
 python3 -m venv venv && source venv/bin/activate
-pip install -e ".[dev]"          # core + tests/lint
+pip install -e ".[dev]"          # core + tests/lint (torch is large; for CPU only: pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cpu first)
 pip install -e ".[llm]"          # optional: LLM-generated profiles (H3/H4)
 pip install -e ".[dla]"          # optional: query-side span analysis (spaCy)
 make test
